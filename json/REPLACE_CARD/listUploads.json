@@ -1,0 +1,16 @@
+{
+    "count": 1,
+    "data": [
+        {
+            "userId": "5b3e045b-691c-48b6-6eec-e4353001c55a",
+            "uploadId": "b5b72b03-8cd5-44d3-b755-b93543c23c4c",
+            "type": "Selfie",
+            "status": "Ready",
+            "result": null,
+            "url": "https://s3.eu-west-1.amazonaws.com/uploads.dev.pyypl.com/5b3e045b-691c-48b6-6eec-e4353001c55a/b5b72b03-8cd5-44d3-b755-b93543c23c4c?AWSAccessKeyId=AKIAJWHL7L26F2ZYZYOA&Expires=1700656458&Signature=hW6HJ8DKZxR6uglq6Ggl%2FY4vw%2FU%3D&X-Amzn-Trace-Id=Root%3D1-655df1c6-725f8719106c1ec03e60b699%3BParent%3D605b56c50d0f5242%3BSampled%3D0%3BLineage%3Daca03456%3A0",
+            "createdAt": "2022-08-12T08:25:55.570Z",
+            "updatedAt": "2022-08-12T08:26:00.987Z",
+            "faceDetails": "[]"
+        }
+    ]
+}

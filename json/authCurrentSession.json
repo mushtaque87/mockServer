@@ -1,0 +1,12 @@
+{
+    "challengeName": "mock_challengeName",
+    "challengeParam": "mock_challengeParam",
+    "Session": "mock_session",
+    "idToken": {
+        "jwtToken": "mock_jwtToken",
+        "payload": {
+            "deviceId": "mock_deviceId",
+            "biometrics": "mock_biometrics"
+        }
+    }
+}

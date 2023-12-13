@@ -1,0 +1,51 @@
+[
+    {
+        "pnwPaymentId": "5507a9e0-b86f-4699-bbc3-c0cad8a8898a",
+        "accountId": "17d8a0a8-bd2f-490e-8f9e-174460a0e640",
+        "transactionId": "b4e5d2a0-dc5c-4c82-b85f-13c9337cca8a",
+        "transactionStatus": "REFUNDED",
+        "pnwPaymentType": "REMITTANCE",
+        "pnwPaymentBeneficiaryData": {
+            "beneficiaryFirstName": "Mushtaque ",
+            "beneficiaryLastName": "Ahmed",
+            "beneficiaryNickName": null,
+            "beneficiaryPhoneNumber": "+8616521687184",
+            "beneficiaryCountryOfResidence": null,
+            "beneficiaryRelationshipToSender": "PARE",
+            "beneficiaryIdentityDocumentNumber": "12321",
+            "beneficiaryIdentityDocumentType": "NIDN",
+            "beneficiaryAccountCurrency": null,
+            "beneficiaryTargetInstitutionId": "EWALIPAY",
+            "beneficiaryLocalAccountNumber": null,
+            "beneficiaryAccountIBAN": null,
+            "beneficiaryTargetInstitutionBranchId": null,
+            "beneficiaryCountrySubDivision": null,
+            "beneficiaryBlockchainAccountAddress": null,
+            "beneficiaryCityOfResidence": null,
+            "beneficiaryLocalAccountType": null,
+            "beneficiaryDescription": "Alipay"
+        },
+        "pnwPaymentData": {
+            "accountFrom": "17d8a0a8-bd2f-490e-8f9e-174460a0e640",
+            "amountFrom": 20000,
+            "amountTo": 34074,
+            "countryTo": "CN",
+            "currencyFrom": "AED",
+            "currencyTo": "CNY",
+            "description": null,
+            "processorPaymentMethodId": "PNW#TRANGLO#WALLET#001",
+            "processorPaymentMethodQuoteId": "915e707a-8ab9-4a6c-9c6a-50f984903e2f",
+            "paymentPurposeCode": "SUBS"
+        },
+        "pnwPaymentSenderData": {
+            "senderAddressLines": null,
+            "senderSourceOfCash": "WINS",
+            "senderOccupation": null,
+            "senderCityOfResidence": null,
+            "senderNote": "",
+            "senderIdentityPassportNumber": null
+        },
+        "createdAt": "2023-05-05T12:10:16.695Z",
+        "updatedAt": "2023-05-05T12:10:48.115Z"
+    }
+]

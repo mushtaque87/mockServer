@@ -1,0 +1,25 @@
+{
+    "count": 1,
+    "data": [
+        {
+            "bankTransferRequestId": "de2a2b72-64e6-4998-86b0-dffeff813994",
+            "bankTransferRequestAmount": 10000,
+            "bankTransferRequestReceivedAmount": null,
+            "bankTransferRequestCurrency": "AED",
+            "bankTransferRequestReference": "+971545269990",
+            "bankTransferRequestTransactionId": "112132121",
+            "bankTransferRequestBankName": null,
+            "bankTransferRequestMethod": "MANUAL_BANK_TRANSFER",
+            "bankTransferRequestStatus": "PENDING",
+            "linkedTransferRequestId": null,
+            "userId": "c323293d-ffb8-53e4-6a02-549733de244b",
+            "userData": {
+                "firstName": "TERESIAH NJERI",
+                "lastName": "KIRIETHE"
+            },
+            "accountId": "17d8a0a8-bd2f-490e-8f9e-174460a0e640",
+            "createdAt": "2023-12-11T12:28:36.287Z",
+            "updatedAt": "2023-12-11T12:28:36.287Z"
+        }
+    ]
+}

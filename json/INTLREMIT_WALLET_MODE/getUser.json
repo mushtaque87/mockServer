@@ -1,0 +1,20 @@
+{
+    "userId": "9390d509-5026-8430-d5b0-21e852e2cb34",
+    "phoneNumberVerified": true,
+    "acceptedTermsAndConditions__createdTimestamp": null,
+    "createdAt": "2023-07-11T09:46:04.820Z",
+    "status": "TnC_ACCEPTED",
+    "loyaltyStatus": null,
+    "phoneNumber": "+971555000444",
+    "locale": "en",
+    "assignedOperatingCountry": "AE",
+    "firstName": "AUGUSTINE",
+    "lastName": "NASENYA",
+    "nickname": "TA",
+    "dateOfBirth": "1996-12-25",
+    "nationality": "UG",
+    "emailAddress": null,
+    "userExternalSupportChatCustomerId": null,
+    "emailAddressVerified": null,
+    "countryCode": "AE"
+}

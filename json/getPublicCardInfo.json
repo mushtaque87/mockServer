@@ -1,0 +1,22 @@
+{
+    "cardBin": "500001",
+    "cardType": "DEBIT",
+    "cardScheme": "EBT",
+    "cardCountryCode": "US",
+    "bin": "50000186",
+    "number": null,
+    "scheme": null,
+    "type": "debit",
+    "brand": null,
+    "prepaid": null,
+    "country": {
+        "numeric": null,
+        "alpha2": "US",
+        "name": null,
+        "emoji": null,
+        "currency": "USD",
+        "latitude": null,
+        "longitude": null
+    },
+    "bank": null
+}

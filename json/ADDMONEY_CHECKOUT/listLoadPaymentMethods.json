@@ -1,0 +1,30 @@
+[
+    {
+        "loadPaymentMethodId": "ea7d8629-654f-44a4-a825-23a778aea733",
+        "loadPaymentProvider": "STRIPE",
+        "loadPaymentMethodType": "CARD",
+        "headDigits": null,
+        "tailDigits": "5556",
+        "userId": "c323293d-ffb8-53e4-6a02-549733de244b",
+        "issuerCountry": "US",
+        "cardToken": "pm_1MGhZVFmOdcLKpmU0zS6mv7q",
+        "cardScheme": "VISA",
+        "cardType": "DEBIT",
+        "createdAt": "2022-12-19T11:31:55.108Z",
+        "updatedAt": "2022-12-19T11:31:55.108Z"
+    },
+    {
+        "loadPaymentMethodId": "d8bf4063-17d5-42b9-969a-e4f2010c5b76",
+        "loadPaymentProvider": "CHECKOUT",
+        "loadPaymentMethodType": "CARD",
+        "headDigits": "500018",
+        "tailDigits": "6654",
+        "userId": "c323293d-ffb8-53e4-6a02-549733de244b",
+        "issuerCountry": "US",
+        "cardToken": "src_32xrhyyev5mfmcdbtpobw2vkwi",
+        "cardScheme": "MASTERCARD",
+        "cardType": "DEBIT",
+        "createdAt": "2023-01-04T12:08:44.429Z",
+        "updatedAt": "2023-01-04T12:08:44.429Z"
+    }
+]

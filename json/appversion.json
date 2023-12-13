@@ -1,0 +1,12 @@
+{
+    "minimalRequiredAppVersion": 1501,
+    "latestAppVersion": 1501,
+    "shouldUpdate": false,
+    "cardPairing": "id-query",
+    "appDebugging": false,
+    "sslPinningCheck": true,
+    "jailBreakCheck": false,
+    "chatBotEnabledCountries": [
+        "AE"
+    ]
+}

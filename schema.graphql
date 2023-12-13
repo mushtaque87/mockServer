@@ -1,0 +1,5195 @@
+type Query {
+  # users
+  listUsers(limit: Int, sortBy: SortBy, filters: [Filter], offset: Int): UserSet
+  listUsersAMLCTF(
+    limit: Int
+    sortBy: SortBy
+    filters: [Filter]
+    offset: Int
+  ): UserSet
+  listContacts(contacts: [String]): ContactSet
+  getUser(userId: ID): User
+  findUserByPhoneNumber(phoneNumber: String): User
+  getUserPreferences(userId: ID): UserPreferences
+  getFaceIdMatch(userId: ID): String
+  getUserAttribute(userId: ID, attributeName: String): UserAttribute
+  phoneNumberExists(phoneNumber: String): phoneNumberExistsResponse
+  checkUsersExistenceByPhoneNumber(
+    phoneNumbers: [String]
+  ): [checkUsersExistenceByPhoneNumberResponse]
+  isNewUser(userId: ID!, options: IsNewUserOptions): Boolean
+  isUser(input: Filter): IsUser
+  hasCompletedOnboarding(
+    userId: ID
+    options: HasCompletedOnboardingOptions
+  ): UserOnboardingResponse
+  getOnboardingRestrictionStatus(input: [AttributeInput]): Status
+  listStates(input: ListStatesInput): [State]
+  listUserSensitiveAttributes(
+    userId: ID
+    filters: UserSensitiveAttributesFilter
+  ): [UserSensitiveAttribute]
+  getAddressInfo(userId: ID): AddressInfo
+  closeAccountEligible(userId: ID): CloseAccountEligible
+
+  # dealers
+  getDealer(dealerId: ID): Dealer
+  listDealers: DealerSet
+
+  # loyalty
+  getRewardWalletConfiguration(accountId: ID!): RewardWalletConfigutation
+  listUserMerchants(userId: ID, accountId: ID!): [Merchant]
+
+  # organizations
+  getOrganization(
+    organizationId: ID!
+    options: OrganizationOptions
+  ): Organization
+  getBankDetails(userId: ID): OrganizationBankDetails
+  listOrganizations(
+    limit: Int
+    sortBy: SortBy
+    filters: [Filter]
+    offset: ID
+  ): [Organization]
+
+  # devices
+  getDevice(deviceId: ID!): Device
+  listDevices(userId: ID!): [Device]
+  listDeviceVerifications(userId: ID): [VerificationResponse]
+  getDeviceAttribute(deviceId: ID!, attributeName: String): DataAttribute
+
+  # mobileApp
+  getMinimalRequiredAppVersion(appVersion: String): AppVersion
+  getAppFeatures: [String]
+  checkCountrySlots(countryCode: String, phoneNumber: String): CountrySlots
+  getInfoBanner(userId: ID, countryCode: String, type: String): InfoBanner
+  getInvitationsConfig(userId: ID): InvitationsConfig
+  listOnboardingCountries(options: ListOnboardingCountriesOptions): [String]
+  getOnboardingConfiguration(userId: ID): OnboardingConfiguration
+  listUnwantedOnboardingCountries: [String]
+  getDynamicContent(userId: ID): DynamicContentSet
+
+  # uploads
+  listUploads(userId: ID, type: UploadType): UploadSet
+  getUpload(userId: ID, uploadId: ID!): Upload
+  getUploadUrlV2(userId: ID, uploadId: ID!): UploadUrlV2
+  getSelfie(phoneNumber: String): Upload
+
+  # accounts
+  listAccounts(
+    userId: ID
+    organizationId: ID
+    limit: Int
+    sortBy: SortBy
+    filters: [Filter]
+    offset: Int
+  ): AccountSet
+  getAccount(accountId: ID!): Account
+  getAccountBalance(accountId: ID!, currency: Currency!): AccountBalance
+  getAccountBalances(accountId: ID!): AccountBalanceSet
+  getAccountBalanceInternal(
+    userId: ID!
+    accountId: ID!
+    currency: Currency!
+  ): AccountBalance
+  listPrefunding(operatingCountryId: Identifier): [Prefunding]
+  getBonusConfig(assignedOperatingCountryCode: String): BonusConfig
+  listBonusInvitees(userId: ID, limit: Int, offset: Int): BonusInviteesSet
+  listAccountWalletLimitUpdateRequests(userId: ID): [LimitUpdateRequest]
+  listSupportedAccountCurrencies(userId: ID, accountId: ID): [Currency]
+
+  # transactions
+  listTransactions(
+    accountId: ID
+    limit: Int
+    sortBy: SortBy
+    filters: [Filter]
+    offset: Int
+    options: TransactionOptions
+  ): TransactionSet
+  listTransactionsAMLCTF(
+    accountId: ID
+    accounts: [ID]
+    limit: Int
+    sortBy: SortBy
+    filters: [Filter]
+    offset: Int
+    options: TransactionOptions
+  ): TransactionSet
+
+  listTransactionHistoryItems(
+    accountId: ID
+    limit: Int
+    sortBy: SortBy
+    filters: [Filter]
+    offset: Int
+    options: TransactionOptions
+  ): TransactionV2Set
+  listTransactionsV2(
+    accountId: ID
+    limit: Int
+    sortBy: SortBy
+    filters: [Filter]
+    offset: Int
+    options: TransactionOptions
+  ): TransactionV2Set
+  listTransactionReportIssueTypes(
+    transactionCategorySlug: String
+  ): TransactionReportIssues
+
+  listTransactionHistoryCategories: [TransactionHistoryCategoryItem]
+  isWithinTransactionUsageVolumeLimits(
+    accountId: ID
+    input: IsWithinTransactionUsageVolumeLimitsInput
+    options: IsWithinTransactionUsageVolumeLimitsOptionsInput
+  ): WithinLimitResponse
+  getTransaction(transactionId: ID!, options: TransactionOptions): Transaction
+  getTransactionFee(transactionId: ID!): TransactionFee
+  getTransactionAMLCTF(
+    transactionId: ID!
+    options: TransactionOptions
+  ): Transaction
+  listBalanceLimits(
+    accountId: ID
+    input: ListBalanceLimitsInput
+    options: ListBalanceOptions
+  ): [BalanceLimit]
+  getTransactionDetails(transactionRecordId: ID): TransactionDetails
+
+  # bill payments
+  listAvailableBillPaymentProducts(userId: ID): BillPaymentProductSet
+
+  # vouchers
+  listVouchers(
+    accountId: ID
+    accounts: [ID]
+    limit: Int
+    sortBy: SortBy
+    filters: [Filter]
+    offset: Int
+  ): VoucherSet
+  getVoucher(voucherId: ID!): Voucher
+
+  # services
+  getDefaultServices: ServiceConstructSet
+  getRequiredFields(userId: ID, services: [String!]!): RequiredFieldSet
+  listServices(userId: ID, accountId: ID, options: ServicesOptions): ServiceSet
+  listFXServices(input: [listServicesInput]): ServiceSet
+  listServiceParameters(accountId: ID): AWSJSON
+  getServiceParameters(input: ServiceParamsInput!): AWSJSON
+  getService(
+    userId: ID
+    accountId: ID!
+    name: String!
+    options: ServicesOptions
+  ): Service
+  hasService(
+    userId: ID
+    accountId: ID
+    name: String!
+    options: ServicesOptions
+  ): Boolean
+  hasCompletedKYC(userId: ID): CompletedKYC
+
+  # v2 service endpoints
+  listServiceFeatures(userId: ID, accountId: ID): [ServiceFeature]
+  generateFeesPage(accountId: ID, operatingCountry: String): String
+
+  # due-diligence
+  getServicesTerms(services: [String!]!, type: String): TermsAndConditions
+  listPermittedDocuments(
+    operatingCountryId: Filter
+    documentType: DocumentType
+  ): PermittedDocuments
+  listKycProviders: [KycProvider]
+  listDueDiligenceSourceOfFundsOptions(
+    countryCode: String
+  ): ListSourceOfFundsOptions
+  listAccountWalletLimitIncreaseDocumentRequirements(
+    userId: ID
+    sourceOfFundsName: String
+  ): [String]
+  listLoadAbilityMethods(accountId: ID!): [LoadAbilityMethod]
+
+  # issuer
+  listCardConfigurations(accountId: ID): [CardConfigurationRules]
+  listCards(accountId: ID, cardIssuer: CardIssuer): CardSet
+  listCardsPaymentAuthorizationRequests(userId: ID, accountId: ID): [CardOtp]
+  getCardSensitiveData(
+    userId: ID!
+    accountId: ID!
+    cardId: String!
+    options: GetCardSensitiveDataOptions
+  ): CardSensitiveData
+  getAccountCard(accountId: ID!, cardId: ID!, cardIssuer: CardIssuer): Card
+
+  # issuer-pckt
+  getPublicKey: String
+  getSensitiveData(
+    userId: ID!
+    cardId: String!
+    devicePublicKey: String!
+    options: CardSensitiveDataOptions
+  ): SensitiveData
+  getAccountCards(accountId: ID!): AccountCardSet
+  getCard(accountId: ID!, cardId: ID!): Card
+  getFXRate(
+    accountId: ID
+    from: Currency
+    to: Currency!
+    options: fxOptions
+  ): fxRate
+  getFXRates: [fxRate]
+  getIssuerPublicKey(devicePublicKey: String): IssuerPublicKey
+  listCardOtps(accountId: ID): [CardOtp]
+  getCardConfig(userId: ID): CardConfig
+
+  # notifications
+  listNotifications(
+    userId: ID
+    limit: Int
+    sortBy: SortBy
+    filters: [Filter]
+    offset: Int
+  ): NotificationSet
+  getInvitationLink: InvitationLink
+
+  # loads
+  listLoadLocations(
+    offset: Int
+    limit: Int
+    input: LoadLocationInput
+  ): [LoadLocation]
+  getDealerLoadLocation(userId: ID): LoadLocation
+  listLoadLimits(accountId: ID, input: loadLimitInput): [LoadLimit]
+  getPaymentRequest(paymentRequestId: ID!): PaymentRequest
+  hasLoad(userId: ID): Boolean
+  listLoadPaymentMethods(userId: ID): [LoadPaymentMethod]
+  listLoadPaymentMethodKeys(
+    input: ListLoadPaymentMethodKeysInput
+  ): [LoadPaymentMethodKey]
+  getFlutterwaveAccountDetail(
+    bankCode: String
+    accountNumber: String
+  ): FlutterwaveAccountDetail
+  listFlutterwaveTransferRates(
+    sourceCurrency: Currency
+    destinationCurrency: Currency
+    amount: Float
+  ): FlutterwaveTransferRate
+  getDirectDebitSupportedBanks: [BankDetail]
+  getManualLoadPageDetails(name: String): ManualLoadPageDetails
+  getPublicCardInfo(bin: String): CardPublicInfo
+  listSourceOfFundsOptions(
+    input: ListSourceOfFundsOptionsInput
+  ): [SourceOfFundsOption]
+  getBankTransferRequest(
+    accountId: String
+    bankTransferRequestId: String
+  ): BankTransferRequest
+  listBankTransferRequests(
+    limit: Int
+    sortBy: SortBy
+    filters: [Filter]
+    offset: Int
+  ): BankTransferRequestSet
+
+  # debentures
+  listDebentureContracts(
+    limit: Int
+    sortBy: SortBy
+    filters: [Filter]
+    offset: Int
+  ): PageableContractList
+  listInvestmentOpportunities(
+    limit: Int
+    sortBy: SortBy
+    filters: [Filter]
+    offset: Int
+  ): PageableInvestmentOpportunityList
+  getDebentureContract(contractId: ID): DebentureContract
+  getDebentureConfiguration: DebentureConfiguration
+  listDebentureCategories: [DebentureCategory]
+  getDebentureTotalDelinquentAmount(debentureRequestId: ID): Int
+  getUserCreditScore(userId: ID): DebentureCreditScore
+  checkDebentureEligibility(userId: ID): DebentureEligibilityResponse
+  isUserPreEligibleForDebentureRequest(userId: ID): Boolean
+  isDebentureRequestPaymentRetryInProgress(debentureRequestId: ID): Boolean
+
+  getLoanRequestLikelihood(input: LoanRequestLikelihoodInput): Float
+  getLoanPaybackInfo(input: LoanPaybackInput): LoanPaybackInfo
+  listLoadMethods(accountId: ID, input: ListLoadMethodInput): [LoadMethod]
+
+  # airtime
+  listAirtimeOperators(filter: Filter): [AirtimeOperator]
+
+  # billing
+  estimateCharge(
+    accountId: ID
+    actionName: String
+    input: EstimateChargeInput
+  ): EstimateCharge
+  listInvoiceItems(accountId: ID, input: ListInvoiceItemsInput): [InvoiceItem]
+  determineEligibilityForFeeOverwrite(
+    accountId: ID
+    input: DetermineEligibilityForFeeOverwriteInput
+  ): FeeOverwriteEligibility
+
+  # pnw-ripplenet
+  listPnwRoutes(
+    filter: Filter @deprecated(reason: "Use `ListPnwRoutesInput`.")
+    input: ListPnwRoutesInput
+  ): [PnwRoute]
+  listPnwProcessorPaymentMethods(
+    input: ListPnwRoutesInput
+  ): [PnwProcessorPaymentMethod]
+
+  listPnwPayoutTargets(input: ListPnwPayoutTargetsInput): [PayoutTarget]
+  getPnwProcessorPaymentMethodQuote(
+    input: PaymentMethodQuoteInput
+  ): ProcessorPaymentMethodQuote
+
+  # pnw-coinmotion
+  listCryptoRates(input: ListCryptoRatesInput): [CryptoRate]
+  listCryptoLimits(accountId: ID, input: ListCryptoLimitsInput): [CryptoLimit]
+  listCryptoCharges(accountId: ID): [CryptoCharge]
+
+  # leantech
+  listPaymentSources(userId: ID): PaymentSourceSet
+
+  # insurances
+  listInsuranceProducts(
+    input: ListInsuranceProductsInput
+  ): PageableInsuranceProducts
+  listInsurancePolicies(userId: ID): PageableInsurancePolicy
+
+  # infra
+  getLocalizationConfiguration: LocalizationConfiguration
+  getLanguageContents(languageISO: String): AWSJSON
+
+  # pnw-flutterwave
+  listPnwFlutterwavePaymentMethods(
+    input: ListPnwRoutesInput
+  ): [PnwProcessorPaymentMethod]
+
+  # pnw-mpesa
+  listPnwMpesaPaymentMethods(
+    input: ListPnwRoutesInput
+  ): [PnwProcessorPaymentMethod]
+
+  # pnw-vodacom
+  listPnwVodacomPaymentMethods(
+    input: ListPnwRoutesInput
+  ): [PnwProcessorPaymentMethod]
+
+  # pnw
+  listAvailableTransferRoutes(accountId: ID, target: Target): [TransferRoute]
+  listAvailableRemittanceCountries(userId: ID, accountId: ID): [String]
+  listRemittanceTargets(userId: ID, accountId: ID): [RemittanceTarget]
+  listPnwPayments(accountId: String): [PnwPayment]
+  listPnwBlockchainNetworks(
+    input: ListPnwBlockchainNetworksInput
+  ): [BlockchainNetwork]
+  listPnwBlockchainNetworkAddresses(
+    index: PnwBlockchainNetworkAddressesIndexes
+    value: String
+    filter: Filter
+  ): [BlockchainAddress]
+  listPnwBlockchainTransferRoutes(accountId: ID, input: Target): [TransferRoute]
+  listPnwCategories(userId: ID, accountId: ID): [PnwCategory]
+
+  # pnw beneficiaries
+  listPnwBeneficiaries(userId: ID): [PnwBeneficiaryDataType]
+
+  # notifications
+  getUserChatMappingByUserId(
+    chatProvider: UserChatMappingExternalProvider
+  ): UserChatMapping
+}
+
+type Mutation {
+  # notifications
+  updateNotificationPreferences(
+    input: NotificationPreferencesInput!
+  ): NotificationPreferences
+  createNotification(userId: ID!, input: NotificationInput!): Notification
+  updateNotification(
+    notificationId: ID!
+    input: UpdateNotificationInput!
+  ): Notification
+  sendNotification(
+    input: NotificationInput!
+    options: NotificationOptions
+  ): AWSJSON
+  sendSMS(
+    phoneNumber: String
+    message: String
+    options: NotificationOptions
+  ): AWSJSON
+  invite(contact: String): Status
+  sendPostTransactionNotification(userId: ID, input: AWSJSON): Transaction
+  createUserChatMapping(input: UserChatMappingInput): UserChatMapping
+
+  # users
+  signUpUser(
+    userId: ID
+    password: String
+    publicKey: String
+    attrs: AWSJSON
+  ): User
+  signInUser(userId: ID, password: String, attrs: AWSJSON): UserAuthentication
+  logoutUser(userId: ID, deviceId: String): Boolean
+  updateUser(
+    userId: ID
+    source: UpdateUserSource
+    input: UpdateUserInput!
+  ): User
+  addUserAttribute(
+    userId: ID!
+    attribute: AttributeInput
+    source: dataSource
+    expiration: dataExpiration
+    accessPermissions: dataAccessPermissions
+  ): User
+  addUserAttributes(userId: ID, attributes: [AttributeInput]): User
+  validatePhoneNumber(userId: ID, input: PhoneInput!): PhoneNumberInfo
+  deactivateUsers(filters: [Filter]): [String]
+  startVerifyPhoneNumber(
+    phoneNumber: String!
+    options: StartVerifyPhoneNumberOptions
+  ): PhoneNumberVerification
+  verifyPhoneNumber(
+    otpId: ID!
+    otp: String!
+    phoneNumber: String!
+    deviceId: String
+  ): PhoneNumberVerificationResponse
+  forgotPasscode: Status
+  verifyPasscode(passcode: String!): Boolean
+  changePasscode(oldPasscode: String!, newPasscode: String!): Status
+  startUpdatePhoneNumber(
+    phoneNumber: String!
+    options: StartUpdatePhoneNumberOptions
+  ): StartUpdatePhoneNumber
+  updatePhoneNumber(input: UpdatePhoneNumberInput): UpdatePhoneNumber
+
+  removeEmailAddress(userId: ID): Boolean
+  startVerifyEmailAddress(
+    userId: ID
+    emailAddress: String!
+  ): EmailAddressVerification
+  verifyEmailAddress(
+    userId: ID
+    otp: String!
+    emailAddress: String!
+  ): EmailAddressVerificationResponse
+
+  closeAccount(userId: ID, deleteData: Boolean): User
+  addAcquisitionChannel(
+    userId: ID
+    input: AcquisitionChannelInput
+  ): AcquisitionChannel
+  signUpDealer(input: DealerInput): Dealer
+  initiateReonboarding(userId: ID): InitiateReonboarding
+  addUserSensitiveAttributes(
+    userId: ID
+    inputs: [UserSensitiveAttributeInput]
+  ): [UserSensitiveAttribute]
+  updateUserSensitiveAttribute(
+    userId: ID
+    input: UserSensitiveAttributeInput
+  ): UserSensitiveAttribute
+  createAddressInfo(userId: ID, input: AddressInfoInput): AddressInfo
+  updateAddressInfo(userId: ID, input: AddressInfoInput): AddressInfo
+  inviteDealer(phoneNumber: String): Status
+  activateDealerStatus(userId: ID): Status
+
+  # devices
+  addDeviceAttribute(
+    deviceId: ID!
+    attribute: AttributeInput
+    source: dataSource
+    expiration: dataExpiration
+    accessPermissions: dataAccessPermissions
+  ): Device
+  addDeviceAttributes(deviceId: ID, attributes: [AttributeInput]): Device
+  attachUserDevice(
+    userId: ID!
+    cardId: String
+    devicePublicKey: String
+  ): UserDevice
+  detachUserDevice(userId: ID!, devicePublicKey: String!): String
+
+  startVerifyDevice(userId: ID, deviceId: ID): VerificationResponse
+  verifyDevice(
+    userId: ID
+    deviceId: ID
+    input: VerifyDeviceInput
+  ): VerificationResponse
+  authorizeDevice(userId: ID, deviceId: ID): Device
+  rotateDeviceKeys(
+    newDevicePublicKey: String!
+    verificationInput: RotateDeviceVerificationInput!
+  ): String
+
+  # uploads
+  createUpload(input: UploadInput!): UploadResponse
+  updateUpload(userId: ID, uploadId: ID!, input: UpdateUploadInput!): Upload
+  createFaceIdMatch(userId: ID): FaceIdStatus
+  updateFaceIdMatch(
+    userId: ID
+    faceIdMatch: Boolean
+    confidenceLevel: Float
+    error: String
+  ): FaceIdResult
+  runFaceAnalysis(userId: ID, uploadId: ID!): Upload
+
+  # accounts
+  createAccount(
+    userId: ID
+    name: String!
+    services: [String!]
+    fields: [AttributeInput]
+  ): Account
+  retryCreateCard(userId: ID!, accountId: ID!): PCKTCardCreated
+  addReferralContext(
+    referralToId: ID
+    referralContext: ReferralContextInput
+  ): ReferralContext
+  addPrefund(receiverId: ID, input: AddPrefundInput): AccountPrefund
+  createAccountWalletLimitUpdateRequest(
+    userId: ID
+    accountId: ID
+    input: LimitUpdateRequestInput
+  ): LimitUpdateRequest
+  attachDocumentsToAccountWalletLimitUpdateRequest(
+    accountLimitUpdateRequestId: ID
+    uploadIds: [String]
+  ): LimitUpdateRequest
+  attachAccountCurrency(userId: ID, accountId: ID, currency: Currency): Account
+
+  # transactions
+  createTransaction(
+    transactionId: ID
+    input: CreateTransactionInput!
+    options: CreateTransactionOptions
+  ): Transaction
+  createTransactions(inputs: [CreateTransactionInput]): [Transaction]
+  updateTransaction(
+    transactionId: ID!
+    input: UpdateTransactionInput!
+  ): Transaction
+  createTransactionMeta(
+    transactionRecordId: ID!
+    input: TransactionMetaDataInput!
+  ): TransactionMeta
+  updateTransactionMetaData(
+    transactionRecordId: ID
+    eventName: String
+    metaData: AWSJSON
+  ): String
+  createTransactionStatement(
+    accountId: ID!
+    input: TransactionStatementInput
+  ): TransactionStatement
+
+  # bill payments
+  createBillPayment(
+    userId: ID
+    accountId: ID!
+    input: BillPaymentInput!
+  ): BillPayment
+
+  # vouchers
+  createVoucher(
+    accountId: ID
+    input: CreateVoucherInput!
+    options: VoucherOptions
+  ): Voucher
+  updateVoucher(voucherId: ID!, input: UpdateVoucherInput!): Voucher
+  activateVoucher(
+    voucherId: ID!
+    pin: String
+    input: ActivateVoucherInput
+  ): Voucher
+  consumeVoucher(voucherId: ID!, pin: String!, accountId: ID!): Voucher
+  reverseVoucher(voucherId: ID!): Voucher
+  massCreateVouchers(
+    sourceAccountId: ID
+    fundingAccountId: ID
+    input: CreateVoucherInput!
+    number: Int!
+    status: VoucherStatus
+  ): [VoucherPack]
+
+  # services
+  createService(
+    userId: ID
+    accountId: ID!
+    name: String!
+    options: CreateServiceOptions
+  ): Service
+  updateService(
+    userId: ID
+    accountId: ID!
+    name: String!
+    input: UpdateServiceInput
+  ): Service
+  createInitialServices(userId: ID!, accountId: ID!): [Service]
+  removeService(userId: ID!, accountId: ID!, name: String!): Service
+  setServiceState(
+    userId: ID!
+    accountId: ID!
+    name: String!
+    status: String!
+  ): Service
+  acceptServiceTerms(
+    userId: ID
+    name: String!
+    options: ServiceTermsOptions
+  ): Service
+
+  # ETH accounts
+  createEthAccount(userId: ID!, accountId: ID!, currency: Currency!): EthAccount
+
+  # due-diligence
+  acceptServicesTerms(services: [String!]!): AcceptTermsResult
+  setPermittedDocuments(
+    operatingCountry: String
+    permittedDocuments: [DueDiligenceDocuments]
+  ): PermittedDocuments
+  generateIDVSession: IDVSession
+  createSourceOfFundsAttribute(
+    userId: ID
+    input: CreateSourceOfFundsAttributeInput
+  ): UserSensitiveAttribute
+  updateSourceOfFundsAttribute(
+    userId: ID
+    input: UpdateSourceOfFundsAttributeInput
+  ): UserSensitiveAttribute
+
+  # issuer
+  requestVirtualCard(
+    userId: ID
+    accountId: ID
+    options: RequestVirtualCardOptions
+  ): Card
+  updateCardSettings(
+    userId: ID
+    accountId: ID
+    cardId: ID
+    input: CardSettingsUpdateInput
+  ): Card
+  updateCardStatus(
+    userId: ID
+    accountId: ID
+    cardId: ID
+    input: CardStatusUpdateInput
+  ): Card
+  processCardPayment(
+    accountId: ID
+    cardId: ID
+    action: ProcessCardPaymentAction
+    input: ProcessCardPaymentInput
+  ): ProcessCardPaymentResponse
+  replaceVirtualCard(
+    userId: ID!
+    accountId: ID!
+    cardId: ID!
+    options: ReplaceVirtualCardOptions
+  ): Card
+  removePhysicalCard(
+    userId: ID!
+    accountId: ID!
+    cardId: ID!
+    options: RemovePhysicalCardOptions
+  ): Card
+  createCardDelivery(input: CardDeliveryInput): CardDelivery
+  requestPhysicalCardDelivery(input: CardDeliveryInput): CardDelivery
+  generateCardTotp(userId: ID, accountId: ID, cardId: ID): String
+
+  # issuer-pckt
+  createCard(
+    cardHolderName: String!
+    expiry: String!
+    accountId: ID!
+    options: CreateCardOptions
+  ): PCKTCard
+  updateCard(accountId: ID!, cardId: ID!, attributes: [AttributeInput]!): Card
+  replaceCard(cardId: ID!, options: ReplaceCardOptions): Card
+  registerUserDevice(
+    userId: ID!
+    cardId: String
+    devicePublicKey: String
+  ): UserDevice
+  reOnBoardUserDevice(
+    userId: ID!
+    cardId: String!
+    oldDevicePublicKey: String!
+    newDevicePublicKey: String!
+  ): UserDevice
+  deleteUserDevice(userId: ID!, devicePublicKey: String!): String
+  getCardMarker(accountId: ID!): CardMarker
+  pairCard(accountId: ID, input: PairCardInput, options: PairCardOptions): Card
+  createCardOtp(otp: CreateCardOtpInput): CardOtp
+  replaceCardDevice(
+    cardId: ID
+    newDevicePublicKey: String
+    oldDevicePublicKey: String
+  ): ReplacedCardDevice
+  removeCard(cardId: ID!, version: AppFlow): Card
+
+  # loyalty
+  redeemRewards(
+    accountId: ID!
+    input: RedeemRewardsInput!
+  ): RedeemRewardsResponse
+
+  # organizations
+  attachAuthConfig(
+    organizationId: ID!
+    attribute: AttributeInput!
+  ): Organization
+  detachAuthConfig(
+    organizationId: ID!
+    attribute: AttributeInput!
+  ): Organization
+
+  # loads
+  createLoadPurchase(accountId: ID!, input: LoadPurchaseInput): LoadPurchase
+  registerLoadLocation(input: RegisterLoadLocationInput): LoadLocation
+  deregisterLoadLocation(loadLocationId: ID): LoadLocation
+  updateLoadLocation(input: RegisterLoadLocationInput): LoadLocation
+  createPaymentRequest(userId: ID, input: PaymentRequestInput): PaymentRequest
+  initiateMPesaLoad(
+    accountId: ID
+    input: InitiateMPesaLoadInput
+    options: InitiateLoadOptions
+  ): LoadResponse
+  initiateMPesaMzLoad(
+    accountId: ID
+    input: InitiateMPesaLoadInput
+    options: InitiateLoadOptions
+  ): LoadResponse
+  initiateCheckoutLoad(
+    accountId: ID
+    input: InitiateCheckoutLoadInput
+    options: InitiateCheckoutLoadOptions
+  ): CheckoutLoadResponse
+  initiateContactPayLoad(
+    accountId: ID
+    input: InitiateContactPayLoadInput
+    options: InitiateContactPayLoadOptions
+  ): ContactPayLoadResponse
+  initiateStripeLoad(
+    accountId: ID
+    input: InitiateStripeLoadInput
+    options: InitiateStripeLoadOptions
+  ): CardLoadResponse
+  initiateBinanceLoad(
+    accountId: ID
+    input: OnlineAcquirerLoadInput
+  ): OnlineAcquirerLoadResponse
+  initiateDlocalLoad(
+    accountId: ID
+    input: InitiateDlocalLoadInput
+  ): DlocalLoadResponse
+  confirmStripeLoad(accountId: ID, clientSecret: String): CardLoadResponse
+  removeLoadPaymentMethod(loadPaymentMethodId: ID): LoadPaymentMethod
+  initiateFlutterwaveDirectDebitPayment(
+    accountId: ID
+    input: InitiateFlutterwaveDirectDebitInput
+  ): InitiateDirectDebitLoadResponse
+  validateFlutterwaveCharge(input: ValidateChargeInput): LoadResponse
+  createBankTransferRequest(
+    accountId: String
+    input: BankTransferRequestInput
+  ): BankTransferRequest
+  initiateLoadAbilityVerification(
+    accountId: ID
+    input: InitiateLoadAbilityVerificationInput
+  ): LoadAbilityVerificationResponse
+
+  # debentures
+  createDebentureRequest(
+    input: DebentureRequestInputParameters
+  ): DebentureRequest
+  createDebentureInvestorCommitment(
+    debentureRequestId: ID!
+    input: DebentureInvestorCommitmentInputParameters
+  ): DebentureInvestorCommitment
+  createDebentureAgreement(
+    debentureRequestId: ID!
+    investorCommitmentId: ID!
+  ): DebentureAgreement
+  createDebentureAgreements(
+    debentureRequestId: ID!
+    input: DebentureAgreementsInputParameters!
+  ): [DebentureAgreement]
+  cancelDebentureContract(id: ID!): [ID]
+  processDebentureFailedInstallmentPayments(debentureRequestId: ID): Int
+  setUserPreEligibleForDebentureRequest(
+    userId: ID
+    setEligible: Boolean
+  ): Boolean
+
+  # airtime
+  createAirtimeTransfer(
+    accountFrom: ID
+    input: AirtimeTransferInput
+  ): AirtimeTransfer
+
+  # pnw-ripplenet
+  createPnwTransfer(accountFrom: ID, input: PnwTransferInput): PnwTransfer
+
+  # billing
+  settleInvoice(accountId: ID, invoiceId: ID): SettledInvoice
+
+  # employees
+  notifyOps(category: NotifyOpsCategory): Status
+
+  # pnw-coinmotion
+  buyCrypto(accountId: ID, input: CryptoTradeInput): CryptoTrade
+  sellCrypto(accountId: ID, input: CryptoTradeInput): CryptoTrade
+  createDepositAddress(accountId: ID!): Boolean
+
+  # leantech
+  createCustomer(userId: ID): Customer
+  createPaymentIntent(
+    userId: ID
+    amount: Int!
+    currency: Currency!
+  ): PaymentIntent
+  removePaymentSource(userId: ID, paymentSourceId: ID!): PaymentSource
+
+  # insurances
+  purchaseInsurancePolicy(
+    accountId: ID!
+    insuranceProductId: ID!
+  ): InsurancePolicy
+  cancelInsurancePolicy(userId: ID, insurancePolicyId: ID!): InsurancePolicy
+  restartCancelledInsurancePolicy(
+    userId: ID
+    insurancePolicyId: ID!
+  ): InsurancePolicy
+  addInsurancePolicyBeneficiary(
+    userId: ID
+    insurancePolicyId: ID!
+    input: InsurancePolicyBeneficiaryDetailsInput!
+  ): InsurancePolicy
+
+  # infra
+  addUserDetailsToClevertap(userId: ID): Status
+
+  # pnw
+  createTransfer(accountFrom: ID, transferRoute: createTransferInput): Transfer
+  registerPnwBlockchainNetworkAddress(
+    accountId: ID
+    input: RegisterPnwBlockchainAddressInput
+  ): BlockchainAddress
+  createBlockchainTransfer(
+    accountFrom: ID
+    input: PnwTransferInput
+  ): PnwTransfer
+
+  # pnw beneficiaries
+  deletePnwBeneficiary(beneficiaryId: ID): PnwBeneficiaryDataType
+
+  # analytics
+  registerUserEvent(userId: ID, input: RegisterUserEventInput): UserEvent
+  assignAnonymousUserEventsToUser(userId: ID, sessionId: String): [UserEvent]
+}
+
+type Subscription {
+  # Account
+  onCreateAccount(userId: ID!): EthAccount
+    @aws_subscribe(mutations: ["createEthAccount"])
+
+  # Notification
+  onCreateNotification(userId: ID!): Notification
+    @aws_subscribe(mutations: ["createNotification"])
+
+  # Notification
+  onSendPostTransactionNotification(userId: ID!): Transaction
+    @aws_subscribe(mutations: ["sendPostTransactionNotification"])
+
+  # User
+  onCreateUser: User @aws_subscribe(mutations: ["signUpUser"])
+  onUpdateUser(userId: ID!): User
+    @aws_subscribe(mutations: ["updateUser", "addUserAttribute"])
+  onUpdateFaceIdMatch(userId: ID!): FaceIdResult
+    @aws_subscribe(mutations: ["updateFaceIdMatch"])
+  onStartVerifyDevice(userId: ID!): VerificationResponse
+    @aws_subscribe(mutations: ["startVerifyDevice"])
+  onVerifyDevice(userId: ID!): VerificationResponse
+    @aws_subscribe(mutations: ["verifyDevice"])
+
+  # Service
+  onCreateService(accountId: ID!): Service
+    @aws_subscribe(mutations: ["createService"])
+
+  # uploads
+  onUpdateUpload(userId: ID!, uploadId: ID): Upload
+    @aws_subscribe(mutations: ["updateUpload"])
+
+  # transactions
+  onCreateTransaction(
+    # originating account
+    source: ID
+    # target account
+    target: ID
+  ): Transaction @aws_subscribe(mutations: ["createTransaction"])
+  onUpdateTransaction(
+    transactionId: ID
+    # originating account
+    source: ID
+    # target account
+    target: ID
+  ): Transaction @aws_subscribe(mutations: ["updateTransaction"])
+
+  # vouchers
+  onCreateVoucher(accountId: ID!): Voucher
+    @aws_subscribe(mutations: ["createVoucher"])
+  onUpdateVoucher(voucherId: ID!): Voucher
+    @aws_subscribe(mutations: ["updateVoucher"])
+
+  # issuer-pckt
+  onCreateCardOtp(accountId: ID!): CardOtp
+    @aws_subscribe(mutations: ["createCardOtp"])
+}
+
+input AddressInput {
+  addressLine1: String
+  addressLine2: String
+  addressLine3: String
+  city: String
+  country: String
+  postcode: String
+  state: String
+}
+
+type Address {
+  addressLine1: String
+  addressLine2: String
+  addressLine3: String
+  city: String
+  country: String
+  postcode: String
+  state: String
+}
+
+enum CardType {
+  VIRTUAL
+  PHYSICAL
+}
+
+enum CardStatus {
+  ACTIVE
+  BLOCKED
+  FROZEN
+  REPLACED
+  REMOVED
+  EXPIRED
+}
+
+enum CardIssuer {
+  PCKT
+  M2P
+}
+
+enum CardBlockedReason {
+  STOLEN
+  LOST
+  BROKEN
+  COMPROMISED
+  SYSTEM_SUSPENDED
+  BLOCKED_BY_COMPLIANCE
+  KYC_UPDATE_REQUIRED
+}
+
+type PCKTCard {
+  expiryDate: String @deprecated(reason: "Use `cardExpiryDate`")
+  uuid: String @deprecated(reason: "Use `cardId`")
+  last4: String @deprecated(reason: "Use `cardLast4`")
+  type: CardType @deprecated(reason: "Use `cardType`")
+  headDigits: String @deprecated(reason: "Use `cardHeadDigits`")
+  tailDigits: String @deprecated(reason: "Use `cardTailDigits`")
+  status: CardStatus @deprecated(reason: "Use `cardStatus`")
+
+  cardId: ID
+  accountId: ID
+  reason: String
+  cardType: CardType
+  cardStatus: CardStatus
+  cardLast4: String
+  cardHeadDigits: String
+  cardTailDigits: String
+  cardExpiryDate: String
+  cardLabel: String
+  cardColor: String
+  createdAt: String
+  updatedAt: String
+}
+
+type PCKTCardCreated {
+  cardId: String
+  cardDeviceId: String
+}
+
+type AccountCardSet {
+  count: Int
+  data: [PCKTCard]!
+}
+
+type CardSet {
+  count: Int
+  data: [Card]!
+}
+
+enum Currency {
+  AED
+  BHD
+  EUR
+  USD
+  KZT
+  SAR
+  EGP
+  KWD
+  PHP
+  KES
+  PKR
+  INR
+  BDT
+  NAD
+  TZS
+  ETB
+  UGX
+  MZN
+  AFN
+  LKR
+  GMD
+  CFA
+  SLL
+  SLE
+  GHS
+  NGN
+  LBP
+  JOD
+  NPR
+  ZAR
+  IDR
+  CNY
+  TRY
+  OMR
+  GBP
+  ZMW
+  RWF
+  XAF
+  XOF
+  VND
+  AUD
+  BRL
+  JPY
+  MYR
+  MNT
+  KRW
+  THB
+  HKD
+  # Niche Countries
+  BOB
+  LRD
+  SOS
+  CRC
+  KHR
+  NIO
+  PEN
+  CDF
+  SOL
+  MAD
+  ZWL
+
+  # Pyypl Loyalty Points
+  PTS
+
+  # cryptos
+  BTC
+  ETH
+  XRP
+  USDT
+  BUSD
+  USDC
+  BNB
+  PPLX
+}
+
+type RewardWalletConfigutation {
+  minimumRedeemableAmount: Int
+}
+
+type AccountBalance {
+  currency: Currency!
+  amount: Int!
+  amountStr: String
+}
+
+type AccountBalanceSet {
+  count: Int
+  data: [AccountBalance!]!
+}
+
+type PageInfo {
+  endCursor: ID
+  hasNextPage: Boolean!
+}
+
+type Phone {
+  countryCode: String
+  number: String
+}
+
+input PhoneInput {
+  countryCode: String
+  number: String
+}
+
+type PhoneNumberInfo {
+  Carrier: String
+  City: String
+  CleansedPhoneNumberE164: String
+  CleansedPhoneNumberNational: String
+  Country: String
+  CountryCodeIso2: String
+  CountryCodeNumeric: String
+  OriginalCountryCodeIso2: String
+  OriginalPhoneNumber: String
+  PhoneType: String
+  PhoneTypeCode: Int
+}
+
+type Result {
+  message: String!
+}
+
+type UserSet {
+  data: [User!]!
+  count: Int
+}
+
+type ContactSet {
+  data: [Contact!]!
+  count: Int
+}
+
+enum UserStatus {
+  CONFIRMED
+  DEACTIVATED
+  ENTERED_PHONE
+  VERIFIED_PHONE
+  ID_FRONT_READ
+  ID_BACK_READ
+  PHOTO_ONE_TAKEN
+  PHOTO_TWO_TAKEN
+  SELFIE_TAKEN
+  TnC_ACCEPTED
+  UNKNOWN
+  EXTERNAL_PROVIDER
+  PENDING_REONBOARDING
+  REONBOARDED
+}
+
+enum CustomerLifeCycleStatus {
+  CREATED
+  LEAD
+  NON_PAYING
+  PAYING
+  CHURNED
+}
+enum UserOnboardedFrom {
+  WEB
+  AGENT
+}
+type User {
+  userId: ID!
+
+  status: UserStatus
+  customerLifeCycleStatus: CustomerLifeCycleStatus
+  enabled: Boolean
+
+  firstName: String
+  firstName__updatedAt: AWSDateTime
+  firstName__updatedBy: AWSJSON
+  lastName: String
+  lastName__updatedAt: AWSDateTime
+  lastName__updatedBy: AWSJSON
+  firstNameLocalized: String
+  firstNameLocalized__updatedAt: AWSDateTime
+  firstNameLocalized__updatedBy: AWSJSON
+  lastNameLocalized: String
+  lastNameLocalized__updatedAt: AWSDateTime
+  lastNameLocalized__updatedBy: AWSJSON
+  nickname: String
+  emailAddress: AWSEmail
+  emailAddressVerified: Boolean
+  phoneNumber: String
+  phoneNumberVerified: Boolean
+  phoneValidation: AWSJSON
+  onboardedFrom: UserOnboardedFrom
+  registrationIpAddress: String
+
+  locale: String
+  countryCode: String
+  carrierCountryCode: String
+  publicKey: String
+  device: AWSJSON
+  devices: [Device]
+
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+
+  preferences: UserPreferences
+  accounts: AccountSet
+  uploads: UploadSet
+
+  acceptedTermsAndConditions: Boolean
+  acceptedTestingTermsAndConditions: Boolean
+  acceptedTermsAndConditions__createdTimestamp: AWSDateTime
+  acceptedTestingTermsAndConditions__createdTimestamp: AWSDateTime
+
+  # TnC acceptance lat/lng
+  latitude: String
+  longitude: String
+
+  servicesTermsHash: String
+  servicesTermsHashHWSignature: String
+  servicesTermsHashSecp256k1Signature: String
+
+  Selfie: Boolean
+  IdCardFront: Boolean
+  IdCardBack: Boolean
+  PassportDataPage: Boolean
+  PhotoOne: Boolean
+  PhotoTwo: Boolean
+
+  userHasLoaded: Boolean
+
+  requireSelfieUpdate: Boolean
+  requireSelfieUpdate__createdTimestamp: AWSDateTime
+  requireSelfieUpdate__dataEntryIdentity: String
+  requireIDUpdate: Boolean
+  requireIDUpdate__createdTimestamp: AWSDateTime
+  requireIDUpdate__dataEntryIdentity: String
+
+  placeOfBirth: String
+  placeOfBirth__updatedAt: AWSDateTime
+  placeOfBirth__updatedBy: AWSJSON
+  dateOfBirth: String
+  dateOfBirth__updatedAt: AWSDateTime
+  dateOfBirth__updatedBy: AWSJSON
+  documentNumber: String
+  dateOfExpiry: String
+  nationality: String
+  iin: String
+
+  PCKTDeviceId: String
+  address: Address
+  sourceOfFunds: String
+  sourceOfWealth: String
+
+  risk: Float
+
+  # Regula fields:
+  primaryId: String
+  secondaryId: String
+  regula_nationality: String
+  sex: String
+  regula_age: String
+
+  documentType: AWSJSON
+  dcTypes: AWSJSON
+  documentCode: String
+  documentIssuingCountry: String
+  isPassport: String
+  isDocumentExpired: String
+  regula_personal_id: String
+  regula_identity_card_number: String
+  regula_document_class_code: String
+  regula_date_of_issue: String
+  regula_issuing_state: String
+  regula_issuing_authority: String
+  regula_months_to_expire: String
+
+  mrzText: String
+  mrzParsed: String
+  regula_optional_data: String
+  regula_check_digit_for_optional_data: String
+  regula_check_digit_for_document_number: String
+  regula_check_digit_for_date_of_birth: String
+  regula_check_digit_for_date_of_expiry: String
+  regula_final_check_digit: String
+
+  # Shown screens
+  screen_FingerprintLock: String
+  screen_FingerprintLock__createdTimestamp: AWSDateTime
+  screen_Congratulations: String
+  screen_Congratulations__createdTimestamp: AWSDateTime
+  screen_TermsOfUse: String
+  screen_TermsOfUse__createdTimestamp: AWSDateTime
+  screen_IdDetails: String
+  screen_IdDetails__createdTimestamp: AWSDateTime
+  screen_IdCardFront: String
+  screen_IdCardFront__createdTimestamp: AWSDateTime
+  screen_IdCardBack: String
+  screen_IdCardBack__createdTimestamp: AWSDateTime
+  screen_PassportDataPage: String
+  screen_PassportDataPage__createdTimestamp: AWSDateTime
+  screen_Dashboard: String
+  screen_Dashboard__createdTimestamp: AWSDateTime
+  screen__Default: String
+  screen__Default__createdTimestamp: AWSDateTime
+  screen_SelfieInput: String
+  screen_SelfieInput__createdTimestamp: AWSDateTime
+  screen_SignUp: String
+  screen_SignUp__createdTimestamp: AWSDateTime
+  screen_CodeVerification: String
+  screen_CodeVerification__createdTimestamp: AWSDateTime
+  screen_PhotoOne: String
+  screen_PhotoOne__createdTimestamp: AWSDateTime
+  screen_PhotoTwo: String
+  screen_PhotoTwo__createdTimestamp: AWSDateTime
+  screen_PersonalDetailsCaptured: String
+  screen_PersonalDetailsCaptured__createdTimestamp: AWSDateTime
+  lastSeenScreen: String
+  lastSeenScreen__createdTimestamp: AWSDateTime
+
+  referrerType: String
+  referrerId: ID
+  acquisitionChannels: [AcquisitionChannel]
+
+  assignedOperatingCountry: String
+
+  reasonForNonStandardOnboardingBonus: String
+
+  bankAccountNumber: String
+  financialInstitution: String
+
+  loyaltyStatus: UserLoyaltyStatus
+
+  documentUsageCounter: Int
+  userComments: [UserComment]
+  unusualUserComment: [UserComment]
+  assignedOrganizationId: ID
+
+  reonboardedUserWithId: ID
+  reonboardedAt: String
+
+  blockedAt: AWSDateTime
+  blockedBy: AWSJSON
+
+  userExternalSupportChatCustomerId: String
+
+  appFlow: AppFlow
+}
+
+type CloseAccountEligible {
+  eligible: Boolean
+  accountsBalancesSum: Float
+  maxBalanceThreshold: Float
+  currency: Currency
+}
+
+type Contact {
+  userId: ID!
+  account: ID
+
+  firstName: String
+  lastName: String
+  emailAddress: AWSEmail
+  emailAddressVerified: Boolean
+  phoneNumber: String
+  phoneNumberVerified: Boolean
+
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+  accounts: AWSJSON
+
+  isNew: Boolean
+
+  bankAccountNumber: String
+  financialInstitution: String
+}
+
+type UserAuthentication {
+  AccessToken: String
+  ExpiresIn: Int
+  TokenType: String
+  RefreshToken: String
+}
+
+enum UpdateUserSource {
+  UserEntered
+  PyyplOperator
+}
+
+input UpdateUserInput {
+  firstName: String
+  lastName: String
+  emailAddress: AWSEmail
+  phoneNumber: String
+  locale: String
+  countryCode: String
+  publicKey: String
+  device: AWSJSON
+  address: AddressInput
+
+  userExternalSupportChatCustomerId: String
+}
+
+type UserPreferences {
+  notifications: NotificationPreferences
+}
+
+enum NotificationStatus {
+  READ
+  UNREAD
+}
+
+type Notification {
+  notificationId: ID!
+  userId: ID!
+  subject: String
+  body: String
+  status: NotificationStatus
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+type NotificationSet {
+  count: Int
+  data: [Notification]!
+}
+
+type NotificationPreferences {
+  default: NotificationPreferenceItem
+}
+
+input NotificationInput {
+  userId: ID
+  subject: String
+  message: String
+}
+
+input UpdateNotificationInput {
+  status: NotificationStatus!
+}
+
+input NotificationPreferencesInput {
+  default: NotificationPreferenceItemInput
+}
+
+type NotificationPreferenceItem {
+  push: Boolean
+  email: Boolean
+  sms: Boolean
+  whatsapp: Boolean
+}
+
+input NotificationPreferenceItemInput {
+  push: Boolean
+  email: Boolean
+  sms: Boolean
+  whatsapp: Boolean
+}
+
+enum UploadType {
+  Passport
+  PassportDataPage
+  IdCardFront
+  IdCardBack
+  Selfie
+  DealerLocation
+  PhotoOne
+  PhotoTwo
+  DriversLicense
+  Avatar
+  Biometric
+  SourceOfFundsProof
+  SourceOfFundsSupportingDocument
+  AddressInfoSupportingDocument
+  LivenessCheck
+}
+
+input UploadInputMetaData {
+  mimeType: String
+  fileName: String
+  fileSize: Int
+  fileExtension: String
+}
+
+type UploadMetaData {
+  mimeType: String
+  fileName: String
+  fileSize: Int
+  fileExtension: String
+}
+
+input UploadInput {
+  type: UploadType!
+  dealerId: ID
+  appFlow: AppFlow
+  metaData: UploadInputMetaData
+}
+
+input MRZResultInput {
+  # status: Ready
+  number: String
+  firstName: String
+  lastName: String
+  gender: String
+  birthDate: String
+  nationality: String
+  country: String
+  issueDate: String
+  expiryDate: String
+
+  # status: Failed
+  reason: String
+}
+
+input UpdateUploadInput {
+  status: UploadStatus
+  result: MRZResultInput
+  faceDetails: AWSJSON
+}
+
+type UploadResponse {
+  uploadId: ID!
+  url: String!
+  fields: String!
+}
+
+enum UploadStatus {
+  WaitingForUpload
+  Received
+  Processing
+  Ready
+  Failed
+  Deleted
+}
+
+type UploadSet {
+  count: Int
+  data: [Upload!]!
+}
+
+type Upload {
+  userId: ID!
+  uploadId: ID!
+  type: UploadType!
+  status: UploadStatus!
+  result: AWSJSON
+  # presigned URL to access file
+  url: AWSURL
+  createdAt: String
+  updatedAt: String
+  faceDetails: AWSJSON
+  metaData: UploadMetaData
+}
+
+type UploadUrlV2 {
+  userId: ID!
+  uploadId: ID!
+  type: UploadType!
+  metaData: UploadMetaData
+  status: UploadStatus!
+  result: AWSJSON
+  # presigned URL to access file
+  url: AWSURL
+  createdAt: String
+  updatedAt: String
+  faceDetails: AWSJSON
+}
+
+type AccountSet {
+  id: ID
+  count: Int
+  data: [Account!]!
+}
+
+type Account {
+  accountId: ID!
+  userId: ID!
+  userData: User
+  name: String
+  type: AccountType
+  state: String
+  balances: AccountBalanceSet
+  cachedBalances: AccountBalanceSet
+  transactions: TransactionSet
+  cards: AccountCardSet @deprecated(reason: "Use `accountCards`")
+  accountCards: CardSet
+  cardId: String
+  expiryDate: String
+  defaultCurrency: Currency
+  services: ServiceSet
+  createdAt: String
+  updatedAt: String
+  balanceLimits: [AccountBalanceLimit]
+  lastTransactionRecordCreatedAt: String
+}
+
+enum AccountType {
+  Internal
+  Ethereum
+  Faucet
+  Prepaid
+}
+
+type CashbackValue {
+  cashbackPercentage: Int
+  cashbackLimitFixed: Int
+  cashbackCountry: String
+  cashbackCurrency: Currency
+}
+
+type Merchant {
+  merchantKey: String
+  merchantName: String
+  merchantLogo: String
+  merchantType: String
+  merchantCashbackEnabled: Boolean
+  merchantCashbackDescription: String
+  merchantCashbackInstructions: [String]
+  merchantCashbackPromotionImage: String
+  merchantCashbackValues: [CashbackValue]
+}
+
+enum TransactionStatus {
+  PENDING
+  CONFIRMED
+  FAILED
+  AUTHORIZED
+  REVERSED
+  CLEARED
+  DECLINED
+  REFUNDED
+  CREATED
+  PRINTED
+  CONSUMED
+  EXPIRED
+  CHARGEDBACK
+  BLOCKED
+  EXCHANGED
+}
+
+enum TransactionType {
+  augmented
+  view
+  latest
+  raw
+}
+
+enum TransactionDirection {
+  ALL
+  DEBIT
+  CREDIT
+}
+
+input TransactionOptions {
+  type: TransactionType
+  transactionDirection: TransactionDirection
+}
+
+enum TransactionTypeInput {
+  LOAD
+  REMITTANCE
+}
+
+input IsWithinTransactionUsageVolumeLimitsInput {
+  transactionType: TransactionTypeInput
+  currency: Currency
+  amount: Int
+}
+
+input IsWithinTransactionUsageVolumeLimitsOptionsInput {
+  sendNotification: Boolean
+}
+
+type WithinLimitResponse {
+  isWithinLimit: Boolean
+  limitExceededCode: String
+  limitExceededMessage: String
+  limitValue: Int
+  remainingValueUntilLimitExceeded: Int
+}
+
+type Transaction {
+  transactionRecordId: ID
+  transactionId: ID!
+  # originating account
+  source: ID
+  # target account
+  target: ID
+  currency: Currency
+  amount: Int
+  status: TransactionStatus!
+  description: String
+  message: String
+  createdAt: String
+  updatedAt: String
+  reasonForFailure: String
+  sourceData: Account
+  targetData: Account
+  risk: TransactionRisk
+  tags: AWSJSON
+
+  fee: TransactionFee
+  charge: TransactionCharge
+
+  # augmented accounts
+  accountFrom: ID
+  accountTo: ID
+  currencyFrom: Currency
+  currencyTo: Currency
+  amountFrom: Int
+  amountTo: Int
+
+  transactionFromAmountInSubUnits: String
+  transactionFromAmountInFullUnits: String
+  transactionToAmountInSubUnits: String
+  transactionToAmountInFullUnits: String
+  ISOTransactionAmountInFullUnits: String
+  ISOTransactionAmountInSubUnits: String
+
+  # balances
+  accountFromBalanceBefore: Int
+  accountFromBalanceAfter: Int
+  accountToBalanceBefore: Int
+  accountToBalanceAfter: Int
+
+  # tags
+  # Internals - Pyypl company accounts
+  isInternal: Boolean
+  fromInternal: Boolean
+  toInternal: Boolean
+
+  # Externals are when money coming from prefunding account or going to settlement account
+  isExternal: Boolean
+  fromExternal: Boolean
+  toExternal: Boolean
+
+  isLocalMoneyTransfer: Boolean
+  isInternationalMoneyTransfer: Boolean
+  isTransactionInternationalFrom: Boolean
+  isTransactionInternationalTo: Boolean
+  isTransactionLocalFrom: Boolean
+  isTransactionLocalTo: Boolean
+
+  # User is involved when account name is not listed in table pyypl_accounts
+  userInvolved: Boolean
+  fromUser: Boolean
+  toUser: Boolean
+
+  fromDealer: Boolean
+  toDealer: Boolean
+  dealerInvolved: Boolean
+
+  fromEmployee: Boolean
+  toEmployee: Boolean
+  employeeInvolved: Boolean
+
+  # Loads
+  isVoucherLoad: Boolean
+  isMoneySendLoad: Boolean
+  isCardLoad: Boolean
+  isKioskLoad: Boolean
+  isLoad: Boolean
+  isSystemLoad: Boolean
+  isUserLoad: Boolean
+  loadProvider: String
+
+  eventName: String
+
+  # Commissions
+  isInviteFriendReferrerSuccess: Boolean
+  isInviteFriendReferredJoined: Boolean
+  isCommissionForNewUser: Boolean
+  isCommissionForLoad: Boolean
+
+  # card messages
+  isCard: Boolean
+  isATM: Boolean
+  isATMWithdrawal: Boolean
+  isMerchant: Boolean
+
+  # fx (not yet supported)
+  isAED: Boolean # AED
+  fromAED: Boolean
+  toAED: Boolean
+
+  isBHD: Boolean # BHD
+  fromBHD: Boolean
+  toBHD: Boolean
+
+  isEUR: Boolean # EUR
+  fromEUR: Boolean
+  toEUR: Boolean
+
+  isKZT: Boolean # KZT
+  fromKZT: Boolean
+  toKZT: Boolean
+
+  isUSD: Boolean # USD
+  fromUSD: Boolean
+  toUSD: Boolean
+
+  isSAR: Boolean # SAR
+  fromSAR: Boolean
+  toSAR: Boolean
+
+  isPHP: Boolean # PHP
+  fromPHP: Boolean
+  toPHP: Boolean
+
+  isKES: Boolean # KES
+  fromKES: Boolean
+  toKES: Boolean
+
+  isPKR: Boolean # PKR
+  fromPKR: Boolean
+  toPKR: Boolean
+
+  isINR: Boolean # INR
+  fromINR: Boolean
+  toINR: Boolean
+
+  isBDT: Boolean # BDT
+  fromBDT: Boolean
+  toBDT: Boolean
+
+  isNAD: Boolean
+  fromNAD: Boolean
+  toNAD: Boolean
+
+  isTZS: Boolean
+  fromTZS: Boolean
+  toTZS: Boolean
+
+  isETB: Boolean
+  fromETB: Boolean
+  toETB: Boolean
+
+  isUGX: Boolean
+  fromUGX: Boolean
+  toUGX: Boolean
+
+  isMZN: Boolean
+  fromMZN: Boolean
+  toMZN: Boolean
+
+  isNGN: Boolean
+  fromNGN: Boolean
+  toNGN: Boolean
+
+  isPTS: Boolean
+  fromPTS: Boolean
+  toPTS: Boolean
+
+  isBTC: Boolean
+  fromBTC: Boolean
+  toBTC: Boolean
+
+  isETH: Boolean
+  fromETH: Boolean
+  toETH: Boolean
+
+  isXRP: Boolean
+  fromXRP: Boolean
+  toXRP: Boolean
+
+  # fees
+  isFee: Boolean
+  isPeriodicFee: Boolean
+  isMoneyTransferFee: Boolean
+  isInternationalMoneyTransferFee: Boolean
+  isElectronicLoadVoucherFee: Boolean
+  isPurchaseFee: Boolean
+  isATMFee: Boolean
+  isCurrencyDifferenceFee: Boolean
+
+  # organization
+  isDistributorFunding: Boolean
+  isSystemFunding: Boolean
+
+  # iso fields
+  ISOMTI: String
+  ISOPAN: String
+  ISOTransactionAmount: String
+  ISOBillingAmount: String
+  ISOExpirationTime: String
+  ISOMCC: String
+  ISOAcquiringInstitution: String
+  ISOCardAcceptorTerminalIdentification: String
+  ISOCardAcceptorIdentificationCode: String
+  ISOCardAcceptor: String
+  ISOTransactionCurrencyMsgCode: String
+  ISOBillingCurrency: String
+
+  isPurchase: Boolean
+  isV1987: Boolean
+  isPCKT: Boolean
+  isV1993: Boolean
+  isNets: Boolean
+  isReverse: Boolean
+  isPartialReverse: Boolean
+
+  # isoCurrency
+  ISOTransactionCurrency: String
+  ISOTransactionCurrencyName: String
+  ISOTransactionCurrencyCode: String
+  ISOTransactionCurrencySubUnits: Int
+
+  meta: [TransactionMeta]
+  reconciliationId: String
+
+  icon: String
+
+  userFrom: ID
+  userTo: ID
+  userId: ID
+
+  records: [Transaction]
+}
+
+type TransactionSubCategory {
+  name: String
+  slug: String
+  eventNames: [String]
+}
+
+type TransactionCategory {
+  name: String
+  slug: String
+  transactionHistorySubCategories: [TransactionSubCategory]
+}
+
+type TransactionV2 {
+  transactionRecordId: ID
+  transactionId: ID!
+  accountFrom: ID
+  accountTo: ID
+  currencyFrom: Currency
+  currencyTo: Currency
+  amountFrom: Int
+  amountTo: Int
+  status: TransactionStatus
+  description: String
+  icon: String
+  transactionHistoryCategories: [TransactionCategory]
+  createdAt: String
+  updatedAt: String
+  metadata: [TransactionMeta]
+}
+
+enum TransactionReportIssueName {
+  CHARGED_TWICE
+  UNRECOGNISED_TRANSACTION
+  OTHER
+  BENEFICIARY_DID_NOT_RECEIVE_FUNDS
+  WRONG_BENEFICIARY_DETAILS
+  CANCEL_TRANSACTION
+  REQUEST_REFUND
+  FUNDS_NOT_RECEIVED_IN_PYYPL_WALLET
+  TOPUP_FAILED
+  CHARGES_NOT_CLEAR
+  VOUCHER_NOT_RECEIVED
+  FEES_NOT_CLEAR
+  MANUAL_BANK_TRANSFER_ENQUIRY
+}
+
+type TransactionReportIssue {
+  transactionReportIssueName: TransactionReportIssueName
+}
+
+type TransactionReportIssues {
+  enabled: Boolean
+  transactionReportIssues: [TransactionReportIssue]
+}
+
+type TransactionMeta {
+  metaDataId: ID
+  transactionRecordId: ID
+  eventName: String
+  metaData: AWSJSON
+  createdAt: String
+  updatedAt: String
+}
+
+type TransactionSet {
+  count: Int
+  data: [Transaction!]!
+}
+
+type TransactionV2Set {
+  count: Int
+  data: [TransactionV2!]
+  totalCount: Int
+  limit: Int
+  offset: Int
+}
+
+type TransactionHistorySubCategoryItem {
+  name: String
+  slug: String
+  eventNames: [String]
+}
+
+type TransactionHistoryCategoryItem {
+  name: String
+  slug: String
+  transactionHistorySubCategories: [TransactionHistorySubCategoryItem]
+}
+
+type TransactionFee {
+  transactionId: ID
+  feeTransactionId: ID
+  createdAt: String
+  feeName: String
+  fee: Int
+  currency: Currency
+}
+
+type TransactionCharge {
+  chargeId: ID
+  chargeTransactionId: ID
+}
+
+input CreateTransactionInput {
+  transactionId: ID
+
+  # old properties
+  source: ID
+  target: ID
+  currency: Currency
+  amount: Int
+
+  # new properties
+  accountFrom: ID
+  accountTo: ID
+  currencyFrom: Currency
+  currencyTo: Currency
+  amountFrom: Int
+  genesisAt: String
+
+  description: String
+  status: String
+  message: String
+  transactionReference: String
+  data: AWSJSON
+
+  meta: TransactionMetaDataInput
+}
+
+input UpdateTransactionInput {
+  status: TransactionStatus
+}
+
+type VoucherSet {
+  count: Int
+  data: [Voucher!]!
+}
+
+type Voucher {
+  voucherId: ID!
+  accountId: ID
+  dealerId: ID
+  dealerAccountId: ID
+  consumerAccountId: ID
+  transactionRecordId: ID
+  status: VoucherStatus!
+  currency: Currency!
+  amount: Int!
+  expiresAt: String!
+  createdAt: String
+  consumedAt: String
+  baseUrl: String
+  sku: String
+  pin: String
+}
+
+type VoucherPack {
+  voucher: Voucher!
+  pin: String!
+}
+
+enum VoucherStatus {
+  Created
+  Activated
+  Pending
+  Consumed
+  Reversed
+}
+
+input CreateVoucherInput {
+  sku: String!
+  currency: Currency!
+  # amount in smallest subunit (e.g. cents)
+  amount: Int!
+  # ISO 8601 formatted timestamp
+  expiresAt: String!
+  pin: String
+}
+
+input UpdateVoucherInput {
+  status: VoucherStatus
+  consumerAccountId: ID
+  transactionRecordId: ID
+}
+
+type TransactionRisk {
+  transactionId: ID!
+  score: Float
+  description: String
+  status: RiskStatus
+  unusual: Boolean
+  createdAt: String
+  updatedAt: String
+  history: TransactionRiskHistorySet
+}
+
+enum RiskStatus {
+  NORMAL
+  UNUSUAL
+  SUSPICIOUS
+  FAILED
+  PENDING
+}
+
+type TransactionRiskHistory {
+  size: Int
+  key: String
+  timestamp: String
+  content: String
+}
+
+type TransactionRiskHistorySet {
+  data: [TransactionRiskHistory]
+}
+
+type ServiceConstructSet {
+  data: [ServiceConstruct!]!
+}
+
+type ServiceConstruct {
+  name: String!
+}
+
+type RequiredFieldSet {
+  data: [RequiredField!]!
+}
+
+type RequiredField {
+  name: String!
+}
+
+type ServiceLocale {
+  titleKey: String
+  subTitleKey: String
+}
+
+enum ServiceStatusInactiveReasonCategory {
+  KYC
+  DENIED_BY_RULE
+  FAILED_REQUIREMENT
+  OPERATIONAL
+  USER_STANDING
+}
+
+enum ServiceStatusInactiveReasonName {
+  MISSING_FIRST_LOAD
+  MAINTENANCE
+  DELINQUENT_DEBENTURE_PAYMENT
+  BLOCKED_REGION
+}
+
+type ServiceStatusInactiveReason {
+  statusInactiveReasonCategory: ServiceStatusInactiveReasonCategory
+  statusInactiveReasonName: String
+}
+
+type Service {
+  name: String!
+  locale: ServiceLocale
+  accountId: ID
+  status: String
+  termsAndConditionsStatus: ServiceTermsAndConditionsStatus
+  statusInactiveReasons: [ServiceStatusInactiveReason]
+}
+
+type ServiceTermsAndConditionsStatus {
+  acceptedTermsAndConditions: Boolean
+  acceptedTermsAndConditions__createdTimestamp: AWSDateTime
+  serviceTermsHash: String
+  serviceTermsHashHWSignature: String
+  serviceTermsHashSecp256k1Signature: String
+}
+
+input ServiceTermsOptions {
+  serviceTermsHash: String
+  serviceTermsHashHWSignature: String
+  serviceTermsHashSecp256k1Signature: String
+}
+
+type ServiceSet {
+  data: [Service!]!
+}
+
+input ServiceParamsInput {
+  type: String!
+  value: String!
+}
+
+type EthAccount {
+  transactionHash: String!
+}
+
+type TermsAndConditions {
+  text: [String]
+  url: String
+  acceptedAt: AWSDateTime
+}
+
+type AcceptTermsResult {
+  success: Boolean
+}
+
+type FaceIdStatus {
+  status: String
+}
+
+type FaceIdResult {
+  userId: ID
+  faceIdMatch: Boolean!
+  confidenceLevel: Float
+  error: String
+}
+input dataSource {
+  dataEntryIdentity: String
+  dataCreationIdentity: String
+}
+
+input dataExpiration {
+  validFrom: AWSDateTime
+  validTill: AWSDateTime
+}
+
+input AttributeInput {
+  attributeName: String
+  attributeValue: String
+}
+
+input dataAccessPermissions {
+  read: String
+  write: String
+}
+
+type UserAttribute {
+  userId: ID
+  attribute: DataAttribute
+}
+
+type DataAttribute {
+  attributeName: String
+  attributeValue: String
+}
+
+type UserAttributeList {
+  userId: ID
+  attributeList: AWSJSON
+}
+
+enum sortDirection {
+  ASC
+  DESC
+}
+
+input SortBy {
+  attributeName: String
+  direction: sortDirection
+}
+
+enum filterOperator {
+  EQ
+  NE
+  LT
+  GT
+  NULL
+  NOT_NULL
+  CONTAINS
+  NOT_CONTAINS
+  IN
+  BETWEEN
+}
+
+input Filter {
+  attributeName: String
+  attributeValue: String
+  attributeValues: [String]
+  operator: filterOperator
+}
+
+type phoneNumberExistsResponse {
+  phoneNumberExists: Boolean
+}
+
+type checkUsersExistenceByPhoneNumberResponse {
+  phoneNumber: String
+  isUser: Boolean
+  isKycCompleted: Boolean
+}
+
+type AppVersion {
+  minimalRequiredAppVersion: String
+  latestAppVersion: String
+  shouldUpdate: Boolean
+}
+
+type CountrySlots {
+  allowOnboarding: Boolean
+}
+
+type UserDevice {
+  devicePublicKey: String
+  id: Int
+}
+
+type CardSensitiveData {
+  sensitiveData: String
+  publicKey: String
+}
+
+type SensitiveData {
+  hasSensitiveData: Boolean
+  cardholderName: String
+  cvv: String
+  pin: String
+  expiryDate: String
+  primaryAccountNumber: String
+  uuid: String
+  publicKey: String
+  initVector: Int
+  sensitiveData: String
+}
+
+type TransactionAuthorized {
+  authorized: Boolean
+}
+
+type Device {
+  deviceId: ID!
+  deviceID: String
+  deviceHardwareId: String
+  biometrics: Boolean
+  userId: ID
+  identityId: ID
+  cardDeviceId: ID
+  publicKey: ID
+  deviceLocale: String
+  deviceBrand: String
+  deviceCarrier: String
+  deviceManufacturer: String
+  deviceModel: String
+  deviceSystemName: String
+  deviceSystemVersion: String
+  deviceTimezone: String
+  createdAt: String
+  updatedAt: String
+  fmcToken: String
+  latitude: String
+  latitude__createdTimestamp: String
+  longitude: String
+  longitude__createdTimestamp: String
+  buildId: String
+  buildType: String
+  attestationCertificate: String
+  intermediateCertificate: String
+  rootCertificate: String
+  sourceIp: String
+  sourceIp__createdTimestamp: String
+  viewerCountry: String
+  viewerCountry__createdTimestamp: String
+  status: String
+  locationCountryCode: String
+}
+
+type Card {
+  status: CardStatus @deprecated(reason: "Use `cardStatus`")
+  type: CardType @deprecated(reason: "Use `cardType`")
+  headDigits: String @deprecated(reason: "Use `cardHeadDigits`")
+  tailDigits: String @deprecated(reason: "Use `cardTailDigits`")
+  last4: String @deprecated(reason: "Use `cardLast4`")
+  cardLast4: String @deprecated(reason: "Use `cardTailDigits`")
+
+  cardId: ID!
+  accountId: ID
+  reason: String
+  cardReferenceId: String
+  cardType: CardType
+  cardStatus: CardStatus
+  cardIssuer: CardIssuer
+  cardHeadDigits: String
+  cardTailDigits: String
+  cardExpiryDate: String
+  cardLabel: String
+  cardColor: String
+  createdAt: String
+  updatedAt: String
+}
+
+input fxOptions {
+  amount: Int
+}
+
+enum FxRateType {
+  BUY
+  SELL
+}
+
+type fxRate {
+  base: String
+  counter: String
+  rate: Float
+  convertedAmount: Int
+  expiresAt: String
+  type: FxRateType
+}
+
+input listServicesInput {
+  userId: ID!
+  accountId: ID!
+}
+
+input ActivateVoucherInput {
+  isStarterPack: Boolean
+  accountId: ID
+}
+
+enum OrganizationAccountName {
+  PREFUNDING
+  REVENUE
+  INTER_COMPANY_TRANSIT
+  CURRENCY_EXCHANGE
+  FAUCET
+  DISTRIBUTION_COMMISSION
+  BUSINESS_EXPENSES
+  UNUSED_UNATTACHED
+  UNUSED_ATTACHED
+  ISSUER
+  IREMIT_ISSUER
+  MTB_ISSUER
+  BONUS
+  EMPLOYEE_PAYMENTS
+  TRADING
+  TRANGLO_ISSUER
+  THUNES_ISSUER
+  CASH_COLLECTION
+  PAYME
+  BANK_TRANSFER_MANUAL
+  MFS_ISSUER
+}
+
+input OrganizationOptions {
+  idType: String
+  accountName: OrganizationAccountName
+  userPoolId: String
+}
+
+type Organization {
+  organizationId: ID
+  organizationName: String
+  organizationShortName: String
+  organizationLogo: String
+  createdAt: String
+  updatedAt: String
+  bankDetails: OrganizationBankDetails
+  reference: String
+
+  # optional - returned when the accountName is specified
+  accountId: ID
+  name: String
+  relevantAccounts: [Account]
+
+  userPoolId: String
+  identityPoolId: String
+
+  accounts: AccountSet
+}
+
+type EmailAddressVerification {
+  otpId: ID
+  serverTime: String
+}
+
+type EmailAddressVerificationResponse {
+  emailAddressVerified: Boolean
+}
+
+type PhoneNumberVerification {
+  otpId: ID
+  serverTime: String
+  salt: String
+  encryptedString: String
+}
+
+type PhoneNumberVerificationResponse {
+  phoneNumberVerified: Boolean
+  userExistenceLevel: String
+  newDeviceLoginAttempt: Boolean
+  sessionId: String
+}
+
+enum VerificationLogsStatus {
+  INITIATED
+  COMPLETED
+  CANCELLED
+  FAILED
+}
+
+type RedeemRewardsResponse {
+  amount: Int
+  currency: Currency
+}
+
+type VerificationResponse {
+  verificationLogStatus: VerificationLogsStatus
+  deviceId: String
+  userId: String
+}
+
+enum MessageType {
+  MESSAGE_ID
+  MESSAGE_TEXT
+}
+
+enum SMSChannel {
+  GENERAL
+  AD
+}
+
+input NotificationOptions {
+  messageType: MessageType
+  messageKey: String
+  messageArgs: AWSJSON
+  transports: [String]
+  smsProvider: String
+  smsChannel: SMSChannel
+}
+
+input VoucherOptions {
+  withFundingFlow: Boolean
+  voucherFundingTransferId: ID
+}
+
+type CardMarker {
+  markerId: ID
+  createdAt: String
+  currency: Currency
+  identifierTimeWindow: Int
+}
+
+type Status {
+  status: String
+}
+
+enum KycStatus {
+  COMPLETED
+  INTERRUPTED
+  PROVISIONALLY_COMPLETED
+  EXPIRED
+  BLOCKED
+}
+
+type CompletedKYC {
+  completedKYC: Boolean
+  kycStatus: KycStatus
+  missingFields: AWSJSON
+}
+
+input LocationInput {
+  longitude: Float
+  latitude: Float
+}
+
+type Location {
+  longitude: Float
+  latitude: Float
+}
+
+input LoadLocationInput {
+  location: LocationInput
+}
+
+type LoadLocation {
+  loadLocationId: ID
+  loadLocationName: String
+  loadLocationPhoneNumber: String
+  loadLocationAddress: Address
+  loadLocationDistance: Int
+  loadLocationExpiration: String
+  loadLocation: Location
+  loadProvider: String
+  loadLocationCategory: String
+  status: String
+}
+
+input TransactionMetaDataInput {
+  eventName: String
+  metaData: AWSJSON
+}
+
+input CreateTransactionOptions {
+  meta: TransactionMetaDataInput
+  feeAmount: Int
+}
+
+enum BannerStyle {
+  POSITIVE
+  NEUTRAL
+  NEGATIVE
+}
+
+enum InfoBannerActionName {
+  OPEN_URL
+  OPEN_DEEPLINK
+}
+
+type InfoBanner {
+  text: String
+  style: BannerStyle
+  icon: String
+  actionName: InfoBannerActionName
+  url: String
+  pageName: String
+  parameters: AWSJSON
+}
+
+type InvitationsConfig {
+  bonusConfig: AWSJSON
+  invitations: Int
+  countries: [String]
+}
+
+input LoadPurchaseInput {
+  amount: Int
+  currency: Currency
+}
+
+type LoadPurchase {
+  loadPurchaseId: ID
+  merchantId: String
+}
+
+input RegisterLoadLocationInput {
+  loadLocationId: ID
+  loadLocation: LocationInput
+  loadLocationName: String
+  loadProvider: String
+  loadLocationDuration: Int
+}
+
+type PageableContractList {
+  items: [DebentureContract]!
+  totalItems: Int
+}
+
+type PageableInvestmentOpportunityList {
+  items: [DebentureContract]!
+  totalItems: Int
+}
+
+input DebentureSalaryRange {
+  min: Int
+  max: Int
+}
+
+type DebentureSalaryRangeType {
+  min: Int
+  max: Int
+}
+
+input DebentureRequestInputParameters {
+  loanAmount: Int!
+  loanCurrency: Currency!
+  loanPurposeDescription: String!
+  title: String!
+  description: String!
+  bankName: String
+  occupation: String
+  salaryRange: DebentureSalaryRange
+  interestRateInBips: Int!
+  paybackStartInDays: Int!
+  numberOfInstallments: Int!
+  paybackInfo: AWSJSON!
+}
+
+input DebentureInvestorCommitmentInputParameters {
+  commitmentAmount: Int!
+  commitmentCurrency: Currency!
+}
+
+input DebentureAgreementsInputParameters {
+  investorCommitments: [ID!]!
+  paybackInfo: AWSJSON!
+}
+
+union DebentureContract =
+    DebentureRequest
+  | DebentureInvestorCommitment
+  | DebentureAgreement
+
+enum DebentureContractStatus {
+  PENDING
+  ACTIVE
+  DELINQUENT
+  EXPIRED
+  CANCELLED
+  COMPLETED
+}
+
+type DebentureRequest {
+  debentureRequestId: ID
+  address: String
+  loanAmount: Int!
+  loanCurrency: Currency!
+  remainingAmount: Int
+  loanPurposeDescription: String
+  title: String
+  description: String
+  bankName: String
+  occupation: String
+  salaryRange: DebentureSalaryRangeType
+  interestRateInBips: Int!
+  expiryTimestamp: AWSDateTime
+  paybackStartInDays: Int
+  numberOfInstallments: Int
+  paybackInfo: LoanPaybackInfo!
+  sourceCode: String
+  creditScore: Int
+  creditScoreTimestamp: AWSDateTime
+  participantInvestorsCount: Int
+  borrowerId: ID
+  borrowerData: User
+  investorCommitments: [DebentureInvestorCommitment]
+  agreement: DebentureAgreement @deprecated(reason: "Use `agreements`.")
+  agreements: [DebentureAgreement]
+  status: DebentureContractStatus
+  active: Boolean # FOR BACKWARDS COMPATIBILITY - TO BE REMOVED AFTER V2 RELEASE
+  cancelled: Boolean # FOR BACKWARDS COMPATIBILITY - TO BE REMOVED AFTER V2 RELEASE
+  completed: Boolean # FOR BACKWARDS COMPATIBILITY - TO BE REMOVED AFTER V2 RELEASE
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime
+}
+
+type DebentureInvestorCommitment {
+  debentureInvestorCommitmentId: ID
+  commitmentAmount: Int
+  commitmentCurrency: Currency
+  address: String
+  sourceCode: String
+  investorId: ID
+  investorData: User
+  debentureRequestId: ID
+  debentureRequest: DebentureRequest
+  debentureAgreementId: ID
+  agreement: DebentureAgreement
+  status: DebentureContractStatus
+  active: Boolean # FOR BACKWARDS COMPATIBILITY - TO BE REMOVED AFTER V2 RELEASE
+  cancelled: Boolean # FOR BACKWARDS COMPATIBILITY - TO BE REMOVED AFTER V2 RELEASE
+  completed: Boolean # FOR BACKWARDS COMPATIBILITY - TO BE REMOVED AFTER V2 RELEASE
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime
+}
+
+type DebentureAgreement {
+  debentureAgreementId: ID
+  address: String
+  sourceCode: String
+  paybackInfo: LoanPaybackInfo!
+  loanAmount: Int!
+  loanCurrency: Currency!
+  debentureRequestId: ID
+  debentureInvestorCommitmentId: ID
+  debentureRequest: DebentureRequest
+  investorCommitment: DebentureInvestorCommitment
+  borrowerId: ID
+  investorId: ID
+  borrowerData: User
+  loanPurposeDescription: String
+  status: DebentureContractStatus
+  active: Boolean # FOR BACKWARDS COMPATIBILITY - TO BE REMOVED AFTER V2 RELEASE
+  cancelled: Boolean # FOR BACKWARDS COMPATIBILITY - TO BE REMOVED AFTER V2 RELEASE
+  completed: Boolean # FOR BACKWARDS COMPATIBILITY - TO BE REMOVED AFTER V2 RELEASE
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime
+}
+
+input LoanRequestLikelihoodInput {
+  loanType: LoanType
+}
+
+input LoanPaybackInput {
+  currency: Currency!
+  loanAmount: Int!
+  interestRateInBips: Int!
+  paybackStartTimestamp: AWSDateTime
+    @deprecated(reason: "Use `paybackStartInDays` and `numberOfInstallments`.")
+  paybackEndTimestamp: AWSDateTime
+    @deprecated(reason: "Use `paybackStartInDays` and `numberOfInstallments`.")
+  paybackStartInDays: Int!
+  numberOfInstallments: Int!
+}
+
+type LoanPaybackInfo {
+  currency: Currency!
+  loanAmount: Int!
+  interestRateInBips: Int!
+  principalTotal: Int!
+  couponTotal: Int!
+  feesTotal: Int!
+  paybackTotal: Int!
+  paybackSchedule: [LoanPaybackInstallment]!
+}
+
+enum LoanPaybackInstallmentStatus {
+  PAID
+  MISSED
+  UPCOMING
+  NA
+}
+
+type LoanPaybackInstallment {
+  daysFromStartOfLoan: Int! # this will be fixed in DebentureRequest
+  paybackDate: AWSDateTime # this will be fixed in DebentureAgreement
+  payment: LoanPaybackInstallmentType!
+  status: LoanPaybackInstallmentStatus
+}
+
+union LoanPaybackInstallmentType = LoanRepayment | LoanFee
+
+type LoanRepayment {
+  principalAmount: Int!
+  couponAmount: Int!
+  totalAmount: Int!
+}
+
+type LoanFee {
+  feeAmount: Int!
+}
+
+type DebentureEligibilityResponse {
+  isEligible: Boolean!
+  reason: String
+}
+
+type AirtimeOperator {
+  airtimeOperatorId: ID
+  airtimeOperatorName: String
+  airtimeOperatorDomesticCurrency: Currency
+  airtimeOperatorPurchaseCurrency: Currency
+  airtimeOperatorFixedAmounts: [Int]
+  airtimeOperatorMinAmount: Int
+  airtimeOperatorMaxAmount: Int
+  airtimeOperatorFXRate: fxRate
+  airtimeOperatorCountryCode: String
+}
+
+enum PnwProcessorMethodListingType {
+  FLATTENED_METHOD_ROUTES
+}
+
+input TargetOptions {
+  pnwProcessorMethodListingType: PnwProcessorMethodListingType
+}
+
+enum PnwCategoryName {
+  PYYPL_TO_PYYPL
+  LOCAL_TRANSFER
+  INTERNATIONAL_TRANSFER
+  BLOCK_CHAIN_TRANSFER
+  MOBILE_WALLETS
+}
+
+enum PnwSubCategoryName {
+  LOCAL_BANK_TRANSFER
+  LOCAL_MOBILE_WALLET
+  INTERNATIONAL_BANK_TRANSFER
+  INTERNATIONAL_MOBILE_WALLET
+  INTERNATIONAL_CASH_PAYOUT
+}
+
+input TargetFilters {
+  pnwCategoryName: PnwCategoryName
+  pnwSubCategoryName: PnwSubCategoryName
+}
+
+input Target {
+  targetType: String
+  targetValue: String
+  currencyFrom: Currency
+  targetOptions: TargetOptions
+  targetFilters: TargetFilters
+}
+
+type TransferTarget {
+  targetType: String
+  targetValue: String
+}
+
+enum PaymentFeeType {
+  FIXED
+  BIPS
+}
+
+type PaymentFee {
+  amount: Int
+  variable: Int
+  currency: Currency
+  type: PaymentFeeType
+}
+
+enum TransferDuration {
+  INSTANT
+  FIFTEEN_MINUTES
+  HALF_AN_HOUR
+  ONE_HOUR
+  THREE_HOURS
+  SIX_HOURS
+  TWELVE_HOURS
+
+  ONE_DAY
+  ONE_BUSINESS_DAY
+
+  TWO_DAYS
+  TWO_BUSINESS_DAYS
+
+  THREE_DAYS
+  THREE_BUSINESS_DAYS
+
+  ONE_WEEK
+}
+
+type TransferRoute {
+  transferId: ID
+  transferRouteId: ID
+  transferRouteTargetCurrency: Currency
+  transferRoutePurchaseCurrency: Currency
+  transferRouteTargetAccountId: String
+  transferRoutePayoutMethodType: String
+  transferRouteMinAmount: ID
+  transferRouteTargetUser: User
+
+  # the max sendable amount the user _can_ send given the user's balance
+  transferRouteMaxAmount: ID
+  transferRouteFXRate: fxRate
+  transferRouteDestinationCountry: String
+  transferRouteFixedAmounts: [Int]
+  transferRouteDescription: String
+  transferRoutePayoutMethodId: ID
+  transferRouteBankPayoutTargets: [PayoutTarget]
+    @deprecated(reason: "Use `transferRoutePayoutTargets`.")
+  transferRouteCashPayoutTargets: [PayoutTarget]
+    @deprecated(reason: "Use `transferRoutePayoutTargets`.")
+  transferRouteWalletPayoutTargets: [PayoutTarget]
+    @deprecated(reason: "Use `transferRoutePayoutTargets`.")
+  transferRoutePayoutTargets: [PayoutTarget]
+  transferRouteRequiredUserInformation: [UserInformation]
+  transferRouteFees: [PaymentFee]
+  transferRouteOngoingTransactions: [Transaction]
+  transferRouteStoredTargets: [TransferTarget]
+  transferRoutePnwProcessorPaymentMethodQuoteId: String
+
+  # the max allowed limit a user is allowed to send, regardless of the users's balance
+  transferRouteTransactionAllowedLimit: Int
+
+  transferRouteDailyAllowedLimit: Int
+  transferRouteEstimatedDuration: TransferDuration
+}
+
+enum PnwCategoryStatus {
+  ACTIVE
+  INACTIVE
+}
+
+enum PnwCategoryStatusInactiveReason {
+  MAINTENANCE
+}
+
+type PnwCategory {
+  pnwCategoryName: String
+  status: PnwCategoryStatus
+  statusInactiveReason: PnwCategoryStatusInactiveReason
+  pnwSubCategories: [PnwSubCategory]
+}
+
+type PnwSubCategory {
+  pnwSubCategoryName: String
+  status: PnwCategoryStatus
+  statusInactiveReason: PnwCategoryStatusInactiveReason
+}
+
+type IsUser {
+  isUser: Boolean
+  user: User
+}
+
+input AirtimeTransferInput {
+  targetCountryCode: String
+  targetPhoneNumber: String
+  airtimeOperatorId: ID
+  airtimeAmount: Int
+  accountFromAmount: Int
+  accountFromCurrency: Currency
+}
+
+type AirtimeTransfer {
+  airtimeFundingTransaction: Transaction
+  airtimeTransferData: AWSJSON
+  airtimeTransferErrorMessage: String
+}
+
+input TransferUserFrom {
+  occupation: String
+  addressLines: [String]
+}
+
+input TransferUserTo {
+  firstName: String
+  lastName: String
+  accountNumber: String
+  accountIBAN: String
+  countryOfResidence: String
+  relationshipToSender: String
+  identityDocumentNumber: String
+  identityDocumentType: String
+  targetInstitutionBranchId: String
+}
+
+enum ProcessorPaymentMethodType {
+  BANK
+  CASH
+  WALLET
+  BLOCKCHAIN
+}
+
+input TransferPaymentMeta {
+  purposeCode: String
+  sourceOfFunds: String
+  processorPaymentMethodId: ID
+  processorPaymentMethodQuoteId: ID
+  processorPaymentMethodType: ProcessorPaymentMethodType
+}
+
+# PAYMENT SENDER DATA
+input PaymentSenderData {
+  senderAddressLines: [String]
+  senderCityOfResidence: String
+  senderSourceOfCash: String
+  senderOccupation: String
+  senderNote: String
+  senderIdentityPassportNumber: String
+  senderCountryOfBirth: String
+}
+type PaymentSenderDataType {
+  senderAddressLines: [String]
+  senderSourceOfCash: String
+  senderOccupation: String
+  senderCityOfResidence: String
+  senderNote: String
+  senderIdentityPassportNumber: String
+}
+
+# PAYMENT BENEFICIARY DATA
+input PaymentBeneficiaryData {
+  beneficiaryFirstName: String
+  beneficiaryLastName: String
+  beneficiaryNickName: String
+  beneficiaryPhoneNumber: String
+  beneficiaryCountryOfResidence: String
+  beneficiaryRelationshipToSender: String
+  beneficiaryIdentityDocumentNumber: String
+  beneficiaryIdentityDocumentType: String
+  beneficiaryAccountCurrency: Currency
+  beneficiaryTargetInstitutionId: String
+  beneficiaryLocalAccountNumber: String
+  beneficiaryUpiId: String
+  beneficiaryAccountIBAN: String
+  beneficiaryTargetInstitutionBranchId: String
+  beneficiaryCountrySubDivision: String
+  beneficiaryBlockchainAccountAddress: String
+  beneficiaryCityOfResidence: String
+  beneficiaryLocalAccountType: String
+  beneficiaryDateOfBirth: String
+  beneficiaryAddressLines: [String]
+  beneficiaryPostalCode: String
+  beneficiaryDistrictNumber: String
+  beneficiaryDescription: String
+  saveBeneficiary: Boolean
+}
+type PaymentBeneficiaryDataType {
+  beneficiaryFirstName: String
+  beneficiaryLastName: String
+  beneficiaryNickName: String
+  beneficiaryPhoneNumber: String
+  beneficiaryCountryOfResidence: String
+  beneficiaryRelationshipToSender: String
+  beneficiaryIdentityDocumentNumber: String
+  beneficiaryIdentityDocumentType: String
+  beneficiaryAccountCurrency: Currency
+  beneficiaryTargetInstitutionId: String
+  beneficiaryLocalAccountNumber: String
+  beneficiaryUpiId: String
+  beneficiaryAccountIBAN: String
+  beneficiaryTargetInstitutionBranchId: String
+  beneficiaryCountrySubDivision: String
+  beneficiaryBlockchainAccountAddress: String
+  beneficiaryCityOfResidence: String
+  beneficiaryLocalAccountType: String
+  beneficiaryDescription: String
+}
+
+type PnwBeneficiaryDataType {
+  pnwBeneficiaryId: ID
+  userId: ID
+  beneficiaryType: String
+  beneficiaryFirstName: String
+  beneficiaryLastName: String
+  beneficiaryNickName: String
+  beneficiaryPhoneNumber: String
+  beneficiaryCountryOfResidence: String
+  beneficiaryRelationshipToSender: String
+  beneficiaryIdentityDocumentNumber: String
+  beneficiaryIdentityDocumentType: String
+  beneficiaryAccountCurrency: Currency
+  beneficiaryTargetInstitutionId: String
+  beneficiaryLocalAccountNumber: String
+  beneficiaryUpiId: String
+  beneficiaryAccountIBAN: String
+  beneficiaryTargetInstitutionBranchId: String
+  beneficiaryCountrySubDivision: String
+  beneficiaryBlockchainAccountAddress: String
+  beneficiaryCityOfResidence: String
+  beneficiaryDateOfBirth: String
+  beneficiaryAddressLines: [String]
+  beneficiaryPostalCode: String
+  beneficiaryDistrictNumber: String
+  beneficiaryLocalAccountType: String
+  beneficiaryDescription: String
+  createdAt: AWSDateTime
+}
+
+# PAYMENT DATA
+input PaymentData {
+  accountFrom: ID
+  amountFrom: Int
+  amountTo: Int
+  countryTo: String
+  currencyFrom: Currency
+  currencyTo: Currency
+  description: String
+  processorPaymentMethodId: ID
+  processorPaymentMethodQuoteId: ID
+  paymentPurposeCode: String
+}
+type PaymentDataType {
+  accountFrom: ID
+  amountFrom: Int
+  amountTo: Int
+  countryTo: String
+  currencyFrom: Currency
+  currencyTo: Currency
+  description: String
+  processorPaymentMethodId: ID
+  processorPaymentMethodQuoteId: ID
+  paymentPurposeCode: String
+}
+
+input TransferRoutePayload {
+  currencyFrom: Currency
+    @deprecated(reason: "Use `transferPayment.currencyFrom`.")
+  currencyTo: Currency @deprecated(reason: "Use `transferPayment.currencyTo`.")
+  amountFrom: Int @deprecated(reason: "Use `transferPayment.amountFrom`.")
+  description: String @deprecated(reason: "Use `transferPayment.description`.")
+  targetPhoneNumber: String
+    @deprecated(
+      reason: "Use `transferPaymentBeneficiaryData.beneficiaryPhoneNumber`."
+    )
+  userFrom: TransferUserFrom
+    @deprecated(reason: "Use `transferPaymentSenderData`.")
+  userTo: TransferUserTo
+    @deprecated(reason: "Use `transferPaymentBeneficiaryData`.")
+  payoutTargetCode: String
+    @deprecated(
+      reason: "Use `transferPaymentBeneficiaryData.beneficiaryTargetInstitutionId`."
+    )
+  paymentMeta: TransferPaymentMeta @deprecated(reason: "Use `transferPayment`.")
+
+  # new v2 fields
+  transferPayment: PaymentData
+  transferPaymentSenderData: PaymentSenderData
+  transferPaymentBeneficiaryData: PaymentBeneficiaryData
+}
+
+input createTransferInput {
+  transferId: ID
+  transferRouteId: ID
+  transferRoutePayload: TransferRoutePayload
+  transferRouteOptions: TransferRouteOptions
+}
+
+type Transfer {
+  transferFundingTransaction: Transaction
+  transferData: AWSJSON
+  transferErrorMessage: String
+}
+
+enum DocumentType {
+  IDENTIFICATION
+}
+
+enum DueDiligenceDocuments {
+  PASSPORT
+  IDCARD
+  RESIDENCY_CARD
+  TWO_PHOTOS
+  DRIVERS_LICENSE
+  OTHER
+}
+
+type PermittedDocuments {
+  operatingCountry: String
+  permittedDocuments: [DueDiligenceDocuments]
+}
+
+enum KycProviderName {
+  VERIFF
+  REGULA
+}
+
+type KycProvider {
+  kycProviderName: KycProviderName
+  kycPermittedDocuments: [DueDiligenceDocuments]
+}
+
+enum LoadAbilityMethodCategory {
+  DEBIT_CARD
+  P2P
+}
+
+enum LoadAbilityMethodName {
+  CHECKOUT_DEBIT_CARD
+  STRIPE_DEBIT_CARD
+  PYYPL
+}
+
+type LoadAbilityMethodConfig {
+  loadAbilityMethodPublicKey: String
+}
+
+type LoadAbilityMethod {
+  loadAbilityMethodCategory: LoadAbilityMethodCategory
+  loadAbilityMethodName: LoadAbilityMethodName
+  loadAbilityMethodConfig: LoadAbilityMethodConfig
+}
+
+input Identifier {
+  idType: String
+  idValue: String
+}
+
+type MonetaryValue {
+  amount: Int
+  currency: Currency
+}
+
+type Prefunding {
+  operatingCountry: String
+  newUser: MonetaryValue
+  oldUser: MonetaryValue
+}
+
+type BonusConfig {
+  minLoadAmount: Int
+  maxBonusAmount: Int
+  fixedBonusAmount: Int
+  bonusPercentage: Int
+  bonusCurrency: Currency
+  bonusMaxDays: Int
+}
+
+enum InviteBonusStatus {
+  ACTIVE
+  EXPIRED
+}
+
+type BonusInvitee {
+  bonusId: ID
+  bonusType: String
+  referrerUserId: ID
+  refereeUserId: ID
+  refereeUserData: User
+  referrerAOC: String
+  paidAmount: Int
+  payoutCurrency: Currency
+  bonusExpiresAt: String
+  bonusStatus: InviteBonusStatus
+  createdAt: String
+  updatedAt: String
+}
+
+type BonusInvitees {
+  invitees: [BonusInvitee]
+  totalPaidBonusSum: Int
+}
+
+type BonusInviteesSet {
+  data: BonusInvitees
+  limit: Int
+  offset: Int
+  count: Int
+}
+
+enum LoadType {
+  CARD
+  KIOSK
+  BANK_TRANSFER
+  CRYPTO_TRADING
+  MPESA
+  CHECKOUT
+  FLUTTERWAVE
+  STRIPE
+  PAYME
+  PNW_CRYPTO_EXCHANGE
+  BINANCE_PAY
+}
+
+input loadLimitInput {
+  loadType: LoadType
+  loadCurrency: Currency
+}
+
+type LoadLimit {
+  loadLimitAmount: Int
+  loadMinAmount: Int
+  limitValue: Int
+  loadCurrency: Currency
+  reason: String
+}
+
+input ListBalanceLimitsInput {
+  currency: Currency
+  useCachedBalance: Boolean
+}
+
+input ListBalanceOptions {
+  applyTransactionVolumeUsageLimit: Boolean
+  transactionType: String
+  sendNotification: Boolean
+}
+
+type BalanceLimit {
+  minBalance: Int
+  minBalanceStr: String
+  maxBalance: Int
+  maxBalanceStr: String
+  accountBalance: Int
+  accountBalanceStr: String
+  currency: Currency
+  remainingBalance: Int
+  remainingBalanceStr: String
+  reasonCode: String
+  limitValue: Int
+  limitValueStr: String
+}
+
+input CreateServiceOptions {
+  excludeAssociatedServices: Boolean
+  status: String
+}
+
+input IsNewUserOptions {
+  userType: String
+}
+
+enum LoanType {
+  DEBENTURE
+}
+
+input ReferralContextInput {
+  referralFromUserId: ID
+  referralCreatedAt: String
+}
+
+type ReferralContext {
+  referralToId: ID
+  referralFromUserId: ID
+  referralCreatedAt: String
+  createdAt: String
+  updatedAt: String
+}
+
+type PaymentRequest {
+  paymentRequestId: ID
+  userId: ID
+  organizationId: ID
+  accountId: ID
+  amount: Int
+  currency: Currency
+  createdAt: String
+  url: String
+  beneficiaryName: String
+  productName: String
+  productDescription: String
+  status: String
+  expiryDate: String
+  maxNumberOfPayments: Int
+  paymentLoadsCount: Int
+}
+
+input PaymentRequestInput {
+  amount: Int
+  currency: Currency
+  beneficiaryName: String
+  productName: String
+  productDescription: String
+  status: String
+  expiryDate: String
+  maxNumberOfPayments: Int
+  paymentLoadsCount: Int
+}
+
+input EstimateChargeInput {
+  accountTo: ID
+  amountFrom: Int
+  currencyFrom: Currency
+  currencyTo: Currency
+  cardExpiryDate: String
+  countryTo: String
+}
+
+type Charge {
+  fixed: Int
+  variable: Int
+}
+
+type EstimateCharge {
+  amount: Int
+  currency: Currency
+  period: String
+  charge: Charge
+
+  # accountTo
+  accountToAmount: Int
+  accountToCurrency: Currency
+  accountToCharge: Charge
+}
+
+type PayoutTarget {
+  payoutTargetCode: String
+  payoutTargetName: String
+  payoutTargetType: String
+}
+
+# DEPRECATED - MOVE TO PnwProcessorPaymentMethod
+type PnwRoute {
+  pnwProcessorPayoutMethodId: ID
+  pnwBankPayoutTargets: [PayoutTarget]
+  pnwCashPayoutTargets: [PayoutTarget]
+  pnwWalletPayoutTargets: [PayoutTarget]
+  pnwFXRate: fxRate
+  pnwTargetCurrency: Currency
+}
+
+enum PnwProcessorPaymentMethodType {
+  BANK_REAL_TIME
+  BANK
+  CASH
+  WALLET
+  UPI
+}
+
+enum FieldValueType {
+  STRING
+  NUMBER
+  ENUM
+  PAYOUT_TARGET
+  BRANCH_ID
+  STRING_ARRAY
+  DATE
+}
+
+enum UserInformationFieldGroupName {
+  SENDER_DATA
+  BENEFICIARY_DATA
+  PAYMENT_DATA
+}
+
+enum UserInformationSection {
+  BENEFICIARY_DATA_SECTION
+  BANK_PAYOUT_DATA_SECTION
+  CASH_PAYOUT_DATA_SECTION
+  WALLET_PAYOUT_DATA_SECTION
+  SENDER_DATA_SECTION
+  PAYMENT_DATA_SECTION
+  UPI_PAYOUT_DATA_SECTION
+}
+
+enum UserInformationFieldLabel {
+  IFSC_CODE
+  ROUTING_NUMBER
+  BANK_TARGET_PAYOUT_ID
+  CASH_TARGET_PAYOUT_ID
+  WALLET_TARGET_PAYOUT_ID
+  UPI_TARGET_PAYOUT_ID
+}
+
+type UserInformation {
+  userInformationFieldName: String
+  userInformationFieldLabel: UserInformationFieldLabel
+  userInformationFieldValueType: FieldValueType
+  userInformationFieldDescription: String
+  userInformationFieldAllowedValues: [String]
+  userInformationFieldGroupName: UserInformationFieldGroupName
+  userInformationFieldSections: [UserInformationSection]
+  userInformationFieldValidationRegexp: String
+  userInformationFieldStringMaxLength: Int
+  userInformationFieldStringMinLength: Int
+}
+
+type PnwProcessorPaymentMethod {
+  pnwProcessorPaymentMethodId: String
+  pnwProcessorPaymentMethodMinAmount: Int
+  pnwProcessorPaymentMethodMaxAmount: Int
+  pnwProcessorPaymentMethodQuoteId: String
+  pnwProcessorPaymentMethodDescription: String
+  pnwProcessorPaymentMethodType: PnwProcessorPaymentMethodType
+  pnwProcessorPaymentMethodFxRate: fxRate
+  pnwProcessorPaymentMethodPayoutTargets: [PayoutTarget]
+  pnwProcessorPaymentMethodTargetCurrency: Currency
+  pnwProcessorPaymentMethodRequiredUserInformation: [UserInformation]
+  pnwProcessorPaymentMethodFees: [PaymentFee]
+  pnwProcessorPaymentMethodTransactionLimit: Int
+  pnwProcessorPaymentMethodDailyLimit: Int
+  pnwProcessorPaymentMethodEstimatedTransferDuration: TransferDuration
+}
+
+input PnwUserFrom {
+  occupation: String
+  addressLines: [String]
+}
+
+input PnwUserTo {
+  firstName: String
+  lastName: String
+  phoneNumber: String
+  accountNumber: String
+  targetDestination: String
+  targetInstitutionBranchId: String
+  accountIBAN: String
+  countryOfResidence: String
+  relationshipToSender: String
+  identityDocumentNumber: String
+  identityDocumentType: String
+}
+
+input PnwPaymentMeta {
+  purposeCode: String
+  sourceOfFunds: String
+  processorPaymentMethodId: ID
+  processorPaymentMethodQuoteId: ID
+  processorPaymentMethodType: ProcessorPaymentMethodType
+}
+
+input TransferRouteOptions {
+  saveBeneficiary: Boolean!
+  beneficiaryType: String!
+}
+
+input PnwTransferInput {
+  transferRouteId: String
+  transferRouteOptions: TransferRouteOptions
+  currencyFrom: Currency
+  currencyTo: Currency
+  amountFrom: Int
+  userFrom: PnwUserFrom
+  userTo: PnwUserTo
+  payoutTargetType: String
+  paymentMeta: PnwPaymentMeta
+  pnwPaymentData: PaymentData
+  pnwPaymentBeneficiaryData: PaymentBeneficiaryData
+  pnwPaymentSenderData: PaymentSenderData
+}
+
+type PnwTransfer {
+  fundingTransaction: Transaction
+  transferData: AWSJSON
+}
+
+enum UserLoyaltyStatus {
+  STANDARD
+  GOLD
+  PLATINUM
+}
+
+input UpdateServiceInput {
+  status: String
+}
+
+enum PnwTransferSubStatus {
+  IN_TRANSIT
+  PENDING_DUE_DILIGENCE
+  FORWARDED
+  REFUNDED
+  FAILED
+  COMPLETED
+}
+
+type TransactionDetails {
+  transaction: Transaction
+  originalAmount: Int
+  originalCurrency: Currency
+  paymentReferenceNumber: String
+  pnwTransferSubStatus: PnwTransferSubStatus
+  pnwTransferSubStatusList: [PnwTransferSubStatus]
+  note: String
+  receiptId: String
+  vat: Int
+  fee: Int
+}
+
+input ListInvoiceItemsInput {
+  invoiceType: String
+  feeNames: [String]
+}
+
+type InvoiceItem {
+  invoiceItemId: ID
+  invoiceId: ID
+  amount: Int
+  currency: Currency
+  feeName: String
+}
+
+input ListPnwPayoutTargetsInput {
+  payoutTargetType: String
+}
+
+input AddPrefundInput {
+  accountFrom: ID
+  currencyFrom: Currency
+  amountFrom: Int
+  description: String
+  prefundType: String
+}
+
+type AccountPrefund {
+  prefundId: ID
+  receiverId: ID
+}
+
+type IssuerPublicKey {
+  deviceNativePublicKey: String
+  keyExpiryDate: String
+}
+
+input RedeemRewardsInput {
+  amount: Int
+  currency: Currency!
+}
+
+input PairCardInput {
+  initializationVector: Int
+  encryptedCardDetails: String
+  issuerPublicKey: String
+  devicePublicKey: String
+  version: AppFlow
+}
+
+type SettledInvoice {
+  invoiceSettlementTransaction: Transaction
+}
+
+type OrganizationBankDetails {
+  bankName: String
+  accountNumber: String
+  swiftCode: String
+  iban: String
+  branchName: String
+  branchAddress: String
+  country: String
+  phoneNumber: String
+  name: String
+  address: Address
+  currency: String
+}
+
+type DynamicContent {
+  type: String
+  title: String
+  content: String
+  url: String
+  actionType: String
+}
+
+type DynamicContentSet {
+  data: [DynamicContent]
+}
+
+type AcquisitionChannel {
+  referrerType: String
+  referrerId: String
+  createdAt: String
+}
+
+input AcquisitionChannelInput {
+  referrerType: String
+  referrerId: String
+}
+
+enum AccountBalanceLimitType {
+  DYNAMIC
+  MANUAL
+}
+
+type AccountBalanceLimit {
+  currency: Currency
+  min: Int
+  max: Int
+  type: AccountBalanceLimitType
+}
+
+input ListOnboardingCountriesOptions {
+  buildType: String
+}
+
+input CardOtpKeyCodePairsInput {
+  publicKey: String
+  encryptedOtp: String
+}
+
+type CardOtpKeyCodePairs {
+  publicKey: String
+  encryptedOtp: String
+}
+
+type CardOtp {
+  otpId: ID
+  accountId: ID
+  cardId: ID
+  cardIssuer: CardIssuer
+  otp: String
+  issuerPublicKey: String
+  keyCodePairs: [CardOtpKeyCodePairs]
+  createdAt: String
+  expiresAt: String
+  merchantName: String
+  authorizedAmount: Int
+  authorizedCurrency: String
+  authorizedMethod: String
+}
+
+input CreateCardOtpInput {
+  accountId: ID
+  cardId: ID
+  otp: String
+  keyCodePairs: [CardOtpKeyCodePairsInput]
+  issuerPublicKey: String
+  merchantName: String
+  authorizedAmount: String
+  authorizedCurrency: String
+  authorizedMethod: String
+  expiresAt: String
+}
+
+type LocationDetails {
+  formattedAddress: String
+  country: String
+  region: String
+  city: String
+  area: String
+}
+
+type Dealer {
+  dealerId: String
+  name: String
+  type: String
+  phoneNumber: String
+  phoneNumberValidation: AWSJSON
+  nationality: String
+  location: Location
+  locationDetails: LocationDetails
+  uploads: UploadSet
+  relationshipManagerId: String
+  createdAt: String
+  createdBy: String
+}
+
+input DealerInput {
+  name: String
+  type: String
+  phoneNumber: String
+  nationality: String
+  location: LocationInput
+}
+
+type DealerSet {
+  data: [Dealer!]!
+  count: Int
+}
+
+type CardConfig {
+  logoStatus: String
+}
+
+type ReplacedCardDevice {
+  cardId: ID
+  cardDeviceId: ID
+  devicePublicKey: String
+}
+
+type UserComment {
+  comment: String
+  createdAt: AWSDateTime
+  createdBy: AWSJSON
+}
+
+type BillPayment {
+  billPaymentFundingTransaction: Transaction
+  billPaymentData: AWSJSON
+  billPaymentErrorMessage: String
+}
+
+input BillPaymentInput {
+  amount: Int
+  currency: Currency
+  quantity: Int
+  providerName: String
+  productCode: String
+  externalAccountId: String
+  attributes: [AttributeInput]
+}
+
+type BillPaymentProductField {
+  name: String
+  placeholder: String
+}
+
+type BillPaymentProductOption {
+  amount: Int
+  minAmount: Int
+  maxAmount: Int
+  currency: Currency
+  productCode: String
+}
+
+type BillPaymentProduct {
+  providerName: String
+  productKey: String
+  productName: String
+  productIcon: String
+  options: [BillPaymentProductOption]
+  inputFields: [BillPaymentProductField]
+}
+
+type BillPaymentProductSet {
+  data: [BillPaymentProduct]
+}
+
+type InitiateReonboarding {
+  intitiatedReonboarding: Boolean
+}
+
+input ListCryptoRatesInput {
+  fiatCurrency: Currency
+}
+
+type CryptoRate {
+  pair: String
+  buy: String
+  sell: String
+}
+
+input CryptoTradeInput {
+  fiatCurrency: Currency
+  cryptoCurrency: Currency
+  cryptoAmount: Int
+}
+
+type CryptoTrade {
+  transactionId: String
+  transactionStatus: String
+  createdAt: String
+  accountId: ID
+  cryptoAmount: Int
+  cryptoCurrency: Currency
+  fiatAmount: Int
+  fiatCurrency: Currency
+  pair: String
+  trade: String
+}
+
+input InitiateMPesaLoadInput {
+  amount: Int
+  currency: Currency
+  phoneNumber: String
+}
+
+type LoadResponse {
+  status: String
+}
+
+enum NotifyOpsCategory {
+  DEALER_BANK_TRANSFER
+  DEALER_REQUEST_FUNDS
+}
+
+input ListCryptoLimitsInput {
+  fiatCurrency: Currency
+}
+
+type CryptoLimit {
+  pair: String
+  fiatCurrency: Currency
+  cryptoCurrency: Currency
+  maxCryptoBuyAmount: Int
+  maxCryptoSellAmount: Int
+  accountSellLimits: BalanceLimit
+  accountBuyLimits: BalanceLimit
+}
+
+type Customer {
+  userId: ID
+  customerId: ID
+}
+
+type PaymentIntent {
+  paymentIntentId: ID
+}
+
+type CryptoCharge {
+  cryptoCurrency: Currency
+  fiatCurrency: Currency
+  buyFixed: Int
+  buyBips: Int
+  sellFixed: Int
+  sellBips: Int
+}
+
+type PaymentSourceAccount {
+  accountId: ID
+  accountName: String
+  accountNumber: String
+  iban: String
+  balance: String
+  currency: Currency
+  balanceUpdatedAt: String
+}
+
+enum PaymentSourceStatus {
+  ACTIVE
+  AWAITING_BENEFICIARY_COOL_OFF
+  INACTIVE
+  DELETED
+}
+
+type PaymentSource {
+  paymentSourceId: ID
+  customerId: ID
+  userId: ID
+  createdAt: String
+  updatedAt: String
+  bankId: String
+  bankName: String
+  beneficiaryCoolOffExpiry: String
+  status: PaymentSourceStatus
+  accounts: [PaymentSourceAccount]
+}
+
+type PaymentSourceSet {
+  data: [PaymentSource]
+}
+
+input ListPnwRoutesInput {
+  accountFrom: ID
+  targetCountryCode: String
+  currencyFrom: Currency
+  currencyTo: Currency
+}
+
+enum PnwBlockchainNetworkAddressesIndexes {
+  blockchainNetworkAddress
+  accountId
+}
+
+enum PaymentPeriod {
+  DAILY
+  WEEKLY
+  MONTHLY
+}
+
+type InsuranceProduct {
+  insuranceProductId: ID
+  insuranceProductType: String
+  insuranceProductName: String
+  insuranceProductPrettyName: String
+  insuranceProductPremium: Int
+  insuranceProductPremiumPaymentPeriod: PaymentPeriod
+  insuranceProductCoverage: Int
+  insuranceProductCurrency: Currency
+  insuranceProductCoolOffPeriod: Int
+  insuranceProductCompany: String
+  insuranceProductTermsAndConditionsUrl: String
+  insuranceProductBenefitsUrl: String
+  insuranceProductClaimFormUrl: String
+}
+
+type PageableInsuranceProducts {
+  items: [InsuranceProduct]
+  totalItems: Int
+}
+
+enum InsurancePolicyStatus {
+  PURCHASED
+  PURCHASED_PENDING_COOLOFF_PERIOD_COMPLETION
+  ACTIVATED
+  CANCELLED_PENDING_COOLOFF_PERIOD_COMPLETION
+  CANCELLED
+  TERMINATED
+}
+
+type InsurancePolicyBeneficiaryDetails {
+  beneficiaryName: String
+  beneficiaryRelationship: String
+  beneficiaryPhoneNumber: String
+}
+
+input InsurancePolicyBeneficiaryDetailsInput {
+  beneficiaryName: String!
+  beneficiaryRelationship: String!
+  beneficiaryPhoneNumber: String!
+}
+
+type InsurancePolicy {
+  insurancePolicyId: ID
+  insuredUserId: ID
+  accountId: ID
+  insurancePolicyStatus: InsurancePolicyStatus
+  createdAt: String
+  updatedAt: String
+  insuranceProductId: ID
+  insuranceProduct: InsuranceProduct
+  beneficiaryDetails: InsurancePolicyBeneficiaryDetails
+}
+
+type PageableInsurancePolicy {
+  items: [InsurancePolicy]
+  totalItems: Int
+}
+
+input ListInsuranceProductsInput {
+  insuranceCurrency: Currency
+}
+
+enum OTPChannel {
+  GENERAL
+  RESEND
+  VOICE
+  WHATSAPP
+}
+
+input StartVerifyPhoneNumberOptions {
+  otpChannel: OTPChannel
+}
+
+enum UpdatePhoneNumberStatus {
+  SUCCESS
+  FAILED
+}
+
+type UpdatePhoneNumberErrorMessage {
+  message: String
+  errorMessageLocalizeKey: String
+}
+
+input StartUpdatePhoneNumberOptions {
+  otpChannel: OTPChannel
+}
+
+type StartUpdatePhoneNumberData {
+  verificationLogSessionId: String
+}
+
+type StartUpdatePhoneNumber {
+  status: UpdatePhoneNumberStatus
+  data: StartUpdatePhoneNumberData
+  errors: [UpdatePhoneNumberErrorMessage]
+}
+
+input UpdatePhoneNumberInput {
+  otp: String
+  deviceId: String
+  verificationLogSessionId: String
+}
+
+type UpdatePhoneNumberData {
+  phoneNumber: String
+}
+
+type UpdatePhoneNumber {
+  status: UpdatePhoneNumberStatus
+  data: UpdatePhoneNumberData
+  errors: [UpdatePhoneNumberErrorMessage]
+}
+
+type UserOnboardingResponse {
+  completed: Boolean
+  defaultAccount: Account
+}
+
+input PaymentMethodQuoteInput {
+  processorPayoutMethodId: ID
+  accountId: ID
+  currencyFrom: Currency
+  currencyTo: Currency
+  amountTo: Int
+  beneficiaryTargetInstitutionId: String
+}
+
+type ProcessorPaymentMethodQuote {
+  processorPaymentMethodQuoteId: ID
+  fxRate: fxRate
+}
+
+type OnboardingConfiguration {
+  possibleCountries: [String]
+  allowedCountries: [String]
+  deactivationCoolOffPeriod: Int
+}
+
+input DetermineEligibilityForFeeOverwriteInput {
+  planName: String
+}
+
+enum FeeOverwriteEligibilityStatus {
+  OVERWRITE_APPLICABLE
+  OVERWRITE_NOT_APPLICABLE
+}
+
+type FeeOverwriteEligibility {
+  feeOverwriteEligibilityStatus: FeeOverwriteEligibilityStatus
+  newFeeAmount: Int
+}
+
+type DebentureInterestPercentageRangeInBips {
+  min: Int
+  max: Int
+}
+
+type DebentureLoanAmountRangeInBips {
+  min: Int
+  max: Int
+}
+
+type DebentureBankListItem {
+  name: String
+}
+
+type DebentureOccupationListItem {
+  name: String
+}
+
+type DebentureSalaryRangesListItem {
+  min: Int
+  max: Int
+}
+
+type DebentureCategoryListItem {
+  name: String
+}
+
+type DebentureConfiguration {
+  numberOfInstallmentsOptions: [Int]
+  paybackStartInDaysOptions: [Int]
+  loanAmountRangeInBips: DebentureLoanAmountRangeInBips
+  interestPercentageRangeInBips: DebentureInterestPercentageRangeInBips
+  categoriesList: [DebentureCategoryListItem]
+  bankNameList: [DebentureBankListItem]
+  occupationList: [DebentureOccupationListItem]
+  salaryRangesList: [DebentureSalaryRangesListItem]
+}
+
+type Language {
+  langISO: String
+  name: String
+  isRTL: Boolean
+  locale: String
+}
+
+type LocalizationConfiguration {
+  updatedAt: String
+  languages: [Language]
+}
+
+type InvitationLink {
+  link: String
+}
+
+enum PaymentCardUsageType {
+  NEW
+  STORED
+}
+
+input InitiateContactPayLoadInput {
+  cardUsageType: PaymentCardUsageType
+  cardToken: ID
+  amountFrom: Int
+  currencyFrom: Currency
+  saveCard: Boolean
+}
+
+input InitiateCheckoutLoadInput {
+  cardUsageType: PaymentCardUsageType
+  cardToken: ID
+  amountFrom: Int
+  currencyFrom: Currency
+  cardCvv: String
+  saveCard: Boolean
+  deviceSessionId: String
+  cardTokenizationMetaData: AWSJSON
+}
+
+input InitiateStripeLoadInput {
+  cardUsageType: PaymentCardUsageType
+  cardToken: ID
+  amountFrom: Int
+  currencyFrom: Currency
+  cardCvv: String
+  saveCard: Boolean
+  cardTokenizationMetaData: AWSJSON
+}
+
+type CheckoutLoadResponse {
+  status: String
+  redirectionUrl: String
+}
+
+type ContactPayLoadResponse {
+  status: String
+  redirectionUrl: String
+}
+
+type CardLoadResponse {
+  status: String
+  paymentIntentClientSecret: String
+  customerEphemeralKey: String
+  paymentMethodId: String
+  customerId: String
+  publicKey: String
+  loadPaymentIntentJson: String
+}
+
+input OnlineAcquirerLoadInput {
+  amountFrom: Int
+  currencyFrom: Currency
+  currencyTo: Currency
+}
+
+type OnlineAcquirerLoadResponse {
+  status: String
+  redirectionUrl: String
+  qrCodeUrl: String
+  deeplinkUrl: String
+  universalUrl: String
+}
+
+enum DlocalPaymentMethodId {
+  IO # for bank
+  CC # for card
+}
+
+input InitiateDlocalLoadInput {
+  paymentMethodId: DlocalPaymentMethodId
+  documentNumber: String
+  currencyFrom: Currency
+  currencyTo: Currency
+  amountFrom: Int
+}
+
+type DlocalLoadResponse {
+  status: String
+  redirectionUrl: String
+  transaction: Transaction
+}
+
+enum LoadAbilityVerificationPaymentMethod {
+  CHECKOUT_DEBIT_CARD
+  STRIPE_DEBIT_CARD
+}
+
+input InitiateLoadAbilityVerificationInput {
+  userId: ID
+  loadAbilityVerificationPaymentCurrency: Currency
+  loadAbilityVerificationPaymentMethod: LoadAbilityVerificationPaymentMethod
+  loadAbilityVerificationPaymentMethodReference: String
+  loadAbilityVerificationPaymentMethodMetadata: AWSJSON
+}
+
+enum loadAbilityVerificationStatus {
+  SUCCESS
+  FAILED
+  PENDING
+}
+
+type LoadAbilityVerificationResponse {
+  loadAbilityVerificationStatus: loadAbilityVerificationStatus
+  loadAbilityVerificationMessage: String
+  loadAbilityVerificationRedirectionUrl: String
+  loadAbilityVerificationMetadata: AWSJSON
+}
+
+enum LoadPaymentMethodType {
+  CARD
+}
+
+enum CardScheme {
+  VISA
+  MASTERCARD
+  AMERICANEXPRESS
+  MIR
+  UNIONPAY
+}
+
+enum CardSettlementType {
+  DEBIT
+  CREDIT
+}
+
+type CardPaymentMethod {
+  loadPaymentMethodId: ID
+  loadPaymentProvider: String
+  loadPaymentMethodType: LoadPaymentMethodType
+  headDigits: String
+  tailDigits: String
+  userId: ID
+  issuerCountry: String
+  cardToken: String
+  cardScheme: CardScheme
+  cardType: CardSettlementType
+  createdAt: String
+  updatedAt: String
+}
+
+union LoadPaymentMethod = CardPaymentMethod
+
+input ListLoadPaymentMethodKeysInput {
+  loadProvider: String
+}
+
+enum KeyType {
+  PUBLIC_KEY
+  SECRET_KEY
+}
+
+type LoadPaymentMethodKey {
+  loadMethodKeyType: KeyType
+  loadMethodKeyValue: String
+}
+
+type FlutterwaveAccountDetail {
+  accountName: String
+  accountNumber: String
+}
+
+type FlutterwaveCurrency {
+  currency: Currency
+  amount: Float
+}
+
+type FlutterwaveTransferRate {
+  rate: Float
+  source: FlutterwaveCurrency
+  destination: FlutterwaveCurrency
+}
+
+type BankDetail {
+  code: String
+  name: String
+}
+
+input InitiateFlutterwaveDirectDebitInput {
+  amount: Int
+  currency: Currency
+  phoneNumber: String
+  bankCode: String
+  accountNumber: String
+  bvn: String
+  passCode: String
+}
+
+type InitiateDirectDebitLoadResponse {
+  status: String
+  message: String
+  flwRef: String
+}
+
+input ValidateChargeInput {
+  otp: String
+  flwRef: String
+  type: String
+}
+
+type DebentureCategory {
+  id: ID
+  debentureCategoryName: String
+  lokaliseKey: String
+}
+
+enum DeviceVerificationAction {
+  CONFIRM
+  CANCEL
+}
+
+input VerifyDeviceInput {
+  plainText: String
+  signature: String
+  verificationAction: DeviceVerificationAction
+}
+
+input RotateDeviceVerificationInput {
+  plainText: String
+  signature: String
+}
+
+enum PnwPaymentType {
+  REMITTANCE
+}
+
+type PnwPayment {
+  pnwPaymentId: String
+  accountId: String
+  transactionId: String
+  transactionStatus: TransactionStatus
+  pnwPaymentType: PnwPaymentType
+  pnwPaymentBeneficiaryData: PaymentBeneficiaryDataType
+  pnwPaymentData: PaymentDataType
+  pnwPaymentSenderData: PaymentSenderDataType
+  createdAt: String
+  updatedAt: String
+}
+
+input TransactionStatementInput {
+  startTimestamp: AWSDateTime
+  endTimestamp: AWSDateTime
+}
+
+type TransactionStatement {
+  url: String
+}
+
+input InitiateCheckoutLoadOptions {
+  paymentType: String
+  loadSessionId: String
+}
+
+input InitiateContactPayLoadOptions {
+  loadSessionId: String
+}
+
+input InitiateStripeLoadOptions {
+  loadSessionId: String
+}
+
+input InitiateLoadOptions {
+  loadSessionId: String
+}
+
+input ListPnwBlockchainNetworksInput {
+  currencyFrom: Currency
+  currencyTo: Currency
+}
+
+enum BlockchainNetworkName {
+  BSC
+  BTC
+}
+
+enum BlockchainNetworkAddressCustodian {
+  BINANCE
+  COINMOTION
+  SELF
+}
+
+type BlockchainCoin {
+  blockchainCoinPyyplReceiverAddress: String
+  blockchainCoin: Currency
+  blockchainCoinNumberOfDecimals: Int
+  blockchainCoinTransferFee: String # Can be very long value, due to lots of subunits
+  blockchainCoinExchangeFees: [PaymentFee]
+  blockchainCoinContractAddress: String
+  blockchainCoinTransferMethodId: String
+  fxRate: fxRate
+}
+
+type BlockchainNetwork {
+  blockchainNetworkChainId: String
+  blockchainNetworkName: BlockchainNetworkName
+  blockchainNetworkPrettyName: String
+  blockchainNetworkMainCoin: Currency
+  blockchainNetworkGasUnits: String
+  blockchainNetworkGasPrice: String
+  blockchainNetworkCoins: [BlockchainCoin]
+}
+
+input RegisterPnwBlockchainAddressInput {
+  blockchainNetworkAddress: String
+  blockchainNetworkName: BlockchainNetworkName
+  blockchainCoin: Currency
+  blockchainNetworkAddressCustodian: BlockchainNetworkAddressCustodian
+}
+
+type BlockchainAddress {
+  blockchainAddressId: String
+  blockchainNetworkAddress: String
+  blockchainNetworkName: BlockchainNetworkName
+  blockchainNetworkAddressCustodian: BlockchainNetworkAddressCustodian
+  blockchainCoin: Currency
+  accountId: String
+  createdAt: String
+  updatedAt: String
+}
+
+input ListLoadMethodInput {
+  currencyTo: Currency
+}
+
+type FeeChargeAmount {
+  bips: Int
+  fixed: Int
+}
+
+type ServiceFee {
+  amount: FeeChargeAmount
+  frequency: String
+  name: String
+}
+
+type LoadMethod {
+  loadMethodId: String
+  loadSessionId: String
+  loadMethodName: String
+  loadMethodFxRates: [fxRate]
+  loadMethodLoadCurrency: Currency
+  loadMethodKeys: [LoadPaymentMethodKey]
+  loadMethodFees: [ServiceFee]
+  loadLimits: [LoadLimit]
+  loadMethodIcon: String
+  localeKey: String
+}
+
+enum UserSensitiveAttributeStatus {
+  PENDING
+  ACTIVE
+  EXPIRED
+  BLOCKED
+  IN_REVIEW
+  REDO
+  PROVISIONAL
+  INCOMPLETE
+}
+
+enum UserSensitiveAttributeType {
+  AMLCTF_COMPLIANCE
+  TERMS_AND_SERVICES_ACCEPTED
+  DATE_OF_BIRTH
+  FIRST_NAME
+  LAST_NAME
+  SELFIE_PHOTO
+  GOVERNMENT_IDENTIFICATION_DOCUMENT
+  PASSCODE
+  ADDRESS_INFO
+  DELINQUENT_DEBENTURE_PAYMENT
+  CREDIT_SCORE
+  DEBENTURE_PRE_ELIGIBLE
+  VERIFICATION_SESSION
+  COMPLIANCE_SCREENING
+  SOURCE_OF_FUNDS
+  ADDRESS_INFO_SUPPORTING_DOCUMENT
+  SOURCE_OF_FUNDS_SUPPORTING_DOCUMENT
+  LOAD_ABILITY
+}
+
+enum UserSensitiveAttributeProvider {
+  REGULA_FORENSICS
+  VERIFF
+  ACUANT
+  COMPLYADVANTAGE
+}
+
+input UserSensitiveAttributesFilter {
+  userSensitiveAttributeType: UserSensitiveAttributeType
+  userSensitiveAttributeStatus: UserSensitiveAttributeStatus
+}
+
+input UserSensitiveAttributeInput {
+  userSensitiveAttributeType: UserSensitiveAttributeType
+  userSensitiveAttributeValue: String
+  userSensitiveAttributeStatus: UserSensitiveAttributeStatus
+  userSensitiveAttributeExpiresAt: String
+  userSensitiveAttributeDocumentNumber: String
+  userSensitiveAttributeDocumentType: DueDiligenceDocuments
+  userSensitiveAttributeProvider: UserSensitiveAttributeProvider
+  userSensitiveAttributeUrl: String
+    @deprecated(reason: "Use `ListPnwRoutesInput`.")
+  userSensitiveAttributeUrls: [String]
+  userSensitiveAttributeHash: String
+  userSensitiveAttributeSignature: String
+  userSensitiveAttributeMetaData: AWSJSON
+}
+
+type UserSensitiveAttribute {
+  userId: ID
+  userSensitiveAttributeId: String
+  userSensitiveAttributeType: UserSensitiveAttributeType
+  userSensitiveAttributeValue: String
+  userSensitiveAttributeStatus: UserSensitiveAttributeStatus
+  userSensitiveAttributeExpiresAt: String
+  userSensitiveAttributeDocumentNumber: String
+  userSensitiveAttributeDocumentType: DueDiligenceDocuments
+  userSensitiveAttributeProvider: UserSensitiveAttributeProvider
+  userSensitiveAttributeUrl: String
+  userSensitiveAttributeUrls: [String]
+  userSensitiveAttributeHash: String
+  userSensitiveAttributeSignature: String
+  userSensitiveAttributeMetaData: AWSJSON
+  createdAt: String
+  updatedAt: String
+}
+
+input AddressInfoInput {
+  address1: String
+  address2: String
+  city: String
+  state: String
+  zipCode: String
+  country: String
+  detectedLocation: LocationInput
+  providedLocation: LocationInput
+}
+
+type AddressInfo {
+  address1: String
+  address2: String
+  city: String
+  state: String
+  zipCode: String
+  country: String
+  providedLocation: Location
+}
+
+input ListStatesInput {
+  countryCode: String
+}
+
+type State {
+  name: String
+  slug: String
+  code: String
+}
+
+type ManualLoadPageDetails {
+  localiseKeys: [String]
+  attributes: [DataAttribute]
+}
+
+type CardPublicInfoNumber {
+  length: String
+    @deprecated(
+      reason: "do not rely on this field - will be deprated from 1st of Jan 2023"
+    )
+  luhn: String
+    @deprecated(
+      reason: "do not rely on this field - will be deprated from 1st of Jan 2023"
+    )
+}
+
+type CardPublicInfoCountry {
+  numeric: String
+    @deprecated(
+      reason: "do not rely on this field - will be deprated from 1st of Jan 2023"
+    )
+  alpha2: String
+    @deprecated(
+      reason: "do not rely on this field - will be deprated from 1st of Jan 2023"
+    )
+  name: String
+    @deprecated(
+      reason: "do not rely on this field - will be deprated from 1st of Jan 2023"
+    )
+  emoji: String
+    @deprecated(
+      reason: "do not rely on this field - will be deprated from 1st of Jan 2023"
+    )
+  currency: String
+    @deprecated(
+      reason: "do not rely on this field - will be deprated from 1st of Jan 2023"
+    )
+  latitude: String
+    @deprecated(
+      reason: "do not rely on this field - will be deprated from 1st of Jan 2023"
+    )
+  longitude: String
+    @deprecated(
+      reason: "do not rely on this field - will be deprated from 1st of Jan 2023"
+    )
+}
+
+type CardPublicInfoBank {
+  name: String
+    @deprecated(
+      reason: "do not rely on this field - will be deprated from 1st of Jan 2023"
+    )
+  url: String
+    @deprecated(
+      reason: "do not rely on this field - will be deprated from 1st of Jan 2023"
+    )
+  phone: String
+    @deprecated(
+      reason: "do not rely on this field - will be deprated from 1st of Jan 2023"
+    )
+  city: String
+    @deprecated(
+      reason: "do not rely on this field - will be deprated from 1st of Jan 2023"
+    )
+}
+
+type CardPublicInfo {
+  cardBin: String
+  cardType: String
+  cardScheme: String
+  cardCountryCode: String
+
+  # deprecated fields
+  bin: String @deprecated(reason: "Use `cardBin`")
+  number: CardPublicInfoNumber
+    @deprecated(
+      reason: "do not rely on this field - will be deprated from 1st of Jan 2023"
+    )
+  scheme: String @deprecated(reason: "use `cardScheme`")
+  type: String @deprecated(reason: "use `cardType`")
+  brand: String
+    @deprecated(
+      reason: "do not rely on this field - will be deprated from 1st of Jan 2023"
+    )
+  prepaid: Boolean
+    @deprecated(
+      reason: "do not rely on this field - will be deprated from 1st of Jan 2023"
+    )
+  country: CardPublicInfoCountry
+    @deprecated(
+      reason: "do not rely on this field - will be deprated from 1st of Jan 2023"
+    )
+  bank: CardPublicInfoBank
+    @deprecated(
+      reason: "do not rely on this field - will be deprated from 1st of Jan 2023"
+    )
+}
+
+type SourceOfFundsOption {
+  name: String
+  description: String
+}
+
+input ListSourceOfFundsOptionsInput {
+  countryCode: String
+}
+
+enum ServiceFeatureName {
+  LOAD_MONEY
+  SEND_MONEY
+  SEND_CRYPTO
+  EXCHANGE_CRYPTO
+  VIRTUAL_CARD
+  VIRTUAL_CARD_REQUEST
+  PHYSICAL_CARD
+  PHYSICAL_CARD_REQUEST
+  PHYSICAL_CARD_ACTIVATE
+  INSURANCE
+  AIRTIME
+  BILL_PAYMENTS
+  DEBENTURE_BONDS
+  DEBENTURE_INVESTMENT
+  INVITE_FRIEND
+  PAYME
+  DEALER_NETWORK
+  DEALER_NETWORK_ACTIVATE
+  MASTER_DEALER_NETWORK
+  EMPLOYEE_NETWORK
+  BASE_KYC
+  CARD_SERVICE
+  MULTI_CURRENCY_WALLET
+  REWARDS
+}
+
+enum ServiceFeatureStatus {
+  AVAILABLE
+  UNAVAILABLE
+}
+
+enum ServiceFeatureUnavailableReasonCategory {
+  OPERATIONAL
+  KYC
+  DENIED_BY_RULE
+  FAILED_REQUIREMENT
+  USER_STANDING
+}
+
+type ServiceFeatureUnavailableReason {
+  serviceFeatureUnavailableReasonCategory: ServiceFeatureUnavailableReasonCategory
+  serviceFeatureUnavailableReasonName: String
+}
+
+type ServiceFeature {
+  serviceFeatureName: ServiceFeatureName
+  serviceFeatureStatus: ServiceFeatureStatus
+  serviceFeatureUnavailableReasons: [ServiceFeatureUnavailableReason]
+}
+
+enum AppFlow {
+  VERSION_1
+  VERSION_2
+}
+
+input GetCardSensitiveDataOptions {
+  devicePublicKey: String
+  cardIssuer: CardIssuer
+}
+
+input CardSensitiveDataOptions {
+  cardFlow: AppFlow
+}
+
+input HasCompletedOnboardingOptions {
+  version: AppFlow
+}
+
+input CardDeliveryInput {
+  address: AddressInput
+  latitude: String
+  longitude: String
+  phoneNumber: String
+  alternativePhoneNumber: String
+}
+
+enum CardDeliveryStatus {
+  CREATED
+}
+
+type CardDelivery {
+  id: String
+  status: CardDeliveryStatus
+  awb: String
+}
+
+input ServicesOptions {
+  appFlow: AppFlow
+  adminOverwriteSourceIp: String
+}
+
+input CreateCardOptions {
+  skipNumberOfRegisteredCardsCheck: Boolean
+  cardLabel: String
+  cardColor: String
+}
+
+input PairCardOptions {
+  cardLabel: String
+}
+
+input RequestVirtualCardOptions {
+  cardLabel: String
+  cardColor: String
+}
+
+input ReplaceCardOptions {
+  cardLabel: String
+  cardColor: String
+}
+
+input ReplaceVirtualCardOptions {
+  cardLabel: String
+  cardColor: String
+  cardIssuer: CardIssuer
+}
+
+input RemovePhysicalCardOptions {
+  cardIssuer: CardIssuer
+}
+
+enum BankTransferRequestMethod {
+  EASY_BANK_TRANSFER
+  MANUAL_BANK_TRANSFER
+}
+
+enum BankTransferRequestStatus {
+  APPROVED
+  PENDING
+  REJECTED
+}
+
+type BankTransferRequestSet {
+  count: Int
+  data: [BankTransferRequest]
+}
+
+type BankTransferRequestUserData {
+  firstName: String
+  lastName: String
+}
+
+type BankTransferRequest {
+  bankTransferRequestId: String
+  bankTransferRequestAmount: Int
+  bankTransferRequestReceivedAmount: Int
+  bankTransferRequestCurrency: Currency
+  bankTransferRequestReference: String
+  bankTransferRequestTransactionId: String
+  bankTransferRequestBankName: String
+  bankTransferRequestMethod: BankTransferRequestMethod
+  bankTransferRequestStatus: BankTransferRequestStatus
+  linkedTransferRequestId: String
+  userId: String
+  userData: BankTransferRequestUserData
+  accountId: String
+  createdAt: String
+  updatedAt: String
+}
+
+input BankTransferRequestInput {
+  bankTransferRequestTransactionId: String!
+  bankTransferRequestAmount: Int!
+  bankTransferRequestCurrency: Currency!
+  bankTransferRequestMethod: BankTransferRequestMethod!
+  bankTransferRequestBankName: String
+}
+
+input CardSettingsUpdateInput {
+  cardLabel: String
+  cardColor: String
+  cardIssuer: CardIssuer
+}
+
+input CardStatusUpdateInput {
+  reason: CardBlockedReason
+  cardStatus: CardStatus
+  cardIssuer: CardIssuer
+}
+
+type DebentureCreditScore {
+  grade: String
+  mobiLoansScore: Int
+}
+
+enum ProcessCardPaymentAction {
+  APPROVE
+  REJECT
+}
+
+input ProcessCardPaymentInput {
+  decryptedChallenge: String
+  otpId: String
+  cardIssuer: CardIssuer
+}
+
+type ProcessCardPaymentResponse {
+  status: Int
+}
+
+enum UserChatMappingExternalProvider {
+  FRESHCHAT
+}
+
+input UserChatMappingInput {
+  userChatMappingExternalId: String
+  userChatMappingExternalProvider: UserChatMappingExternalProvider
+}
+
+type UserChatMapping {
+  userChatMappingExternalId: String
+  userChatMappingExternalProvider: UserChatMappingExternalProvider
+  userId: String
+  createdAt: String
+  updatedAt: String
+}
+
+type CardConfigurationRules {
+  cardType: CardType
+  cardIssuer: CardIssuer
+  freeCardsLimit: Int
+  paidCardsLimit: Int
+  freeCardsRemaining: Int
+  paidCardsRemaining: Int
+}
+
+type IDVSession {
+  id: String
+  url: String
+  vendorData: String
+  host: String
+  status: String
+  sessionToken: String
+}
+
+enum UserEventName {
+  APP_LAUNCHED
+  WELCOME_SCREEN_VIEWED
+  LOGIN_CLICKED
+  CREATE_ACCOUNT_CLICKED
+  NICKNAME_ENTERED
+  MSISDN_ENTERED
+  CAPTCHA_PASSED
+  OTP_VERIFIED
+  PASSCODE_CREATED
+  PASSCODE_CONFIRMED
+  TNC_ACCEPTED
+  SIGNUP_COMPLETED
+  KYC_SKIPPED
+  KYC_INITIATED
+  ADDITIONAL_KYC_INFO_PROVIDED
+  IDV_INITIATED
+  IDV_SUBMITTED
+  IDV_DECISION_APPROVED
+  IDV_DECISION_REJECTED
+  SCREENING_INITIATED
+  SCREENING_DECISION_APPROVED
+  SCREENING_DECISION_REJECTED
+  KYC_COMPLETED
+  FIRST_LOAD_COMPLETED
+  VIRTUAL_CARD_ISSUED
+  OTP_ENTERED
+  OTP_SKIPPED
+  PASSCODE_ENTERED
+  FORGOT_PASSCODE_CLICKED
+  LOGGED_IN
+}
+
+type UserEvent {
+  userEventId: String
+  userEventName: UserEventName
+  userEventSessionId: String
+  userEventMetaData: AWSJSON
+  userId: String
+  createdAt: String
+}
+
+input RegisterUserEventInput {
+  userEventName: UserEventName
+  userEventSessionId: String
+  userEventMetaData: AWSJSON
+}
+
+type ListSourceOfFundsOptionsIncomeRanges {
+  min: Int
+  max: Int
+  level: Int
+}
+
+type ListSourceOfFundsOptionsTurnoverRanges {
+  min: Int
+  max: Int
+  level: Int
+}
+
+type ListSourceOfFundsOptionsProfessions {
+  name: String
+  description: String
+  riskScore: Int
+  hasSector: Boolean
+}
+
+type ListSourceOfFundsOptionsSubSectors {
+  name: String
+  description: String
+  riskScore: Int
+}
+
+type ListSourceOfFundsOptionsSectors {
+  name: String
+  description: String
+  subSectors: [ListSourceOfFundsOptionsSubSectors]
+}
+
+type ListSourceOfFundsSourceOfFund {
+  name: String
+  description: String
+}
+
+type ListSourceOfFundsOptions {
+  incomeRanges: [ListSourceOfFundsOptionsIncomeRanges]
+  turnoverRanges: [ListSourceOfFundsOptionsTurnoverRanges]
+  professions: [ListSourceOfFundsOptionsProfessions]
+  sectors: [ListSourceOfFundsOptionsSectors]
+  sourceOfFunds: [ListSourceOfFundsSourceOfFund]
+}
+
+input incomeRangeInput {
+  level: Int
+}
+
+input turnoverRangeInput {
+  level: Int
+}
+
+input CreateSourceOfFundsAttributeInput {
+  sourceOfFunds: String
+  incomeRange: incomeRangeInput
+  turnoverRange: incomeRangeInput
+  profession: String
+  sector: String
+  subSector: String
+}
+
+input UpdateSourceOfFundsAttributeInput {
+  sourceOfFunds: String
+  incomeRange: incomeRangeInput
+  turnoverRange: turnoverRangeInput
+  profession: String
+  sector: String
+  subSector: String
+}
+
+type RemittanceTarget {
+  countryCode: String
+  currency: Currency
+}
+
+input LimitUpdateRequestInput {
+  newLimitInSubUnits: Int
+}
+
+enum LimitUpdateRequestStatus {
+  PENDING_DOCUMENTS_UPLOAD
+  PENDING_DOCUMENTS_REVIEW
+  APPROVED
+  REJECTED
+}
+
+type LimitUpdateRequest {
+  accountLimitUpdateRequestId: String
+  userId: String
+  accountId: String
+  newLimitInSubUnits: Int
+  status: LimitUpdateRequestStatus
+  documentUploadIds: [String]
+  documentUrls: [String]
+  message: String
+  reason: String
+}

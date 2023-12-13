@@ -1,0 +1,45 @@
+{
+    "count": 2,
+    "data": [
+        {
+            "bankTransferRequestId": "b7516970-4105-4551-97c3-03bee5fdcae4",
+            "bankTransferRequestAmount": 12200,
+            "bankTransferRequestReceivedAmount": null,
+            "bankTransferRequestCurrency": "AED",
+            "bankTransferRequestReference": "+971553162398",
+            "bankTransferRequestTransactionId": "21321321",
+            "bankTransferRequestBankName": null,
+            "bankTransferRequestMethod": "MANUAL_BANK_TRANSFER",
+            "bankTransferRequestStatus": "PENDING",
+            "linkedTransferRequestId": null,
+            "userId": "b4fa5f75-92a4-c3be-ce25-dd49724e8931",
+            "userData": {
+                "firstName": "Pyypl",
+                "lastName": "Automation"
+            },
+            "accountId": "d857f2bb-9597-410c-a637-9c1cf6ce4b70",
+            "createdAt": "2023-09-11T08:08:37.995Z",
+            "updatedAt": "2023-09-11T08:08:37.995Z"
+        },
+        {
+            "bankTransferRequestId": "3f3a237e-b093-4902-b48e-b2adb0f20be7",
+            "bankTransferRequestAmount": 10000,
+            "bankTransferRequestReceivedAmount": null,
+            "bankTransferRequestCurrency": "AED",
+            "bankTransferRequestReference": "+971553162398",
+            "bankTransferRequestTransactionId": "312321",
+            "bankTransferRequestBankName": null,
+            "bankTransferRequestMethod": "MANUAL_BANK_TRANSFER",
+            "bankTransferRequestStatus": "PENDING",
+            "linkedTransferRequestId": null,
+            "userId": "b4fa5f75-92a4-c3be-ce25-dd49724e8931",
+            "userData": {
+                "firstName": "Pyypl",
+                "lastName": "Automation"
+            },
+            "accountId": "d857f2bb-9597-410c-a637-9c1cf6ce4b70",
+            "createdAt": "2023-09-11T07:55:58.839Z",
+            "updatedAt": "2023-09-11T07:55:58.839Z"
+        }
+    ]
+}

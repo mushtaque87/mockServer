@@ -1,0 +1,15 @@
+{
+    "cardId": "1115000088",
+    "cardIssuer": "M2P",
+    "accountId": "17d8a0a8-bd2f-490e-8f9e-174460a0e640",
+    "reason": null,
+    "cardType": "VIRTUAL",
+    "cardStatus": "ACTIVE",
+    "cardHeadDigits": "6504",
+    "cardTailDigits": "0088",
+    "cardExpiryDate": "2024-02-29T00:00:00.000Z",
+    "cardLabel": "mock_Nandhini mock_Elancheran",
+    "cardColor": "teal",
+    "createdAt": "2023-11-22T15:30:11.605Z",
+    "updatedAt": "2023-11-22T15:30:11.605Z"
+}

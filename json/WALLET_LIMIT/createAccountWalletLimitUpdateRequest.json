@@ -1,0 +1,7 @@
+{
+    "accountLimitUpdateRequestId": "a5e73701-2888-4691-89d5-68e807286f59",
+    "accountId": "17d8a0a8-bd2f-490e-8f9e-174460a0e640",
+    "newLimitInSubUnits": 1000000,
+    "status": "APPROVED",
+    "message": "LIMIT_UPDATE_SUCCESSFUL"
+}

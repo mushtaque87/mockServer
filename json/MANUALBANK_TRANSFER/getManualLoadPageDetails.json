@@ -1,0 +1,56 @@
+{
+    "localiseKeys": [
+        "manualBankTransfer.details.title",
+        "manualBankTransfer.details.accountName",
+        "manualBankTransfer.details.accountNumber",
+        "manualBankTransfer.details.IBAN",
+        "manualBankTransfer.details.currency",
+        "manualBankTransfer.details.country",
+        "manualBankTransfer.details.bank",
+        "manualBankTransfer.details.branch",
+        "manualBankTransfer.details.swift",
+        "manualBankTransfer.details.reference"
+    ],
+    "attributes": [
+        {
+            "attributeName": "bankName",
+            "attributeValue": "Commercial Bank of Dubai"
+        },
+        {
+            "attributeName": "accountNumber",
+            "attributeValue": "2002131320"
+        },
+        {
+            "attributeName": "swiftCode",
+            "attributeValue": "CBDUAEAD"
+        },
+        {
+            "attributeName": "iban",
+            "attributeValue": "AE75023000002002131320"
+        },
+        {
+            "attributeName": "branchName",
+            "attributeValue": "CBD Main Branch"
+        },
+        {
+            "attributeName": "branchAddress",
+            "attributeValue": ""
+        },
+        {
+            "attributeName": "country",
+            "attributeValue": "UAE"
+        },
+        {
+            "attributeName": "phoneNumber",
+            "attributeValue": ""
+        },
+        {
+            "attributeName": "name",
+            "attributeValue": "Pyypl Ltd"
+        },
+        {
+            "attributeName": "currency",
+            "attributeValue": "AED"
+        }
+    ]
+}

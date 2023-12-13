@@ -1,0 +1,12 @@
+[
+    {
+      "serviceFeatureName": "LOAD_MONEY",
+      "serviceFeatureStatus": "AVAILABLE",
+      "serviceFeatureUnavailableReasons": null
+    },
+    {
+      "serviceFeatureName": "SEND_MONEY",
+      "serviceFeatureStatus": "AVAILABLE",
+      "serviceFeatureUnavailableReasons": null
+    }
+]

@@ -1,0 +1,1152 @@
+[
+    {
+        "loadLocationId": "1029",
+        "loadLocationName": "Hassan Abdul Latif Grocery",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "12 Street 58, Gold Souk",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 723,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.297155,
+            "latitude": 25.270453
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1032",
+        "loadLocationName": "Khalid Baniyas Trading",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "32b Street 39, Al Daghaya",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 777,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.303074,
+            "latitude": 25.273712
+        },
+        "loadProvider": "Dealer",
+        "loadLocationCategory": "RETAIL",
+        "status": null
+    },
+    {
+        "loadLocationId": "1696",
+        "loadLocationName": "White House Traders",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "Deira",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 803,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.302255,
+            "latitude": 25.272186
+        },
+        "loadProvider": "Dealer",
+        "loadLocationCategory": "DEALER",
+        "status": null
+    },
+    {
+        "loadLocationId": "1223",
+        "loadLocationName": "Golden Hair",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "12b Street 26, Naif, Deira",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 805,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.300602,
+            "latitude": 25.270857
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1030",
+        "loadLocationName": "New Grand Mart General Trading",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "New Grand Mart, 107 Street, Al Buteen, Deira",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 830,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.300667,
+            "latitude": 25.270619
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1038",
+        "loadLocationName": "Que Tee Swaiket Trading",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "2a Street 5, Al Buteen, Deira",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 844,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.297709,
+            "latitude": 25.269436
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1027",
+        "loadLocationName": "Zaharat Al Madaen Hotel",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "29a Street 9, Al Buteen",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 861,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.300167,
+            "latitude": 25.270034
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1046",
+        "loadLocationName": "Ozair Mubarak Roastery",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "11a Street 17, Ayal Nasir",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 942,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.304665,
+            "latitude": 25.273276
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1723",
+        "loadLocationName": "Al Saedi Restaurant",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "18 Street 41, Ayal Nasir, Deira",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 966,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.305207,
+            "latitude": 25.273887
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1022",
+        "loadLocationName": "Al Wahaj Star Trading",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "Sabkha Street, Naid, Deira",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 996,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.302667,
+            "latitude": 25.270112
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1025",
+        "loadLocationName": "Ali Askari Gerashi General Trading",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "Sabkha Street, Al Sabkha, Deira",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 996,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.302847,
+            "latitude": 25.270264
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1024",
+        "loadLocationName": "Sweets Center",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "Sabkha Street, Al Sabkha, Deira",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 1008,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.303172,
+            "latitude": 25.270382
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1208",
+        "loadLocationName": "Zargai Muhammad Natural Herbs",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "8a Street 8, Naif, Deira",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 1057,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.304301,
+            "latitude": 25.270839
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1585",
+        "loadLocationName": "Shalimar Restaurant",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "8a Street 4, Naif, Deira",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 1058,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.304049,
+            "latitude": 25.270558
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1184",
+        "loadLocationName": "Faaz Supermarket (Deira)",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "2 Street, Al Murar, Deira",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 1098,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.30709,
+            "latitude": 25.277586
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1101",
+        "loadLocationName": "Lina International Trading",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "20 Street 46, Ayal Nasir, Deira",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 1101,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.306576,
+            "latitude": 25.273731
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1551",
+        "loadLocationName": "Wonder Trading",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "20a Street, Naif, Deira",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 1107,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.304548,
+            "latitude": 25.270415
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1472",
+        "loadLocationName": "Al Noobi Bin Yousuf Grocery",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "Al Ras Road 11, Al Ras, Deira",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 1138,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.294712,
+            "latitude": 25.266759
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1066",
+        "loadLocationName": "Shaker New Cafeteria",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "Baniyas Road/ D85, Al Ras Deira, Dubai",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 1169,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.295843,
+            "latitude": 25.26639
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1199",
+        "loadLocationName": "Al Suwais Supermarket",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "20 street 20, Al Murar, Deira, Dubai",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 1193,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.307905,
+            "latitude": 25.27514
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1211",
+        "loadLocationName": "Sharq Al Marfa Restaurant",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "103 Street /D85, Al Corniche, Deira",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 1205,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.306834,
+            "latitude": 25.281902
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1492",
+        "loadLocationName": "Tayyiba Grocery",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "Abdulla",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 1207,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.307682,
+            "latitude": 25.273733
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1198",
+        "loadLocationName": "Al Moftah Al Ajeeb Key",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "20b Street 17, Naif, Deira",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 1221,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.306462,
+            "latitude": 25.271022
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1446",
+        "loadLocationName": "Faaz Supermarket (Al Murar)",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "UAE",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 1252,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.308655,
+            "latitude": 25.277026
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1743",
+        "loadLocationName": "Faaz Supermarket (Hor Al Anz)",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "Naif Road",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 1269,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.308823,
+            "latitude": 25.276998
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1242",
+        "loadLocationName": "Talal Supermarket (Deira 1)",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "20 Street 27, Al Murar, Deira",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 1293,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.308995,
+            "latitude": 25.275764
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1236",
+        "loadLocationName": "Talal Supermarket (Deira 2) (Mosque)",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "24 Street 30, Al Murar, Deira",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 1302,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.309019,
+            "latitude": 25.275238
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1461",
+        "loadLocationName": "Marshida Internet Services",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "6 Street 53, Al Murar, Deira",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 1320,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.309257,
+            "latitude": 25.27817
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1120",
+        "loadLocationName": "Al Telal Al Hamraa Supermarket (Deira)",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "25 Street 8, Naif, Deira",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 1347,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.309107,
+            "latitude": 25.273649
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1193",
+        "loadLocationName": "Rouchi Grocery",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "17b Street 32, Naif, Deira",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 1357,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.308092,
+            "latitude": 25.271134
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1609",
+        "loadLocationName": "Janak Sharma Trading",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "54a Street 12, Al Souq Al Kabeer, Bur Dubai",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 1379,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.29675,
+            "latitude": 25.264507
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1574",
+        "loadLocationName": "Happy Land City Trading",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "Al Souk Al Kabeer Street, Al Rigga, Deira",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 1397,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.307159,
+            "latitude": 25.269177
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1499",
+        "loadLocationName": "MBME Pay Kiosk - Ministry of Finance Dubai",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "MBME Pay Kiosk - Ministry of Finance Dubai",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 1400,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.290833,
+            "latitude": 25.265278
+        },
+        "loadProvider": "MBME",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1158",
+        "loadLocationName": "Ibrahim Abdullah Ghanim Rest.",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "5b Street 30 Al Souq Al Kabeer Dubai",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 1427,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.295094,
+            "latitude": 25.264107
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1118",
+        "loadLocationName": "Foto Guide Trading",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "25 Street 19, Naif, Deira",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 1435,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.309674,
+            "latitude": 25.272635
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1554",
+        "loadLocationName": "Noor Al Hayat Supermarket",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "11b Street, Jebel Ali Ind.",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 1447,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.308314,
+            "latitude": 25.269882
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1544",
+        "loadLocationName": "Auto Korea Motors",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "38b Street 17, Naif, Deira",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 1454,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.308299,
+            "latitude": 25.269736
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1017",
+        "loadLocationName": "Malabar Supermarket (Nakheel)(Deira)",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "12b Street 24, Naif",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 1475,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.310239,
+            "latitude": 25.273049
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1197",
+        "loadLocationName": "Al Jamea Tailor",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "13c Street 44, Al Souq Al Kabeer, Bur Dubai",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 1535,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.293431,
+            "latitude": 25.263325
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1217",
+        "loadLocationName": "Abdulla Mulla Ali Grocery",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "38b Street 8, Al Souq Al Kabeer, Bur Dubai",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 1535,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.294445,
+            "latitude": 25.263187
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1782",
+        "loadLocationName": "Sea Bird Supermarket",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "Al Fahidi Street 58, Al Souq Al Kabeer",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 1550,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.298364,
+            "latitude": 25.263097
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1105",
+        "loadLocationName": "Ambarat Al Madina Supermarket",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "13c Street 35, Al Souq Al Kabeer, Bur Dubai",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 1575,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.292193,
+            "latitude": 25.263205
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1681",
+        "loadLocationName": "Shah Kottarath Grocery (BR)",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "21C Street 50, Al Souq Al Kabeer, Bur Dubai",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 1577,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.29369,
+            "latitude": 25.262897
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1045",
+        "loadLocationName": "Al Baraka Trading",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "74 Street 2, Al Souq Al Kabeer, Bur Dubai",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 1606,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.298454,
+            "latitude": 25.262601
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1234",
+        "loadLocationName": "Malabar Supermarket (Deira)",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "45 Street 1, Al Murar, Deira",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 1608,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.312095,
+            "latitude": 25.278483
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1606",
+        "loadLocationName": "Gaded Rafaa Gen.Trading L.L.C",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "Al Raffa Street 1, Al Souq Al Kabeer, Bur Dubai",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 1629,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.289941,
+            "latitude": 25.263392
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1537",
+        "loadLocationName": "Talal Supermarket (Yousuf Baker Road)",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "29c Street 71, Naif, Deira",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 1635,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.31139,
+            "latitude": 25.271655
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1626",
+        "loadLocationName": "Al Bateen Restaurant & Cafeteria (Br.)",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "Naif Road/D82 240, Al Murar, Deira",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 1640,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.312461,
+            "latitude": 25.275758
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1061",
+        "loadLocationName": "Shah Kottarath Grocery(Branch)(Hilou)",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "22 Street 5, Al Souq Al Kabeer, Bur Dubai",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 1770,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.291195,
+            "latitude": 25.261637
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    },
+    {
+        "loadLocationId": "1225",
+        "loadLocationName": "Bayt Madina Grocery",
+        "loadLocationPhoneNumber": null,
+        "loadLocationAddress": {
+            "addressLine1": "33c Street 31, Al Souq Al Kabeer, Bur Dubai",
+            "addressLine2": null,
+            "addressLine3": null,
+            "city": "Dubai",
+            "country": null,
+            "postcode": null,
+            "state": null
+        },
+        "loadLocationDistance": 1826,
+        "loadLocationExpiration": null,
+        "loadLocation": {
+            "longitude": 55.298129,
+            "latitude": 25.26057
+        },
+        "loadProvider": "uPay",
+        "loadLocationCategory": "KIOSK",
+        "status": null
+    }
+]

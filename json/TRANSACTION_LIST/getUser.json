@@ -1,0 +1,20 @@
+{
+    "userId": "c323293d-ffb8-53e4-6a02-549733de244b",
+    "phoneNumberVerified": true,
+    "acceptedTermsAndConditions__createdTimestamp": null,
+    "createdAt": "2022-10-28T05:12:01.784Z",
+    "status": "TnC_ACCEPTED",
+    "loyaltyStatus": null,
+    "phoneNumber": "+971545269990",
+    "locale": "en",
+    "assignedOperatingCountry": "AE",
+    "firstName": "mock_TERESIAH NJERI",
+    "lastName": "mock_KIRIETHE",
+    "nickname": "",
+    "dateOfBirth": "1990-08-20T00:00:00.000Z",
+    "nationality": "KEN",
+    "emailAddress": "c323293d-ffb8-53e4-6a02-549733de244b@dev.pyypl.io",
+    "userExternalSupportChatCustomerId": null,
+    "emailAddressVerified": null,
+    "countryCode": "AE"
+  }

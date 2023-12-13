@@ -1,0 +1,92 @@
+[
+  {
+    "serviceFeatureName": "LOAD_MONEY",
+    "serviceFeatureStatus": "AVAILABLE",
+    "serviceFeatureUnavailableReasons": null
+  },
+  {
+    "serviceFeatureName": "SEND_MONEY",
+    "serviceFeatureStatus": "AVAILABLE",
+    "serviceFeatureUnavailableReasons": null
+  },
+  {
+    "serviceFeatureName": "INVITE_FRIEND",
+    "serviceFeatureStatus": "AVAILABLE",
+    "serviceFeatureUnavailableReasons": null
+  },
+  {
+    "serviceFeatureName": "REWARDS",
+    "serviceFeatureStatus": "UNAVAILABLE",
+    "serviceFeatureUnavailableReasons": [
+      {
+        "serviceFeatureUnavailableReasonCategory": null,
+        "serviceFeatureUnavailableReasonName": null
+      }
+    ]
+  },
+  {
+    "serviceFeatureName": "CARD_SERVICE",
+    "serviceFeatureStatus": "AVAILABLE",
+    "serviceFeatureUnavailableReasons": null
+  },
+  {
+    "serviceFeatureName": "VIRTUAL_CARD_REQUEST",
+    "serviceFeatureStatus": "AVAILABLE",
+    "serviceFeatureUnavailableReasons": null
+  },
+  {
+    "serviceFeatureName": "PHYSICAL_CARD_REQUEST",
+    "serviceFeatureStatus": "AVAILABLE",
+    "serviceFeatureUnavailableReasons": null
+  },
+  {
+    "serviceFeatureName": "PAYME",
+    "serviceFeatureStatus": "UNAVAILABLE",
+    "serviceFeatureUnavailableReasons": [
+      {
+        "serviceFeatureUnavailableReasonCategory": "OPERATIONAL",
+        "serviceFeatureUnavailableReasonName": "MAINTENANCE"
+      }
+    ]
+  },
+  {
+    "serviceFeatureName": "PHYSICAL_CARD_ACTIVATE",
+    "serviceFeatureStatus": "AVAILABLE",
+    "serviceFeatureUnavailableReasons": null
+  },
+  {
+    "serviceFeatureName": "DEALER_NETWORK",
+    "serviceFeatureStatus": "AVAILABLE",
+    "serviceFeatureUnavailableReasons": null
+  },
+  {
+    "serviceFeatureName": "MASTER_DEALER_NETWORK",
+    "serviceFeatureStatus": "AVAILABLE",
+    "serviceFeatureUnavailableReasons": null
+  },
+  {
+    "serviceFeatureName": "DEBENTURE_BONDS",
+    "serviceFeatureStatus": "AVAILABLE",
+    "serviceFeatureUnavailableReasons": null
+  },
+  {
+    "serviceFeatureName": "DEBENTURE_INVESTMENT",
+    "serviceFeatureStatus": "AVAILABLE",
+    "serviceFeatureUnavailableReasons": null
+  },
+  {
+    "serviceFeatureName": "BASE_KYC",
+    "serviceFeatureStatus": "AVAILABLE",
+    "serviceFeatureUnavailableReasons": null
+  },
+  {
+    "serviceFeatureName": "MULTI_CURRENCY_WALLET",
+    "serviceFeatureStatus": "UNAVAILABLE",
+    "serviceFeatureUnavailableReasons": [
+      {
+        "serviceFeatureUnavailableReasonCategory": null,
+        "serviceFeatureUnavailableReasonName": null
+      }
+    ]
+  }
+]

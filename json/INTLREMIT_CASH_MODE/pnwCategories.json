@@ -1,0 +1,25 @@
+[
+    {
+        "pnwCategoryName": "PYYPL_TO_PYYPL",
+        "status": "ACTIVE",
+        "pnwSubCategories": []
+    },
+    {
+        "pnwCategoryName": "INTERNATIONAL_TRANSFER",
+        "status": "ACTIVE",
+        "pnwSubCategories": [
+            {
+                "pnwSubCategoryName": "INTERNATIONAL_BANK_TRANSFER",
+                "status": "ACTIVE"
+            },
+            {
+                "pnwSubCategoryName": "INTERNATIONAL_MOBILE_WALLET",
+                "status": "INACTIVE"
+            },
+            {
+                "pnwSubCategoryName": "INTERNATIONAL_CASH_PAYOUT",
+                "status": "ACTIVE"
+            }
+        ]
+    }
+]

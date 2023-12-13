@@ -1,0 +1,76 @@
+{
+    "data": [
+        {
+            "accountId": "2dfe4f8f-3d33-4a03-b5cc-813ac0692f99",
+            "defaultCurrency": "AED",
+            "cardId": null,
+            "balances": {
+                "data": [
+                    {
+                        "amount": 85000,
+                        "currency": "AED"
+                    }
+                ]
+            },
+            "balanceLimits": [
+                {
+                    "min": 0,
+                    "max": 500000,
+                    "type": "MANUAL",
+                    "currency": "AED"
+                }
+            ],
+            "name": "default",
+            "type": "Prepaid",
+            "state": "new"
+        },
+        {
+            "accountId": "444bbfe9-423a-4d7f-9e97-2ecf6c87772e",
+            "defaultCurrency": "AED",
+            "cardId": null,
+            "balances": {
+                "data": [
+                    {
+                        "amount": 0,
+                        "currency": "AED"
+                    }
+                ]
+            },
+            "balanceLimits": [
+                {
+                    "min": 0,
+                    "max": 500000,
+                    "type": "DYNAMIC",
+                    "currency": "AED"
+                }
+            ],
+            "name": "escrow",
+            "type": "Prepaid",
+            "state": "new"
+        },
+        {
+            "accountId": "82a96031-1b37-4f19-bee3-63a390989dcd",
+            "defaultCurrency": "AED",
+            "cardId": null,
+            "balances": {
+                "data": [
+                    {
+                        "amount": 0,
+                        "currency": "AED"
+                    }
+                ]
+            },
+            "balanceLimits": [
+                {
+                    "min": 0,
+                    "max": 500000,
+                    "type": "DYNAMIC",
+                    "currency": "AED"
+                }
+            ],
+            "name": "reward",
+            "type": "Prepaid",
+            "state": "new"
+        }
+    ]
+}

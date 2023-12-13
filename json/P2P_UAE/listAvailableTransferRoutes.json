@@ -1,0 +1,38 @@
+[
+    {
+        "transferId": "e975f6ca-c108-4307-b85d-35eb87885f3b",
+        "transferRouteId": "PYYPL#7e76bf11-e0f5-421f-adf2-33aaf7d310ac",
+        "transferRouteTargetCurrency": "AED",
+        "transferRoutePurchaseCurrency": "AED",
+        "transferRouteMinAmount": "2000",
+        "transferRouteMaxAmount": "374472",
+        "transferRouteDestinationCountry": "AE",
+        "transferRouteDescription": "The money will be instantly credited on their Pyypl card.",
+        "transferRoutePayoutMethodId": null,
+        "transferRoutePayoutMethodType": "PYYPL",
+        "transferRouteDailyAllowedLimit": null,
+        "transferRouteTransactionAllowedLimit": null,
+        "transferRouteTargetAccountId": "7e76bf11-e0f5-421f-adf2-33aaf7d310ac",
+        "transferRouteEstimatedDuration": null,
+        "transferRoutePnwProcessorPaymentMethodQuoteId": null,
+        "transferRouteTargetUser": {
+            "firstName": "Nandhini",
+            "lastName": "Elancheran",
+            "phoneNumber": null
+        },
+        "transferRouteFees": [
+            {
+                "amount": 0,
+                "currency": "AED"
+            },
+            {
+                "amount": 200,
+                "currency": "AED"
+            }
+        ],
+        "transferRoutePayoutTargets": null,
+        "transferRouteFXRate": null,
+        "transferRouteRequiredUserInformation": null,
+        "transferRouteFixedAmounts": null
+    }
+]

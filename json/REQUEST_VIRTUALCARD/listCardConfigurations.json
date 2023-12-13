@@ -1,0 +1,18 @@
+[
+    {
+        "cardType": "VIRTUAL",
+        "cardIssuer": "M2P",
+        "freeCardsLimit": 1,
+        "paidCardsLimit": 1,
+        "freeCardsRemaining": 0,
+        "paidCardsRemaining": 1
+    },
+    {
+        "cardType": "PHYSICAL",
+        "cardIssuer": "PCKT",
+        "freeCardsLimit": null,
+        "paidCardsLimit": null,
+        "freeCardsRemaining": 0,
+        "paidCardsRemaining": 0
+    }
+]

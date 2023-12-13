@@ -1,0 +1,18 @@
+{
+    "count": 0,
+    "data": {
+        "invitees": [
+            {
+                "bonusId": "ID",
+                "bonusType": "bonusType",
+                "paidAmount": 1000,
+                "payoutCurrency": "AED",
+                "bonusExpiresAt": "2023-12-10T06:17:03.788Z",
+                "bonusStatus": "ACTIVE",
+                "createdAt": "2023-05-10T06:17:03.788Z",
+                "updatedAt": "2023-05-10T06:17:03.788Z"
+            }
+        ],
+        "totalPaidBonusSum": 1000
+    }
+}

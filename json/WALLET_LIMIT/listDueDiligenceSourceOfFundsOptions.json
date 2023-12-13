@@ -1,0 +1,676 @@
+{
+    "turnoverRanges": [
+        {
+            "level": 1,
+            "max": 250000,
+            "min": 0
+        },
+        {
+            "level": 2,
+            "max": 500000,
+            "min": 250100
+        },
+        {
+            "level": 3,
+            "max": 1000000,
+            "min": 500100
+        },
+        {
+            "level": 4,
+            "max": 1500000,
+            "min": 1000100
+        },
+        {
+            "level": 5,
+            "max": null,
+            "min": 1500000
+        }
+    ],
+    "incomeRanges": [
+        {
+            "level": 1,
+            "max": 250000,
+            "min": 0
+        },
+        {
+            "level": 2,
+            "max": 500000,
+            "min": 250100
+        },
+        {
+            "level": 3,
+            "max": 1000000,
+            "min": 500100
+        },
+        {
+            "level": 4,
+            "max": 1500000,
+            "min": 1000100
+        },
+        {
+            "level": 5,
+            "max": null,
+            "min": 1500000
+        }
+    ],
+    "professions": [
+        {
+            "name": "EMPLOYEE",
+            "riskScore": 1,
+            "description": "Employee",
+            "hasSector": true
+        },
+        {
+            "name": "EXECUTIVE_CEO_CFO_COO",
+            "riskScore": 2,
+            "description": "Executive/CEO/CFO/COO",
+            "hasSector": true
+        },
+        {
+            "name": "STATE_OR_MUNICIPAL_OFFICIAL",
+            "riskScore": 3,
+            "description": "State or Municipal Official",
+            "hasSector": true
+        },
+        {
+            "name": "ENTREPRENEUR",
+            "riskScore": 2,
+            "description": "Entrepreneur",
+            "hasSector": true
+        },
+        {
+            "name": "REGISTERED_SELF_EMPLOYMENT_CONSULTANT",
+            "riskScore": 2,
+            "description": "Registered Self Employment, Consultant",
+            "hasSector": true
+        },
+        {
+            "name": "STUDENT",
+            "riskScore": 3,
+            "description": "Student",
+            "hasSector": false
+        },
+        {
+            "name": "RETIRED",
+            "riskScore": 3,
+            "description": "Retired",
+            "hasSector": false
+        },
+        {
+            "name": "UNEMPLOYED_HOUSEWIFE",
+            "riskScore": 3,
+            "description": "Unemployed, Housewife",
+            "hasSector": false
+        }
+    ],
+    "sectors": [
+        {
+            "name": "ACCOMMODATION_AND_FOOD_SERVICE_ACTIVITIES",
+            "description": "Accommodation and food service activities",
+            "subSectors": [
+                {
+                    "name": "ACCOMMODATION_HOTELS_HOLIDAY_SHORT_STAYS",
+                    "description": "Accommodation - Hotels, Holiday, short stays"
+                },
+                {
+                    "name": "FOOD_AND_BEVERAGE_SERVICE_ACTIVITIES",
+                    "description": "Food and beverage service activities"
+                }
+            ]
+        },
+        {
+            "name": "ACTIVITIES_OF_EXTRATERRITORIAL_ORGANISATIONS_AND_BODIES",
+            "description": "Activities of extraterritorial organisations and bodies",
+            "subSectors": [
+                {
+                    "name": "ACTIVITIES_OF_EXTRATERRITORIAL_ORGANISATIONS_AND_BODIES",
+                    "description": "Activities of extraterritorial organizations and bodies"
+                }
+            ]
+        },
+        {
+            "name": "ACTIVITIES_OF_HOUSEHOLDS_AS_EMPLOYERS_UNDIFFERENTIATED_GOODS_AND_SERVICES_PRODUCING_ACTIVITIES_OF_HOUSEHOLDS_FOR_OWN_USE",
+            "description": "Activities of households as employers; undifferentiated goods- and services-producing activities of households for own use",
+            "subSectors": [
+                {
+                    "name": "ACTIVITIES_OF_HOUSEHOLDS_AS_EMPLOYERS_OF_DOMESTIC_PERSONNEL",
+                    "description": "Activities of households as employers of domestic personnel"
+                },
+                {
+                    "name": "UNDIFFERENTIATED_GOODS_AND_SERVICES_PRODUCING_ACTIVITIES_OF_PRIVATE_HOUSEHOLDS_FOR_OWN_USE",
+                    "description": "Undifferentiated goods- and services-producing activities of private households for own use"
+                }
+            ]
+        },
+        {
+            "name": "ADMINISTRATIVE_AND_SUPPORT_SERVICE_ACTIVITIES",
+            "description": "Administrative and support service activities",
+            "subSectors": [
+                {
+                    "name": "EMPLOYMENT_ACTIVITIES",
+                    "description": "Employment activities"
+                },
+                {
+                    "name": "OFFICE_ADMINISTRATIVE_OFFICE_SUPPORT_AND_OTHER_BUSINESS_SUPPORT_ACTIVITIES",
+                    "description": "Office administrative, office support and other business support activities"
+                },
+                {
+                    "name": "RENTAL_AND_LEASING_ACTIVITIES",
+                    "description": "Rental and leasing activities"
+                },
+                {
+                    "name": "SECURITY_AND_INVESTIGATION_ACTIVITIES",
+                    "description": "Security and investigation activities"
+                },
+                {
+                    "name": "SERVICES_TO_BUILDINGS_AND_LANDSCAPE_ACTIVITIES",
+                    "description": "Services to buildings and landscape activities"
+                },
+                {
+                    "name": "TRAVEL_AGENCY_TOUR_OPERATOR_AND_OTHER_RESERVATION_SERVICE_AND_RELATED_ACTIVITIES",
+                    "description": "Travel agency, tour operator and other reservation service and related activities"
+                }
+            ]
+        },
+        {
+            "name": "AGRICULTURE_FORESTRY_AND_FISHING",
+            "description": "Agriculture, Forestry and Fishing",
+            "subSectors": [
+                {
+                    "name": "ANIMAL_PRODUCTION",
+                    "description": "Animal production"
+                },
+                {
+                    "name": "FISHING_AND_AQUACULTURE",
+                    "description": "Fishing and aquaculture"
+                },
+                {
+                    "name": "FORESTRY_AND_LOGGING",
+                    "description": "Forestry and logging"
+                },
+                {
+                    "name": "GROWING_OF_NON_PERENNIAL_CROPS",
+                    "description": "Growing of non-perennial crops"
+                },
+                {
+                    "name": "GROWING_OF_PERENNIAL_CROPS",
+                    "description": "Growing of perennial crops"
+                },
+                {
+                    "name": "HUNTING_TRAPPING_AND_RELATED_SERVICE_ACTIVITIES",
+                    "description": "Hunting, trapping and related service activities"
+                },
+                {
+                    "name": "MIXED_FARMING",
+                    "description": "Mixed farming"
+                },
+                {
+                    "name": "PLANT_PROPAGATION",
+                    "description": "Plant propagation"
+                },
+                {
+                    "name": "SUPPORT_ACTIVITIES_TO_AGRICULTURE_AND_POST_HARVEST_CROP_ACTIVITIES",
+                    "description": "Support activities to agriculture and post-harvest crop activities"
+                }
+            ]
+        },
+        {
+            "name": "ARTS_ENTERTAINMENT_AND_RECREATION",
+            "description": "Arts, entertainment and recreation",
+            "subSectors": [
+                {
+                    "name": "CREATIVE_ARTS_AND_ENTERTAINMENT_ACTIVITIES",
+                    "description": "Creative, arts and entertainment activities"
+                },
+                {
+                    "name": "GAMBLING_AND_BETTING_ACTIVITIES",
+                    "description": "Gambling and betting activities"
+                },
+                {
+                    "name": "LIBRARIES_ARCHIVES_MUSEUMS_AND_OTHER_CULTURAL_ACTIVITIES",
+                    "description": "Libraries, archives, museums and other cultural activities"
+                },
+                {
+                    "name": "SPORTS_ACTIVITIES_AND_AMUSEMENT_AND_RECREATION_ACTIVITIES",
+                    "description": "Sports activities and amusement and recreation activities"
+                }
+            ]
+        },
+        {
+            "name": "CONSTRUCTION",
+            "description": "Construction",
+            "subSectors": [
+                {
+                    "name": "CIVIL_ENGINEERING",
+                    "description": "Civil engineering"
+                },
+                {
+                    "name": "CONSTRUCTION_OF_BUILDINGS",
+                    "description": "Construction of buildings"
+                },
+                {
+                    "name": "SPECIALIZED_CONSTRUCTION_ACTIVITIES",
+                    "description": "Specialized construction activities"
+                }
+            ]
+        },
+        {
+            "name": "EDUCATION",
+            "description": "Education",
+            "subSectors": [
+                {
+                    "name": "ACADEMIC_EDUCATION",
+                    "description": "Academic Education"
+                },
+                {
+                    "name": "EDUCATIONAL_SUPPORT_ACTIVITIES_ADVISORY_CONSULTANT",
+                    "description": "Educational support activities - Advisory, Consultant"
+                },
+                {
+                    "name": "OTHER_EDUCATION_SPORTS_CULTURAL_DRIVING_SCHOOL",
+                    "description": "Other Education- Sports, Cultural, Driving School"
+                }
+            ]
+        },
+        {
+            "name": "ELECTRICITY_GAS_STEAM_AND_AIR_CONDITIONING_SUPPLY",
+            "description": "Electricity, gas, steam and air conditioning supply",
+            "subSectors": [
+                {
+                    "name": "ELECTRIC_POWER_GENERATION_TRANSMISSION_AND_DISTRIBUTION",
+                    "description": "Electric power generation, transmission and distribution"
+                },
+                {
+                    "name": "MANUFACTURE_OF_GAS_DISTRIBUTION_OF_GASEOUS_FUELS_THROUGH_MAINS",
+                    "description": "Manufacture of gas; distribution of gaseous fuels through mains"
+                },
+                {
+                    "name": "STEAM_AND_AIR_CONDITIONING_SUPPLY",
+                    "description": "Steam and air conditioning supply"
+                }
+            ]
+        },
+        {
+            "name": "FINANCIAL_AND_INSURANCE_ACTIVITIES",
+            "description": "Financial and insurance activities",
+            "subSectors": [
+                {
+                    "name": "ACTIVITIES_AUXILIARY_TO_FINANCIAL_SERVICES_AND_INSURANCE_ACTIVITIES",
+                    "description": "Activities auxiliary to financial services and insurance activities"
+                },
+                {
+                    "name": "FINANCIAL_SERVICE_ACTIVITIES_EXCEPT_INSURANCE_AND_PENSION_FUNDING",
+                    "description": "Financial service activities, except insurance and pension funding"
+                },
+                {
+                    "name": "INSURANCE_REINSURANCE_AND_PENSION_FUNDING_EXCEPT_COMPULSORY_SOCIAL_SECURITY",
+                    "description": "Insurance, reinsurance and pension funding, except compulsory social security"
+                }
+            ]
+        },
+        {
+            "name": "HUMAN_HEALTH_AND_SOCIAL_WORK_ACTIVITIES",
+            "description": "Human health and social work activities",
+            "subSectors": [
+                {
+                    "name": "HUMAN_HEALTH_ACTIVITIES",
+                    "description": "Human health activities"
+                },
+                {
+                    "name": "RESIDENTIAL_CARE_ACTIVITIES",
+                    "description": "Residential care activities"
+                },
+                {
+                    "name": "SOCIAL_WORK_ACTIVITIES_WITHOUT_ACCOMMODATION",
+                    "description": "Social work activities without accommodation"
+                }
+            ]
+        },
+        {
+            "name": "INFORMATION_AND_COMMUNICATION",
+            "description": "Information and communication",
+            "subSectors": [
+                {
+                    "name": "COMPUTER_PROGRAMMING_CONSULTANCY_AND_RELATED_ACTIVITIES",
+                    "description": "Computer programming, consultancy and related activities"
+                },
+                {
+                    "name": "INFORMATION_SERVICE_ACTIVITIES",
+                    "description": "Information service activities"
+                },
+                {
+                    "name": "MOTION_PICTURE_VIDEO_AND_TELEVISION_PROGRAMME_PRODUCTION_SOUND_RECORDING_AND_MUSIC_PUBLISHING_ACTIVITIES",
+                    "description": "Motion picture, video and television programme production, sound recording and music publishing activities"
+                },
+                {
+                    "name": "PROGRAMMING_AND_BROADCASTING_ACTIVITIES",
+                    "description": "Programming and broadcasting activities"
+                },
+                {
+                    "name": "PUBLISHING_ACTIVITIES",
+                    "description": "Publishing activities"
+                },
+                {
+                    "name": "TELECOMMUNICATIONS",
+                    "description": "Telecommunications"
+                }
+            ]
+        },
+        {
+            "name": "MANUFACTURING",
+            "description": "Manufacturing",
+            "subSectors": [
+                {
+                    "name": "MANUFACTURE_OF_BASIC_PHARMACEUTICAL_PRODUCTS_AND_PHARMACEUTICAL_PREPARATIONS",
+                    "description": "Manufacture of basic pharmaceutical products and pharmaceutical preparations"
+                },
+                {
+                    "name": "MANUFACTURE_OF_BEVERAGES",
+                    "description": "Manufacture of beverages"
+                },
+                {
+                    "name": "MANUFACTURE_OF_CHEMICALS_AND_CHEMICAL_PRODUCTS",
+                    "description": "Manufacture of chemicals and chemical products"
+                },
+                {
+                    "name": "MANUFACTURE_OF_COKE_AND_REFINED_PETROLEUM_PRODUCTS",
+                    "description": "Manufacture of coke and refined petroleum products"
+                },
+                {
+                    "name": "MANUFACTURE_OF_COMPUTER_ELECTRONIC_AND_OPTICAL_PRODUCTS",
+                    "description": "Manufacture of computer, electronic and optical products"
+                },
+                {
+                    "name": "MANUFACTURE_OF_FABRICATED_METAL_PRODUCTS_EXCEPT_MACHINERY_AND_EQUIPMENT",
+                    "description": "Manufacture of fabricated metal products, except machinery and equipment"
+                },
+                {
+                    "name": "MANUFACTURE_OF_FOOD_PRODUCTS",
+                    "description": "Manufacture of food products"
+                },
+                {
+                    "name": "MANUFACTURE_OF_FURNITURE",
+                    "description": "Manufacture of furniture"
+                },
+                {
+                    "name": "MANUFACTURE_OF_LEATHER_AND_RELATED_PRODUCTS",
+                    "description": "Manufacture of leather and related products"
+                },
+                {
+                    "name": "MANUFACTURE_OF_MACHINERY_AND_EQUIPMENT_N_E_C",
+                    "description": "Manufacture of machinery and equipment n.e.c."
+                },
+                {
+                    "name": "MANUFACTURE_OF_MOTOR_VEHICLES_TRAILERS_AND_SEMI_TRAILERS",
+                    "description": "Manufacture of motor vehicles, trailers and semi-trailers"
+                },
+                {
+                    "name": "MANUFACTURE_OF_OTHER_NON_METALLIC_MINERAL_PRODUCTS",
+                    "description": "Manufacture of other non-metallic mineral products"
+                },
+                {
+                    "name": "MANUFACTURE_OF_OTHER_TRANSPORT_EQUIPMENT",
+                    "description": "Manufacture of other transport equipment"
+                },
+                {
+                    "name": "MANUFACTURE_OF_PAPER_AND_PAPER_PRODUCTS",
+                    "description": "Manufacture of paper and paper products"
+                },
+                {
+                    "name": "MANUFACTURE_OF_RUBBER_AND_PLASTIC_PRODUCTS",
+                    "description": "Manufacture of rubber and plastic products"
+                },
+                {
+                    "name": "MANUFACTURE_OF_TEXTILES",
+                    "description": "Manufacture of textiles"
+                },
+                {
+                    "name": "MANUFACTURE_OF_TOBACCO_PRODUCTS",
+                    "description": "Manufacture of tobacco products"
+                },
+                {
+                    "name": "MANUFACTURE_OF_WEARING_APPAREL",
+                    "description": "Manufacture of wearing apparel"
+                },
+                {
+                    "name": "MANUFACTURE_OF_WOOD_AND_OF_PRODUCTS_OF_WOOD_AND_CORK_EXCEPT_FURNITURE_MANUFACTURE_OF_ARTICLES_OF_STRAW_AND_PLAITING_MATERIALS",
+                    "description": "Manufacture of wood and of products of wood and cork, except furniture; manufacture of articles of straw and plaiting materials"
+                },
+                {
+                    "name": "OTHER_MANUFACTURING_JEWELRY_SPORTS_MUSICAL_INSTRUMENTS",
+                    "description": "Other manufacturing - Jewelry, sports, musical instruments"
+                },
+                {
+                    "name": "PRINTING_AND_REPRODUCTION_OF_RECORDED_MEDIA",
+                    "description": "Printing and reproduction of recorded media"
+                },
+                {
+                    "name": "REPAIR_AND_INSTALLATION_OF_MACHINERY_AND_EQUIPMENT",
+                    "description": "Repair and installation of machinery and equipment"
+                }
+            ]
+        },
+        {
+            "name": "MINING_AND_QUARRYING",
+            "description": "Mining and Quarrying",
+            "subSectors": [
+                {
+                    "name": "EXTRACTION_OF_CRUDE_PETROLEUM_AND_NATURAL_GAS",
+                    "description": "Extraction of crude petroleum and natural gas"
+                },
+                {
+                    "name": "MINING_AND_QUARRYING_NEC",
+                    "description": "Mining and quarrying n.e.c."
+                },
+                {
+                    "name": "MINING_OF_COAL_AND_LIGNITE",
+                    "description": "Mining of coal and lignite"
+                },
+                {
+                    "name": "MINING_OF_METAL_ORES",
+                    "description": "Mining of metal ores"
+                },
+                {
+                    "name": "MINING_SUPPORT_SERVICE_ACTIVITIES",
+                    "description": "Mining support service activities"
+                }
+            ]
+        },
+        {
+            "name": "OTHER_SERVICE_ACTIVITIES",
+            "description": "Other service activities",
+            "subSectors": [
+                {
+                    "name": "ACTIVITIES_OF_MEMBERSHIP_ORGANIZATIONS",
+                    "description": "Activities of membership organisations"
+                },
+                {
+                    "name": "OTHER_PERSONAL_SERVICE_ACTIVITIES_LAUNDRY_SALOON",
+                    "description": "Other personal service activities - Laundry, Saloon"
+                },
+                {
+                    "name": "REPAIR_OF_COMPUTERS_AND_PERSONAL_AND_HOUSEHOLD_GOODS",
+                    "description": "Repair of computers and personal and household goods"
+                },
+                {
+                    "name": "REPAIR_OF_WATCHES_CLOCKS_AND_JEWELRY",
+                    "description": "Repair of watches, clocks and jewelry"
+                }
+            ]
+        },
+        {
+            "name": "PROFESSIONAL_SCIENTIFIC_AND_TECHNICAL_ACTIVITIES",
+            "description": "Professional, scientific and technical activities",
+            "subSectors": [
+                {
+                    "name": "ACTIVITIES_OF_HEAD_OFFICES_MANAGEMENT_CONSULTANCY_ACTIVITIES",
+                    "description": "Activities of head offices; management consultancy activities"
+                },
+                {
+                    "name": "ADVERTISING_AND_MARKET_RESEARCH",
+                    "description": "Advertising and market research"
+                },
+                {
+                    "name": "ARCHITECTURAL_AND_ENGINEERING_ACTIVITIES_TECHNICAL_TESTING_AND_ANALYSIS",
+                    "description": "Architectural and engineering activities; technical testing and analysis"
+                },
+                {
+                    "name": "LEGAL_AND_ACCOUNTING_ACTIVITIES",
+                    "description": "Legal and accounting activities"
+                },
+                {
+                    "name": "OTHER_PROFESSIONAL_SCIENTIFIC_AND_TECHNICAL_ACTIVITIES",
+                    "description": "Other professional, scientific and technical activities"
+                },
+                {
+                    "name": "SCIENTIFIC_RESEARCH_AND_DEVELOPMENT",
+                    "description": "Scientific research and development"
+                },
+                {
+                    "name": "VETERINARY_ACTIVITIES",
+                    "description": "Veterinary activities"
+                }
+            ]
+        },
+        {
+            "name": "PUBLIC_ADMINISTRATION_AND_DEFENCE_COMPULSORY_SOCIAL_SECURITY",
+            "description": "Public administration and defence; compulsory social security",
+            "subSectors": [
+                {
+                    "name": "ADMINISTRATION_OF_THE_STATE_AND_THE_ECONOMIC_AND_SOCIAL_POLICY_OF_THE_COMMUNITY",
+                    "description": "Administration of the State and the economic and social policy of the community"
+                },
+                {
+                    "name": "COMPULSORY_SOCIAL_SECURITY_ACTIVITIES",
+                    "description": "Compulsory social security activities"
+                },
+                {
+                    "name": "PROVISION_OF_SERVICES_TO_THE_COMMUNITY_AS_A_WHOLE",
+                    "description": "Provision of services to the community as a whole"
+                }
+            ]
+        },
+        {
+            "name": "REAL_ESTATE_ACTIVITIES",
+            "description": "Real estate activities",
+            "subSectors": [
+                {
+                    "name": "BUYING_AND_SELLING_OF_OWN_REAL_ESTATE",
+                    "description": "Buying and selling of own real estate"
+                },
+                {
+                    "name": "REAL_ESTATE_ACTIVITIES_ON_A_FEE_OR_CONTRACT_BASIS",
+                    "description": "Real estate activities on a fee or contract basis"
+                },
+                {
+                    "name": "RENTAL_AND_OPERATING_OF_OWN_OR_LEASED_REAL_ESTATE",
+                    "description": "Rental and operating of own or leased real estate"
+                }
+            ]
+        },
+        {
+            "name": "TRANSPORTATION_AND_STORAGE",
+            "description": "Transportation and storage",
+            "subSectors": [
+                {
+                    "name": "AIR_TRANSPORT",
+                    "description": "Air transport"
+                },
+                {
+                    "name": "LAND_TRANSPORT_AND_TRANSPORT_VIA_PIPELINES",
+                    "description": "Land transport and transport via pipelines"
+                },
+                {
+                    "name": "POSTAL_AND_COURIER_ACTIVITIES",
+                    "description": "Postal and courier activities"
+                },
+                {
+                    "name": "WAREHOUSING_AND_SUPPORT_ACTIVITIES_FOR_TRANSPORTATION",
+                    "description": "Warehousing and support activities for transportation"
+                },
+                {
+                    "name": "WATER_TRANSPORT",
+                    "description": "Water transport"
+                }
+            ]
+        },
+        {
+            "name": "WATER_SUPPLY_SEWERAGE_WASTE_MANAGEMENT_AND_REMEDIATION_ACTIVITIES",
+            "description": "Water supply; sewerage, waste management and remediation activities",
+            "subSectors": [
+                {
+                    "name": "REMEDIATION_ACTIVITIES_AND_OTHER_WASTE_MANAGEMENT_SERVICES",
+                    "description": "Remediation activities and other waste management services"
+                },
+                {
+                    "name": "SEWERAGE",
+                    "description": "Sewerage"
+                },
+                {
+                    "name": "WASTE_COLLECTION_TREATMENT_AND_DISPOSAL_ACTIVITIES_MATERIALS_RECOVERY",
+                    "description": "Waste collection, treatment and disposal activities; materials recovery"
+                },
+                {
+                    "name": "WATER_COLLECTION_TREATMENT_AND_SUPPLY",
+                    "description": "Water collection, treatment and supply"
+                }
+            ]
+        },
+        {
+            "name": "WHOLESALE_AND_RETAIL_TRADE_REPAIR_OF_MOTOR_VEHICLES_AND_MOTORCYCLES",
+            "description": "Wholesale and retail trade; repair of motor vehicles and motorcycles",
+            "subSectors": [
+                {
+                    "name": "RETAIL_AND_WHOLESALE_TRADE_OF_PRECIOUS_METAL_DIAMOND_JEWELRIES_PEARLS_STONES",
+                    "description": "Retail & Wholesale Trade of Precious Metal, Diamond, Jewelries, Pearls, Stones"
+                },
+                {
+                    "name": "RETAIL_TRADE_EXCEPT_OF_MOTOR_VEHICLES_AND_MOTORCYCLES",
+                    "description": "Retail trade, except of motor vehicles and motorcycles"
+                },
+                {
+                    "name": "WHOLESALE_AND_RETAIL_TRADE_AND_REPAIR_OF_MOTOR_VEHICLES_AND_MOTORCYCLES",
+                    "description": "Wholesale and retail trade and repair of motor vehicles and motorcycles"
+                },
+                {
+                    "name": "WHOLESALE_TRADE_EXCEPT_OF_MOTOR_VEHICLES_AND_MOTORCYCLES_AGRICULTURAL_PRODUCT_CHEMICAL_MACHINERIES_TEXTILE_LEATHER_PRODUCT_FOOD_BEVERAGES_HOUSE_HOLD_APPLIANCES",
+                    "description": "Wholesale trade, except of motor vehicles and motorcycles - Agricultural Product/Chemical, Machineries, Textile, Leather Product, Food, Beverages, House Hold Appliances"
+                }
+            ]
+        }
+    ],
+    "sourceOfFunds": [
+        {
+            "name": "EMPLOYMENT_INCOME_SALARY_ROYALTIES_REWARDS",
+            "description": "Employment income (Salary, royalties, rewards)"
+        },
+        {
+            "name": "SAVINGS",
+            "description": "Savings"
+        },
+        {
+            "name": "INVESTMENTS_STOCKS_FOREX",
+            "description": "Investments (stocks, forex)"
+        },
+        {
+            "name": "INCOME_FROM_REAL_ESTATE_SALE_RENTAL",
+            "description": "Income from real estate (sale, rental)"
+        },
+        {
+            "name": "FROM_COMPANY_OWNERSHIP_DIVIDENDS_SALE_OF_COMPANY",
+            "description": "From company ownership (dividends, sale of company)"
+        },
+        {
+            "name": "INHERITANCE_GIFTS",
+            "description": "Inheritance, gifts"
+        },
+        {
+            "name": "CRYPTO_OPERATIONS",
+            "description": "Crypto operations"
+        },
+        {
+            "name": "LOANS",
+            "description": "Loans"
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "enabled": false,
+    "transactionReportIssues": [
+        {
+            "transactionReportIssueName": "MANUAL_BANK_TRANSFER_ENQUIRY"
+        },
+        {
+            "transactionReportIssueName": "CHARGED_TWICE"
+        },
+        {
+            "transactionReportIssueName": "UNRECOGNISED_TRANSACTION"
+        },
+        {
+            "transactionReportIssueName": "OTHER"
+        }
+    ]
+}

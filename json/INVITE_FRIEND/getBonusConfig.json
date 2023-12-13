@@ -1,0 +1,8 @@
+{
+    "minLoadAmount": 2000,
+    "maxBonusAmount": 2500,
+    "fixedBonusAmount": 500,
+    "bonusPercentage": 1,
+    "bonusCurrency": "AED",
+    "bonusMaxDays": 30
+}

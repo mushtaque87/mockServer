@@ -1,0 +1,34 @@
+{
+  "name": "pyypl-mockserver",
+  "version": "2.20",
+  "private": true,
+  "scripts": {
+    "mockserver": "ts-node-dev --transpile-only --no-notify --exit-child src/server.ts",
+    "generate-schema": "ts-node --transpile-only mockServer/src/schema.ts"
+  },
+  "dependencies": {
+    "graphql": "16.6.0",
+    "graphql-ws": "5.11.2",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@apollo/server": "^4.7.5",
+    "@faker-js/faker": "^8.0.2",
+    "@types/http-errors": "^1.8.2",
+    "@types/node-fetch": "^2.6.4",
+    "detox": "20.12.0",
+    "fs": "^0.0.1-security",
+    "graphql-tools": "^9.0.0",
+    "ts-jest": "^29.1.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "4.8.4"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "lint-staged": {
+    "**/*.{js,ts,tsx}": [
+      "yarn format-prettier"
+    ]
+  }
+}

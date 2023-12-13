@@ -1,0 +1,35 @@
+{
+    "count": 1,
+    "data": [
+        {
+            "cardId": "7b8f5c62-1808-45e1-9207-a9b2f632f81a",
+            "accountId": "32263cfd-460d-189c-d52d-1ba78b037322",
+            "reason": null,
+            "cardType": "VIRTUAL",
+            "cardStatus": "ACTIVE",
+            "cardLast4": "2222",
+            "cardHeadDigits": null,
+            "cardTailDigits": "2642",
+            "cardExpiryDate": "2026-06-30T23:59:59.999Z",
+            "cardLabel": "Nandhini Elancheran",
+            "cardColor": "purpleDark",
+            "createdAt": "2023-06-07T04:50:56.866Z",
+            "updatedAt": "2023-06-07T04:50:56.866Z"
+        },
+        {
+            "cardId": "7b8f5c62-1808-45e1-9207-a9b2f632f81a",
+            "accountId": "32263cfd-460d-189c-d52d-1ba78b037322",
+            "reason": null,
+            "cardType": "VIRTUAL",
+            "cardStatus": "BLOCKED",
+            "cardLast4": "3232",
+            "cardHeadDigits": null,
+            "cardTailDigits": "2642",
+            "cardExpiryDate": "2026-06-30T23:59:59.999Z",
+            "cardLabel": "Nandhini Elancheran",
+            "cardColor": "purpleDark",
+            "createdAt": "2023-06-07T04:50:56.866Z",
+            "updatedAt": "2023-06-07T04:50:56.866Z"
+        }
+    ]
+}

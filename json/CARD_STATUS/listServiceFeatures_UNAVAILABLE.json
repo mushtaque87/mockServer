@@ -1,0 +1,112 @@
+[
+    {
+        "serviceFeatureName": "LOAD_MONEY",
+        "serviceFeatureStatus": "UNAVAILABLE",
+        "serviceFeatureUnavailableReasons": [
+            {
+                "serviceFeatureUnavailableReasonCategory": "KYC",
+                "serviceFeatureUnavailableReasonName": "GOVERNMENT_IDENTIFICATION_DOCUMENT#MISSING"
+            }
+        ]
+    },
+    {
+        "serviceFeatureName": "SEND_MONEY",
+        "serviceFeatureStatus": "UNAVAILABLE",
+        "serviceFeatureUnavailableReasons": [
+            {
+                "serviceFeatureUnavailableReasonCategory": "KYC",
+                "serviceFeatureUnavailableReasonName": "GOVERNMENT_IDENTIFICATION_DOCUMENT#MISSING"
+            }
+        ]
+    },
+    {
+        "serviceFeatureName": "INVITE_FRIEND",
+        "serviceFeatureStatus": "UNAVAILABLE",
+        "serviceFeatureUnavailableReasons": [
+            {
+                "serviceFeatureUnavailableReasonCategory": "KYC",
+                "serviceFeatureUnavailableReasonName": "GOVERNMENT_IDENTIFICATION_DOCUMENT#MISSING"
+            }
+        ]
+    },
+    {
+        "serviceFeatureName": "REWARDS",
+        "serviceFeatureStatus": "UNAVAILABLE",
+        "serviceFeatureUnavailableReasons": [
+            {
+                "serviceFeatureUnavailableReasonCategory": null,
+                "serviceFeatureUnavailableReasonName": null
+            }
+        ]
+    },
+    {
+        "serviceFeatureName": "CARD_SERVICE",
+        "serviceFeatureStatus": "UNAVAILABLE",
+        "serviceFeatureUnavailableReasons": [
+            {
+                "serviceFeatureUnavailableReasonCategory": "KYC",
+                "serviceFeatureUnavailableReasonName": "GOVERNMENT_IDENTIFICATION_DOCUMENT#MISSING"
+            }
+        ]
+    },
+    {
+        "serviceFeatureName": "VIRTUAL_CARD_REQUEST",
+        "serviceFeatureStatus": "UNAVAILABLE",
+        "serviceFeatureUnavailableReasons": [
+            {
+                "serviceFeatureUnavailableReasonCategory": "KYC",
+                "serviceFeatureUnavailableReasonName": "GOVERNMENT_IDENTIFICATION_DOCUMENT#MISSING"
+            }
+        ]
+    },
+    {
+        "serviceFeatureName": "PHYSICAL_CARD_REQUEST",
+        "serviceFeatureStatus": "UNAVAILABLE",
+        "serviceFeatureUnavailableReasons": [
+            {
+                "serviceFeatureUnavailableReasonCategory": "KYC",
+                "serviceFeatureUnavailableReasonName": "GOVERNMENT_IDENTIFICATION_DOCUMENT#MISSING"
+            }
+        ]
+    },
+    {
+        "serviceFeatureName": "PAYME",
+        "serviceFeatureStatus": "UNAVAILABLE",
+        "serviceFeatureUnavailableReasons": [
+            {
+                "serviceFeatureUnavailableReasonCategory": "KYC",
+                "serviceFeatureUnavailableReasonName": "GOVERNMENT_IDENTIFICATION_DOCUMENT#MISSING"
+            }
+        ]
+    },
+    {
+        "serviceFeatureName": "PHYSICAL_CARD_ACTIVATE",
+        "serviceFeatureStatus": "UNAVAILABLE",
+        "serviceFeatureUnavailableReasons": [
+            {
+                "serviceFeatureUnavailableReasonCategory": "KYC",
+                "serviceFeatureUnavailableReasonName": "GOVERNMENT_IDENTIFICATION_DOCUMENT#MISSING"
+            }
+        ]
+    },
+    {
+        "serviceFeatureName": "BASE_KYC",
+        "serviceFeatureStatus": "UNAVAILABLE",
+        "serviceFeatureUnavailableReasons": [
+            {
+                "serviceFeatureUnavailableReasonCategory": "KYC",
+                "serviceFeatureUnavailableReasonName": "GOVERNMENT_IDENTIFICATION_DOCUMENT#MISSING"
+            }
+        ]
+    },
+    {
+        "serviceFeatureName": "MULTI_CURRENCY_WALLET",
+        "serviceFeatureStatus": "UNAVAILABLE",
+        "serviceFeatureUnavailableReasons": [
+            {
+                "serviceFeatureUnavailableReasonCategory": null,
+                "serviceFeatureUnavailableReasonName": null
+            }
+        ]
+    }
+]

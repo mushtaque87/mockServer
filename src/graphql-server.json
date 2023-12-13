@@ -1,0 +1,411 @@
+{ 
+    "getUserAttribute": [{
+        "userId": "c323293d-ffb8-53e4-6a02-549733de244b",
+        "attribute": {
+          "attributeName": "nickname",
+          "attributeValue": ""
+        }
+      }],
+    "getUser": [{
+        "id": "c323293d-ffb8-53e4-6a02-549733de244b",
+        "userId": "c323293d-ffb8-53e4-6a02-549733de244b",
+        "phoneNumberVerified": true,
+        "acceptedTermsAndConditions__createdTimestamp": null,
+        "createdAt": "2022-10-28T05:12:01.784Z",
+        "status": "TnC_ACCEPTED",
+        "loyaltyStatus": null,
+        "phoneNumber": "+971545269990",
+        "locale": "en",
+        "assignedOperatingCountry": "AE",
+        "firstName": "TERESIAH NJERI",
+        "lastName": "KIRIETHE",
+        "nickname": "",
+        "dateOfBirth": "1990-08-20T00:00:00.000Z",
+        "nationality": "KEN",
+        "emailAddress": "c323293d-ffb8-53e4-6a02-549733de244b@dev.pyypl.io",
+        "userExternalSupportChatCustomerId": null,
+        "emailAddressVerified": null,
+        "countryCode": "AE"
+      }],
+      "listUploads": [{
+        "userId": "c323293d-ffb8-53e4-6a02-549733de244b",
+        "count": 3,
+        "data": [
+          {
+            "userId": "c323293d-ffb8-53e4-6a02-549733de244b",
+            "uploadId": "7a41ef9f-44ea-4995-a6ac-2b9ffce67f03",
+            "type": "Avatar",
+            "status": "Ready",
+            "result": null,
+            "url": "https://s3.eu-west-1.amazonaws.com/uploads.dev.pyypl.com/c323293d-ffb8-53e4-6a02-549733de244b/7a41ef9f-44ea-4995-a6ac-2b9ffce67f03?AWSAccessKeyId=AKIAJWHL7L26F2ZYZYOA&Expires=1687853035&Signature=khyGQJ%2FD%2FC%2BggckybzrjdTbM2ac%3D&X-Amzn-Trace-Id=Root%3D1-649a9467-5f18bc0914b9eb0e704cf435%3BParent%3D5c7aa9a005f6c2be%3BSampled%3D0%3BLineage%3Daca03456%3A0",
+            "createdAt": "2023-02-16T14:53:08.522Z",
+            "updatedAt": "2023-02-16T14:53:12.929Z",
+            "faceDetails": null
+          },
+          {
+            "userId": "c323293d-ffb8-53e4-6a02-549733de244b",
+            "uploadId": "e895e4b9-4c33-4eb4-8eca-eccc9960f49c",
+            "type": "Avatar",
+            "status": "Deleted",
+            "result": null,
+            "url": "https://s3.eu-west-1.amazonaws.com/uploads.dev.pyypl.com/c323293d-ffb8-53e4-6a02-549733de244b/e895e4b9-4c33-4eb4-8eca-eccc9960f49c?AWSAccessKeyId=AKIAJWHL7L26F2ZYZYOA&Expires=1687853035&Signature=qwHFsL4j7Qr0G8QSjmAn1nZX794%3D&X-Amzn-Trace-Id=Root%3D1-649a9467-29a336106adb03d671c0a436%3BParent%3D37771c6a2a9d740d%3BSampled%3D0%3BLineage%3Daca03456%3A0",
+            "createdAt": "2023-02-16T14:52:28.111Z",
+            "updatedAt": "2023-02-16T14:53:08.465Z",
+            "faceDetails": null
+          },
+          {
+            "userId": "c323293d-ffb8-53e4-6a02-549733de244b",
+            "uploadId": "cdc9d18b-427a-47a6-9e2f-90d51650a63a",
+            "type": "Avatar",
+            "status": "Deleted",
+            "result": null,
+            "url": "https://s3.eu-west-1.amazonaws.com/uploads.dev.pyypl.com/c323293d-ffb8-53e4-6a02-549733de244b/cdc9d18b-427a-47a6-9e2f-90d51650a63a?AWSAccessKeyId=AKIAJWHL7L26F2ZYZYOA&Expires=1687853035&Signature=jyZ6w2WjLysD0HOxRjbWea4OjtM%3D&X-Amzn-Trace-Id=Root%3D1-649a9467-69db7f22161403a272dafa9a%3BParent%3D066789aa4ab94861%3BSampled%3D0%3BLineage%3Daca03456%3A0",
+            "createdAt": "2023-02-16T14:51:08.786Z",
+            "updatedAt": "2023-02-16T14:51:39.512Z",
+            "faceDetails": null
+          }
+        ]
+      }],
+    "listAccounts": [{
+        "id": "c323293d-ffb8-53e4-6a02-549733de244b",
+        "userId": "c323293d-ffb8-53e4-6a02-549733de244b",
+        "data": [
+          {
+            "accountId": "9d37cc6d-e75c-4893-8ca7-67b6138184c5",
+            "defaultCurrency": "AED",
+            "cardId": null,
+            "balances": {
+              "data": [
+                {
+                  "amount": 11423,
+                  "currency": "AED"
+                }
+              ]
+            },
+            "balanceLimits": [
+              {
+                "min": 0,
+                "max": 500000,
+                "type": "DYNAMIC",
+                "currency": "AED"
+              }
+            ],
+            "name": "Unconsumed unattached voucher value account",
+            "type": "Prepaid",
+            "state": "new"
+          },
+          {
+            "accountId": "4025c34e-041a-4608-a85c-599663af44da",
+            "defaultCurrency": "AED",
+            "cardId": null,
+            "balances": {
+              "data": [
+                {
+                  "amount": 0,
+                  "currency": "AED"
+                }
+              ]
+            },
+            "balanceLimits": [
+              {
+                "min": 0,
+                "max": 500000,
+                "type": "DYNAMIC",
+                "currency": "AED"
+              }
+            ],
+            "name": "Unconsumed attached voucher value account",
+            "type": "Prepaid",
+            "state": "new"
+          },
+          {
+            "accountId": "057e7276-8bce-438b-bf33-42ca75ed8c25",
+            "defaultCurrency": "AED",
+            "cardId": null,
+            "balances": {
+              "data": [
+                {
+                  "amount": 0,
+                  "currency": "AED"
+                }
+              ]
+            },
+            "balanceLimits": [
+              {
+                "min": 0,
+                "max": 500000,
+                "type": "DYNAMIC",
+                "currency": "AED"
+              }
+            ],
+            "name": "escrow",
+            "type": "Prepaid",
+            "state": "new"
+          },
+          {
+            "accountId": "17d8a0a8-bd2f-490e-8f9e-174460a0e640",
+            "defaultCurrency": "AED",
+            "cardId": null,
+            "balances": {
+              "data": [
+                {
+                  "amount": 478472,
+                  "currency": "AED"
+                },
+                {
+                  "amount": 652000,
+                  "currency": "BTC"
+                },
+                {
+                  "amount": 15000,
+                  "currency": "USD"
+                }
+              ]
+            },
+            "balanceLimits": [
+              {
+                "min": 0,
+                "max": 500000,
+                "type": "DYNAMIC",
+                "currency": "AED"
+              }
+            ],
+            "name": "default",
+            "type": "Prepaid",
+            "state": "new"
+          }
+        ]
+    }],
+    "hasCompletedOnboarding": [
+       { 
+        "userId": "c323293d-ffb8-53e4-6a02-549733de244b",
+        "completed": true
+      }
+    ],
+    "listAccounts": {
+			"data": [
+			  {
+				"accountId": "9d37cc6d-e75c-4893-8ca7-67b6138184c5",
+				"defaultCurrency": "AED",
+				"cardId": null,
+				"balances": {
+				  "data": [
+					{
+					  "amount": 11423,
+					  "currency": "AED"
+					}
+				  ]
+				},
+				"balanceLimits": [
+				  {
+					"min": 0,
+					"max": 500000,
+					"type": "DYNAMIC",
+					"currency": "AED"
+				  }
+				],
+				"name": "Unconsumed unattached voucher value account",
+				"type": "Prepaid",
+				"state": "new"
+			  },
+			  {
+				"accountId": "4025c34e-041a-4608-a85c-599663af44da",
+				"defaultCurrency": "AED",
+				"cardId": null,
+				"balances": {
+				  "data": [
+					{
+					  "amount": 0,
+					  "currency": "AED"
+					}
+				  ]
+				},
+				"balanceLimits": [
+				  {
+					"min": 0,
+					"max": 500000,
+					"type": "DYNAMIC",
+					"currency": "AED"
+				  }
+				],
+				"name": "Unconsumed attached voucher value account",
+				"type": "Prepaid",
+				"state": "new"
+			  },
+			  {
+				"accountId": "057e7276-8bce-438b-bf33-42ca75ed8c25",
+				"defaultCurrency": "AED",
+				"cardId": null,
+				"balances": {
+				  "data": [
+					{
+					  "amount": 0,
+					  "currency": "AED"
+					}
+				  ]
+				},
+				"balanceLimits": [
+				  {
+					"min": 0,
+					"max": 500000,
+					"type": "DYNAMIC",
+					"currency": "AED"
+				  }
+				],
+				"name": "escrow",
+				"type": "Prepaid",
+				"state": "new"
+			  },
+			  {
+				"accountId": "17d8a0a8-bd2f-490e-8f9e-174460a0e640",
+				"defaultCurrency": "AED",
+				"cardId": null,
+				"balances": {
+				  "data": [
+					{
+					  "amount": 478472,
+					  "currency": "AED"
+					},
+					{
+					  "amount": 652000,
+					  "currency": "BTC"
+					},
+					{
+					  "amount": 15000,
+					  "currency": "USD"
+					}
+				  ]
+				},
+				"balanceLimits": [
+				  {
+					"min": 0,
+					"max": 500000,
+					"type": "DYNAMIC",
+					"currency": "AED"
+				  }
+				],
+				"name": "default",
+				"type": "Prepaid",
+				"state": "new"
+			  }
+			]
+		  },
+		  "listServiceFeatures": [
+			{
+			  "serviceFeatureName": "LOAD_MONEY",
+			  "serviceFeatureStatus": "AVAILABLE",
+			  "serviceFeatureUnavailableReasons": null
+			},
+			{
+			  "serviceFeatureName": "SEND_MONEY",
+			  "serviceFeatureStatus": "AVAILABLE",
+			  "serviceFeatureUnavailableReasons": null
+			},
+			{
+			  "serviceFeatureName": "INVITE_FRIEND",
+			  "serviceFeatureStatus": "AVAILABLE",
+			  "serviceFeatureUnavailableReasons": null
+			},
+			{
+			  "serviceFeatureName": "CARD_SERVICE",
+			  "serviceFeatureStatus": "UNAVAILABLE",
+			  "serviceFeatureUnavailableReasons": [
+				{
+				  "serviceFeatureUnavailableReasonCategory": "OPERATIONAL",
+				  "serviceFeatureUnavailableReasonName": "MAINTENANCE"
+				}
+			  ]
+			},
+			{
+			  "serviceFeatureName": "VIRTUAL_CARD_REQUEST",
+			  "serviceFeatureStatus": "AVAILABLE",
+			  "serviceFeatureUnavailableReasons": null
+			},
+			{
+			  "serviceFeatureName": "PHYSICAL_CARD_REQUEST",
+			  "serviceFeatureStatus": "AVAILABLE",
+			  "serviceFeatureUnavailableReasons": null
+			},
+			{
+			  "serviceFeatureName": "PAYME",
+			  "serviceFeatureStatus": "UNAVAILABLE",
+			  "serviceFeatureUnavailableReasons": [
+				{
+				  "serviceFeatureUnavailableReasonCategory": "OPERATIONAL",
+				  "serviceFeatureUnavailableReasonName": "MAINTENANCE"
+				}
+			  ]
+			},
+			{
+			  "serviceFeatureName": "PHYSICAL_CARD_ACTIVATE",
+			  "serviceFeatureStatus": "AVAILABLE",
+			  "serviceFeatureUnavailableReasons": null
+			},
+			{
+			  "serviceFeatureName": "EXCHANGE_CRYPTO",
+			  "serviceFeatureStatus": "AVAILABLE",
+			  "serviceFeatureUnavailableReasons": null
+			},
+			{
+			  "serviceFeatureName": "DEALER_NETWORK",
+			  "serviceFeatureStatus": "AVAILABLE",
+			  "serviceFeatureUnavailableReasons": null
+			},
+			{
+			  "serviceFeatureName": "MASTER_DEALER_NETWORK",
+			  "serviceFeatureStatus": "AVAILABLE",
+			  "serviceFeatureUnavailableReasons": null
+			},
+			{
+			  "serviceFeatureName": "DEBENTURE_BONDS",
+			  "serviceFeatureStatus": "AVAILABLE",
+			  "serviceFeatureUnavailableReasons": null
+			},
+			{
+			  "serviceFeatureName": "DEBENTURE_INVESTMENT",
+			  "serviceFeatureStatus": "AVAILABLE",
+			  "serviceFeatureUnavailableReasons": null
+			},
+			{
+			  "serviceFeatureName": "BASE_KYC",
+			  "serviceFeatureStatus": "AVAILABLE",
+			  "serviceFeatureUnavailableReasons": null
+			}
+		  ],
+		"listPnwCategories": [{
+			"pnwCategoryName": "PYYPL_TO_PYYPL",
+			"status": "ACTIVE",
+			"pnwSubCategories": []
+		}, {
+			"pnwCategoryName": "LOCAL_TRANSFER",
+			"status": "INACTIVE",
+			"pnwSubCategories": [{
+				"pnwSubCategoryName": "LOCAL_BANK_TRANSFER",
+				"status": "INACTIVE"
+			}, {
+				"pnwSubCategoryName": "LOCAL_MOBILE_WALLET",
+				"status": "INACTIVE"
+			}]
+		}, {
+			"pnwCategoryName": "INTERNATIONAL_TRANSFER",
+			"status": "ACTIVE",
+			"pnwSubCategories": [{
+				"pnwSubCategoryName": "INTERNATIONAL_BANK_TRANSFER",
+				"status": "ACTIVE"
+			}, {
+				"pnwSubCategoryName": "INTERNATIONAL_MOBILE_WALLET",
+				"status": "INACTIVE"
+			}, {
+				"pnwSubCategoryName": "INTERNATIONAL_CASH_PAYOUT",
+				"status": "ACTIVE"
+			}]
+		}, {
+			"pnwCategoryName": "BLOCK_CHAIN_TRANSFER",
+			"status": "ACTIVE",
+			"pnwSubCategories": []
+		}, {
+			"pnwCategoryName": "MOBILE_WALLETS",
+			"status": "INACTIVE",
+			"pnwSubCategories": []
+		}]
+  }

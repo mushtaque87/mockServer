@@ -1,0 +1,17 @@
+{
+    "cardId": "1115000230",
+    "cardIssuer": "M2P",
+    "accountId": "17d8a0a8-bd2f-490e-8f9e-174460a0e640",
+    "reason": null,
+    "cardType": "VIRTUAL",
+    "cardStatus": "ACTIVE",
+    "cardHeadDigits": "6504",
+    "cardTailDigits": "0230",
+    "cardExpiryDate": "2024-02-29T00:00:00.000Z",
+    "cardLabel": "TERESIAH KIRIETHE",
+    "cardColor": "teal",
+    "createdAt": "2023-11-23T07:09:54.748Z",
+    "updatedAt": "2023-11-23T07:09:54.748Z"
+}
+
+

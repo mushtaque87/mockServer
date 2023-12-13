@@ -1,0 +1,166 @@
+[
+    {
+        "countryCode": "PH",
+        "currency": "PHP"
+    },
+    {
+        "countryCode": "PK",
+        "currency": "PKR"
+    },
+    {
+        "countryCode": "IN",
+        "currency": "INR"
+    },
+    {
+        "countryCode": "LK",
+        "currency": "USD"
+    },
+    {
+        "countryCode": "LK",
+        "currency": "LKR"
+    },
+    {
+        "countryCode": "BD",
+        "currency": "BDT"
+    },
+    {
+        "countryCode": "KE",
+        "currency": "KES"
+    },
+    {
+        "countryCode": "NG",
+        "currency": "NGN"
+    },
+    {
+        "countryCode": "ZA",
+        "currency": "ZAR"
+    },
+    {
+        "countryCode": "ET",
+        "currency": "USD"
+    },
+    {
+        "countryCode": "ET",
+        "currency": "ETB"
+    },
+    {
+        "countryCode": "ID",
+        "currency": "IDR"
+    },
+    {
+        "countryCode": "CN",
+        "currency": "CNY"
+    },
+    {
+        "countryCode": "TR",
+        "currency": "TRY"
+    },
+    {
+        "countryCode": "GB",
+        "currency": "GBP"
+    },
+    {
+        "countryCode": "EURO_ZONE",
+        "currency": "EUR"
+    },
+    {
+        "countryCode": "VN",
+        "currency": "VND"
+    },
+    {
+        "countryCode": "EG",
+        "currency": "EGP"
+    },
+    {
+        "countryCode": "NP",
+        "currency": "NPR"
+    },
+    {
+        "countryCode": "MY",
+        "currency": "MYR"
+    },
+    {
+        "countryCode": "MN",
+        "currency": "MNT"
+    },
+    {
+        "countryCode": "KR",
+        "currency": "KRW"
+    },
+    {
+        "countryCode": "BR",
+        "currency": "BRL"
+    },
+    {
+        "countryCode": "TH",
+        "currency": "THB"
+    },
+    {
+        "countryCode": "BO",
+        "currency": "USD"
+    },
+    {
+        "countryCode": "KH",
+        "currency": "USD"
+    },
+    {
+        "countryCode": "KH",
+        "currency": "KHR"
+    },
+    {
+        "countryCode": "CD",
+        "currency": "USD"
+    },
+    {
+        "countryCode": "CR",
+        "currency": "USD"
+    },
+    {
+        "countryCode": "EC",
+        "currency": "USD"
+    },
+    {
+        "countryCode": "SV",
+        "currency": "USD"
+    },
+    {
+        "countryCode": "LR",
+        "currency": "USD"
+    },
+    {
+        "countryCode": "NI",
+        "currency": "USD"
+    },
+    {
+        "countryCode": "PE",
+        "currency": "USD"
+    },
+    {
+        "countryCode": "SO",
+        "currency": "USD"
+    },
+    {
+        "countryCode": "ZW",
+        "currency": "USD"
+    },
+    {
+        "countryCode": "MZ",
+        "currency": "MZN"
+    },
+    {
+        "countryCode": "EUROZONE",
+        "currency": null
+    },
+    {
+        "countryCode": "GH",
+        "currency": "GHS"
+    },
+    {
+        "countryCode": "CM",
+        "currency": "XAF"
+    },
+    {
+        "countryCode": "SN",
+        "currency": "XOF"
+    }
+]

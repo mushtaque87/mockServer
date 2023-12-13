@@ -1,0 +1,108 @@
+{
+    "data": [
+      {
+        "accountId": "9d37cc6d-e75c-4893-8ca7-67b6138184c5",
+        "defaultCurrency": "AED",
+        "cardId": null,
+        "balances": {
+          "data": [
+            {
+              "amount": 11423,
+              "currency": "AED"
+            }
+          ]
+        },
+        "balanceLimits": [
+          {
+            "min": 0,
+            "max": 500000,
+            "type": "DYNAMIC",
+            "currency": "AED"
+          }
+        ],
+        "name": "Unconsumed unattached voucher value account",
+        "type": "Prepaid",
+        "state": "new"
+      },
+      {
+        "accountId": "4025c34e-041a-4608-a85c-599663af44da",
+        "defaultCurrency": "AED",
+        "cardId": null,
+        "balances": {
+          "data": [
+            {
+              "amount": 0,
+              "currency": "AED"
+            }
+          ]
+        },
+        "balanceLimits": [
+          {
+            "min": 0,
+            "max": 500000,
+            "type": "DYNAMIC",
+            "currency": "AED"
+          }
+        ],
+        "name": "Unconsumed attached voucher value account",
+        "type": "Prepaid",
+        "state": "new"
+      },
+      {
+        "accountId": "057e7276-8bce-438b-bf33-42ca75ed8c25",
+        "defaultCurrency": "AED",
+        "cardId": null,
+        "balances": {
+          "data": [
+            {
+              "amount": 0,
+              "currency": "AED"
+            }
+          ]
+        },
+        "balanceLimits": [
+          {
+            "min": 0,
+            "max": 500000,
+            "type": "DYNAMIC",
+            "currency": "AED"
+          }
+        ],
+        "name": "escrow",
+        "type": "Prepaid",
+        "state": "new"
+      },
+      {
+        "accountId": "7e76bf11-e0f5-421f-adf2-33aaf7d310ac",
+        "defaultCurrency": "AED",
+        "cardId": null,
+        "balances": {
+          "data": [
+            {
+              "amount": 8472,
+              "currency": "AED"
+            },
+            {
+              "amount": 652000,
+              "currency": "BTC"
+            },
+            {
+              "amount": 15000,
+              "currency": "USD"
+            }
+          ]
+        },
+        "balanceLimits": [
+          {
+            "min": 0,
+            "max": 500000,
+            "type": "DYNAMIC",
+            "currency": "AED"
+          }
+        ],
+        "name": "default",
+        "type": "Prepaid",
+        "state": "new"
+      }
+    ]
+  }
