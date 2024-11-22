@@ -68,9 +68,10 @@ jobs:
           app-name: 'testApp1987'
           slot-name: 'Production'
           package: .
-          
+
       - name: npm run
         run: |
+          npm install
           npm run mockserver
           
           
